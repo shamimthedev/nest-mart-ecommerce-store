@@ -2,7 +2,11 @@
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <>
+      <section className="mx-auto max-w-[1610px]">
+
+      </section>
+    </>
   )
 }
 
