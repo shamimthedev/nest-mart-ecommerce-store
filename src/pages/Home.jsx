@@ -5,6 +5,7 @@ import Hero from "../components/Hero"
 import PopularProducts from "../components/PopularProducts"
 import RecentlyAdded from "../components/RecentlyAdded"
 import ShopByCategories from "../components/ShopByCategories"
+import Subscription from "../components/Subscription"
 import TopRated from "../components/TopRated"
 import TopSelling from "../components/TopSelling"
 import TrendingProducts from "../components/TrendingProducts"
@@ -21,12 +22,12 @@ const Home = () => {
       <PopularProducts />
       <DailyBestSells/>
       <DealsOfTheDay />
-      <ShopByCategories />
-      <div className="flex gap-5 flex-wrap">
-        <TopSelling />
-        <TrendingProducts />
-        <RecentlyAdded />
-        <TopRated />
+      {/* <ShopByCategories /> */}
+      <div className="mt-[50px] max-w-[1610px] mx-auto grid grid-cols-4">
+        <TopSelling title={'Top Selling'}/>
+        <TopSelling title={'Trending Products'}/>
+        <TopSelling title={'Recently Added'}/>
+        <TopSelling title={'Top Rated'}/>
       </div>
     </>
   )
