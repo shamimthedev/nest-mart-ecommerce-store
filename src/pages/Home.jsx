@@ -1,3 +1,4 @@
+import DailyBestSells from "../components/DailyBestSells"
 import DealsOfTheDay from "../components/DealsOfTheDay"
 import FeaturedCategories from "../components/FeaturedCategories"
 import Hero from "../components/Hero"
@@ -18,6 +19,7 @@ const Home = () => {
       <Hero />
       <FeaturedCategories/>
       <PopularProducts />
+      <DailyBestSells/>
       <DealsOfTheDay />
       <ShopByCategories />
       <div className="flex gap-5 flex-wrap">

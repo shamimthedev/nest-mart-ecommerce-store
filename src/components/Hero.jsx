@@ -33,7 +33,7 @@ const Hero = () => {
     fade: true,
     autoplay: true,
     autoplaySpeed: 2000,
-    nextArrow: <NextArrow/>,
+    nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     customPaging: i => (
       <div

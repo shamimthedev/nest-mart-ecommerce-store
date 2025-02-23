@@ -146,7 +146,7 @@ const Navbar = ({className}) => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute left-1/2 transform -translate-x-1/2 w-[90%] max-w-[1600px] bg-white shadow-lg border-t border-gray-200 z-50 py-5 top-full rounded-b-md"
+                        className="absolute left-1/2 transform -translate-x-1/2 w-full max-w-[1600px] bg-white shadow-lg border-t border-gray-200 z-50 py-5 top-full rounded-b-md"
                     >
                         <div className="max-w-[1600px] mx-auto px-10 grid grid-cols-4 gap-6">
                             {navList

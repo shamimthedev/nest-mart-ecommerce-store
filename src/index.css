@@ -59,6 +59,9 @@ body {
 .cat-slide .slick-slide{
   padding-right: 24px;
 }
+#dealsOfTheDay .deals-slide .slick-slide{
+  padding-right: 24px !important;
+}
 
 /* product tooltip css */
 .wrapper {

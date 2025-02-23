@@ -2,7 +2,10 @@
 
 const DealsOfTheDay = () => {
   return (
-    <div>DealsOfTheDay</div>
+    <>
+
+
+    </>
   )
 }
 
