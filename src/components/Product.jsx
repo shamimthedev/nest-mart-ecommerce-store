@@ -1,3 +1,7 @@
+
+
+
+
 import Product01 from '/product-01.png'
 import Product012 from '/product-1-2.jpg'
 import Rating from '@mui/material/Rating';
@@ -7,122 +11,6 @@ import CompareArrowsOutlinedIcon from '@mui/icons-material/CompareArrowsOutlined
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 
 const Product = () => {
-
-    // const productsData = [
-    //     {
-    //         id: 1,
-    //         img: Product01,
-    //         img2: Product012,
-    //         title: 'Seeds of Change Organic Quinoa, Brown, & Red Rice',
-    //         cat: 'Snack',
-    //         rating: '2.5',
-    //         author: 'Stouffer',
-    //         oldPrice: '$52.85',
-    //         newPrice: '$55.8',
-    //     },
-    //     {
-    //         id: 2,
-    //         img: Product02,
-    //         img2: Product022,
-    //         title: 'All Natural Italian-Style Chicken Meatballs',
-    //         cat: 'Hodo Foods',
-    //         rating: '3.5',
-    //         author: 'NestFood',
-    //         oldPrice: '$28.85',
-    //         newPrice: '$32.8',
-    //     },
-    //     {
-    //         id: 3,
-    //         img: Product03,
-    //         img2: Product032,
-    //         title: "Angie’s Boomchickapop Sweet & Salty Kettle Corn",
-    //         cat: 'Snack',
-    //         rating: '4',
-    //         author: 'StarKist',
-    //         oldPrice: '$48.85',
-    //         newPrice: '$52.8',
-    //     },
-    //     {
-    //         id: 4,
-    //         img: Product04,
-    //         img2: Product042,
-    //         title: 'Foster Farms Takeout Crispy Classic Buffalo Wings',
-    //         cat: 'Vegetables',
-    //         rating: '4',
-    //         author: 'Old El Paso',
-    //         oldPrice: '$17.85',
-    //         newPrice: '$19.8',
-    //     },
-    //     {
-    //         id: 5,
-    //         img: Product05,
-    //         img2: Product052,
-    //         title: 'Blue Diamond Almonds Lightly Salted Vegetables',
-    //         cat: 'Pet Foods',
-    //         rating: '4',
-    //         author: 'StarKist',
-    //         oldPrice: '$23.85',
-    //         newPrice: '$25.8',
-    //     },
-    //     {
-    //         id: 6,
-    //         img: Product06,
-    //         img2: Product062,
-    //         title: 'Chobani Complete Vanilla Greek Yogurt',
-    //         cat: 'Hodo Foods',
-    //         rating: '4.5',
-    //         author: 'NestFood',
-    //         oldPrice: '$54.85',
-    //         newPrice: '$55.8',
-    //     },
-    //     {
-    //         id: 7,
-    //         img: Product07,
-    //         img2: Product072,
-    //         title: 'Canada Dry Ginger Ale – 2 L Bottle - 200ml - 400g',
-    //         cat: 'Meats',
-    //         rating: '3.5',
-    //         author: 'Stouffer',
-    //         oldPrice: '$32.85',
-    //         newPrice: '$33.8',
-    //     },
-    //     {
-    //         id: 8,
-    //         img: Product08,
-    //         img2: Product082,
-    //         title: 'Encore Seafoods Stuffed Alaskan Salmon',
-    //         cat: 'Snack',
-    //         rating: '3.0',
-    //         author: 'Tyson',
-    //         oldPrice: '$35.85',
-    //         newPrice: '$37.8',
-    //     },
-    //     {
-    //         id: 9,
-    //         img: Product09,
-    //         img2: Product092,
-    //         title: "Gorton’s Beer Battered Fish Fillets with soft paper",
-    //         cat: 'Coffee',
-    //         rating: '4.0',
-    //         author: 'Old El Paso',
-    //         oldPrice: '$23.85',
-    //         newPrice: '$25.8',
-    //     },
-    //     {
-    //         id: 10,
-    //         img: Product10,
-    //         img2: Product102,
-    //         title: 'Haagen-Dazs Caramel Cone Ice Cream Ketchup',
-    //         cat: 'Cream',
-    //         rating: '2.0',
-    //         author: 'Tyson',
-    //         oldPrice: '$22.85',
-    //         newPrice: '$24.8',
-    //     },
-    // ]
-
-    // Detect Scroll to Add Background and Shadow
-
 
     return (
         <div className="w-[300px] rounded-[15px] p-[25px] border border-[#ECECEC] transition-all ease-in-out duration-200 hover:border-green-200 hover:shadow-md relative group">
