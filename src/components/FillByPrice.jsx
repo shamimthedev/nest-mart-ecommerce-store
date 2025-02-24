@@ -94,7 +94,7 @@ const FillByPrice = () => {
                             </li>
                         </ul>
                     </div>
-                    <button className="font-bold leading-[21px] tracking-[0.5px] text-sm bg-greeny rounded-sm text-white py-3 px-4 flex items-center gap-2">
+                    <button className="font-bold leading-[21px] tracking-[0.5px] text-sm bg-greeny rounded-sm text-white py-3 px-4 flex items-center gap-2 hover:bg-[#FDC040]">
                         <CiFilter className="w-4 h-4" />
                         Filter
                     </button>
