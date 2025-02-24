@@ -3,12 +3,7 @@ import DealsOfTheDay from "../components/DealsOfTheDay"
 import FeaturedCategories from "../components/FeaturedCategories"
 import Hero from "../components/Hero"
 import PopularProducts from "../components/PopularProducts"
-import RecentlyAdded from "../components/RecentlyAdded"
-import ShopByCategories from "../components/ShopByCategories"
-import Subscription from "../components/Subscription"
-import TopRated from "../components/TopRated"
 import TopSelling from "../components/TopSelling"
-import TrendingProducts from "../components/TrendingProducts"
 
 
 const Home = () => {
