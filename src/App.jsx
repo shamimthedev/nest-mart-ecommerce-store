@@ -5,6 +5,7 @@ import RootLayout from "./layout/RootLayout";
 import Shop from "./pages/Shop";
 import Shop2 from "./pages/Shop2";
 import Error from "./pages/Error";
+import ProductDetails from "./pages/ProductDetails";
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="shop" element={<Shop />} />
           <Route path="shop2" element={<Shop2 />} />
+          <Route path="product/details" element={<ProductDetails />} />
           <Route path="*" element={<Error />} />
         </Route>
       </Routes>
