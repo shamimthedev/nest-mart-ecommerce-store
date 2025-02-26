@@ -62,7 +62,14 @@ body {
 #dealsOfTheDay .deals-slide .slick-slide{
   padding-right: 24px !important;
 }
-
+.product-slide .slick-slide{
+  padding: 8px;
+  overflow: hidden !important;
+  border-radius: 17px !important;
+}
+.product-slide .slick-current .item{
+  border: 4px solid #A2D2C9;
+}
 /* product tooltip css */
 .wrapper {
   font-family: 'Lato';

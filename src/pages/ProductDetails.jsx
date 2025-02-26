@@ -13,6 +13,8 @@ import ProductImg1 from '/product-img-gallary-01.png'
 import ProductImg2 from '/product-img-gallary-02.png'
 import ProductImg3 from '/product-img-gallary-03.png'
 import ProductImg4 from '/product-img-gallary-04.png'
+import ProductImg5 from '/product-img-gallary-05.jpg'
+import ProductImg6 from '/product-img-gallary-06.jpg'
 
 const ProductDetails = () => {
   const [value, setValue] = useState(2);
@@ -23,8 +25,8 @@ const ProductDetails = () => {
     slidesToShow: 4,
     slidesToScroll: 1,
     arrows: true,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />
+    nextArrow: <NextArrow isSingleProduct={true}/>,
+    prevArrow: <PrevArrow isSingleProduct={true}/>
   };
   return (
     <>
@@ -52,24 +54,24 @@ const ProductDetails = () => {
                     <img src={SingleProduct} alt="" />
                   </div>
                   <div className="overflow-hidden">
-                    <Slider {...settings} className="cat-slide">
-                      <div className="">
+                    <Slider {...settings} className="product-slide">
+                      <div className="overflow-hidden rounded-[17px] border border-transparent item">
                         <img src={ProductImg1} alt="" className="w-full"/>
                       </div>
-                      <div className="">
+                      <div className="overflow-hidden rounded-[17px] border border-transparent item">
                         <img src={ProductImg2} alt="" className="w-full"/>
                       </div>
-                      <div className="">
+                      <div className="overflow-hidden rounded-[17px] border border-transparent item">
                         <img src={ProductImg3} alt="" className="w-full"/>
                       </div>
-                      <div className="">
+                      <div className="overflow-hidden rounded-[17px] border border-transparent item">
                         <img src={ProductImg4} alt="" className="w-full"/>
                       </div>
-                      <div className="">
-                        <img src={ProductImg1} alt="" className="w-full"/>
+                      <div className="overflow-hidden rounded-[17px] border border-transparent item">
+                        <img src={ProductImg5} alt="" className="w-full"/>
                       </div>
-                      <div className="">
-                        <img src={ProductImg3} alt="" className="w-full"/>
+                      <div className="overflow-hidden rounded-[17px] border border-transparent item">
+                        <img src={ProductImg6} alt="" className="w-full"/>
                       </div>
                     </Slider>
                   </div>
