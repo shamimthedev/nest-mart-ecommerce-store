@@ -31,7 +31,6 @@ const PopularProducts = () => {
             <Product/>
             <Product/>
           </div>
-          
         </div>
       </section>
     </>

@@ -23,6 +23,7 @@ import { IoMdHeartEmpty } from "react-icons/io";
 import ReviewAuthor01 from '/review-author-01.png'
 import ReviewAuthor02 from '/review-author-02.png'
 import ReviewAuthor03 from '/review-author-03.png'
+import Product from "../components/Product";
 
 const ProductDetails = () => {
   const [value, setValue] = useState(2);
@@ -260,7 +261,7 @@ const ProductDetails = () => {
                 {
                   activeTab === 1 && (
                     <div className="">
-                      <table className="table-fixed border-spacing-2 border border-[#ECECEC] font-lato leading-6 text-[#7E7E7E] font-normal">
+                      <table className="mb-14 table-fixed border-spacing-2 border border-[#ECECEC] font-lato leading-6 text-[#7E7E7E] font-normal">
                         <tbody>
                           <tr>
                             <th className="font-normal text-left px-8 py-4 border border-[#ECECEC]">Stand Up</th>
@@ -476,6 +477,17 @@ const ProductDetails = () => {
                   )
                 }
 
+              </div>
+
+              {/* Related Products */}
+              <div className="mt-[60px] mb-[30px]">
+                <h2 className="font-bold text-2xl mb-[30px] pb-[17px] border-b border-[#ECECEC] relative after:absolute after:content-[''] after:w-[80px] after:h-[2px] after:bg-[#BCE3C9] after:bottom-0 after:left-0">Related Products</h2>
+                <div className="flex flex-wrap gap-5">
+                  <Product />
+                  <Product />
+                  <Product />
+                  <Product />
+                </div>
               </div>
             </div>
 
