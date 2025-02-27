@@ -9,6 +9,7 @@ import Payment from '/payment-method.png'
 import { FiPhoneCall } from "react-icons/fi";
 import { FaFacebookF, FaInstagram, FaPinterestP, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { Link } from 'react-router';
 
 const Footer = () => {
   return (
@@ -16,7 +17,7 @@ const Footer = () => {
       <section className="mx-auto max-w-[1610px]">
         <div className="flex justify-between items-center pb-[45px] border-b border-[#BCE3C9]">
           <div className="">
-            <img src={Logo} alt="Logo" className='w-[215px] mb-[22px]' />
+            <Link to='/'><img src={Logo} loading="lazy" alt="Logo" className="w-[215px] mb-[22px]" /></Link>
             <p className='text-[17px] leading-6 font-lato max-w-[237px] mb-[35px]'>Awesome grocery store website
               template</p>
             <div className="flex flex-col gap-4 font-lato text-[15px] leading-6">
@@ -87,19 +88,19 @@ const Footer = () => {
         </div>
         <div className="flex justify-between py-[30px]">
           <div className="font-lato text-sm text-[#7E7E7E] leading-6">
-            <p>© 2022, <span className='text-greeny'>Nest</span> - HTML Ecommerce Template <br />
+            <p>© 2022, <span className='text-greeny'><Link to='/'>Nest</Link></span> - HTML Ecommerce Template <br />
               All rights reserved</p>
           </div>
           <div className="flex gap-x-5">
             <div className="flex gap-x-3 items-center text-greeny">
-              <FiPhoneCall className='text-3xl'/>
+              <FiPhoneCall className='text-3xl' />
               <div>
                 <p className='font-bold text-[26px] leading-[26px]'>1900 - 6666</p>
                 <span className='font-lato text-xs leading-3 text-[#7E7E7E]'>Working 8:00 - 22:00</span>
               </div>
             </div>
             <div className="flex gap-x-3 items-center text-greeny">
-              <FiPhoneCall className='text-3xl'/>
+              <FiPhoneCall className='text-3xl' />
               <div>
                 <p className='font-bold text-[26px] leading-[26px]'>1900 - 8888</p>
                 <span className='font-lato text-xs leading-3 text-[#7E7E7E]'>24/7 Support Center</span>

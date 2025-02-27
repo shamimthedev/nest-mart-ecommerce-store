@@ -1,5 +1,6 @@
 import { IoPaperPlaneOutline } from "react-icons/io5"
 import SubscriptionImg from '/subscription.png'
+import { Link } from "react-router"
 
 const Subscription = () => {
   return (
@@ -8,7 +9,7 @@ const Subscription = () => {
         <img src={SubscriptionImg} alt="Subscription Img" className="w-full rounded-[30px]" />
         <div className="absolute top-20 left-[78px]">
           <h1 className='text-[#253D4E] max-w-[529px] text-[40px] leading-[48px] font-bold mb-[20px]'>Stay home & get your daily needs from our shop</h1>
-          <p className='font-lato text-[#7E7E7E] text-lg leading-6 mb-[46px]'>Start You'r Daily Shopping with <span className="text-greeny">Nest Mart</span></p>
+          <p className='font-lato text-[#7E7E7E] text-lg leading-6 mb-[46px]'>Start You'r Daily Shopping with <span className="text-greeny"><Link to='/'>Nest Mart</Link></span></p>
           <div className="flex items-center w-[480px] bg-white rounded-full shadow-md overflow-hidden">
             <IoPaperPlaneOutline className="text-gray-500 text-2xl ml-4" />
             <input

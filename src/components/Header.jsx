@@ -13,6 +13,7 @@ import axios from "axios"
 import { FiClipboard, FiHeart, FiSettings, FiTarget, FiUser } from "react-icons/fi"
 import { GoSignOut } from "react-icons/go"
 import Navbar from "./Navbar"
+import { Link } from "react-router"
 
 const Header = () => {
   const [isAccOpen, setIsAccOpen] = useState(false)
@@ -119,7 +120,7 @@ const Header = () => {
 
             {/* Logo here  */}
             <div className="w-[150px] 2xl:w-[180px]">
-              <img src={Logo} loading="lazy" alt="Logo" className="w-full" />
+              <Link to='/'><img src={Logo} loading="lazy" alt="Logo" className="w-full" /></Link>
             </div>
 
             {/* Search Bar */}
