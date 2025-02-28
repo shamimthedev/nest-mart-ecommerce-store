@@ -17,6 +17,10 @@ import AboutFeature05 from '/about-feature-05.svg'
 import AboutFeature06 from '/about-feature-06.svg'
 import AboutPerformance from '/about-performance.png'
 import AboutCounter from '/about-counter-background.png'
+import TeamMember01 from '/team-member-01.png'
+import TeamMember02 from '/team-member-02.png'
+import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const About = () => {
   var settings = {
@@ -227,6 +231,62 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* Our Team Section */}
+      <section>
+        <div className="max-w-[1341px] mx-auto mt-[50px] mb-[220px]">
+          <div className="relative mb-10">
+            <h2 className='font-bold text-[40px] text-center leading-12 pb-6'>Our Team</h2>
+            <img src={Divider} alt="" className='absolute bottom-0 left-1/2 -translate-x-1/2' />
+          </div>
+          <div className="flex items-center gap-x-[30px]">
+            <div className="">
+              <h5 className='font-bold leading-[20px] text-greeny'>Our Team</h5>
+              <h2 className='mb-[31px] max-w-[378px] font-bold text-5xl leading-[58px]'>Meet Our Expert Team</h2>
+              <p className='mb-[35px] font-lato text-[#7E7E7E] leading-6 text-justify'>Proin ullamcorper pretium orci. Donec necscele risque leo.
+                Nam massa dolor imperdiet neccon sequata congue idsem.
+                Maecenas malesuada faucibus finibus.</p>
+              <p className='mb-[33px] font-lato text-[#7E7E7E] leading-6 text-justify'>Proin ullamcorper pretium orci. Donec necscele risque leo.
+                Nam massa dolor imperdiet neccon sequata congue idsem.
+                Maecenas malesuada faucibus finibus.</p>
+              <button className='w-[188px] h-[47px] text-sm leading-[21px] tracking-[0.5px] font-bold bg-greeny rounded-sm text-white cursor-pointer'>View All Members</button>
+            </div>
+            <div className="flex gap-6">
+              <div className="relative group">
+                <div className="w-[420px]">
+                  <img src={TeamMember01} alt="" className='w-full'/>
+                </div>
+                <div className="absolute left-[42px] right-[42px] -bottom-20 text-center py-[30px] bg-white rounded-[15px] shadow-md leading-6 transition-all ease-in-out duration-300 group-hover:translate-y-[-6px]">
+                  <h5 className='font-bold text-2xl mb-[6px]'>H. Merinda</h5>
+                  <span className='text-[#7E7E7E] font-lato text-[17px]'>CEO & Co-Founder</span>
+                  <div className="mt-[23px] mb-[7px] flex text-greeny items-center justify-center gap-3">
+                    <FaFacebookF className='w-5 h-5'/>
+                    <FaXTwitter className='w-5 h-5'/>
+                    <FaInstagram  className='w-5 h-5'/>
+                    <FaYoutube  className='w-5 h-5'/>
+                  </div>
+                </div>
+              </div>
+              <div className="relative group">
+                <div className="w-[420px]">
+                  <img src={TeamMember02} alt="" className='w-full'/>
+                </div>
+                <div className="absolute left-[42px] right-[42px] -bottom-20 text-center py-[30px] bg-white rounded-[15px] shadow-md leading-6 transition-all ease-in-out duration-300 group-hover:translate-y-[-6px]">
+                  <h5 className='font-bold text-2xl mb-[6px]'>Dilan Specter</h5>
+                  <span className='text-[#7E7E7E] font-lato text-[17px]'>Head Engineer</span>
+                  <div className="mt-[23px] mb-[7px] flex text-greeny items-center justify-center gap-3">
+                    <FaFacebookF className='w-5 h-5'/>
+                    <FaXTwitter className='w-5 h-5'/>
+                    <FaInstagram  className='w-5 h-5'/>
+                    <FaYoutube  className='w-5 h-5'/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </>
   )
 }
