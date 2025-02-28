@@ -8,6 +8,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { PiSortAscendingLight } from "react-icons/pi";
 import { FiClipboard, FiHeart, FiSettings, FiTarget, FiUser } from 'react-icons/fi';
 import { GoSignOut } from 'react-icons/go';
+import {productsData} from '/src/data/DB'
 
 const Shop = () => {
     const [isSortOpen, setIsSortOpen] = useState(false)
@@ -101,8 +102,8 @@ const Shop = () => {
                         </div>
                         <div className="flex flex-wrap gap-x-6 gap-y-[30px]">
 
-                            {[...Array(20)].map((_, index) => (
-                                <Product key={index} />
+                            {productsData.map((product, index) => (
+                                <Product key={index} product={product}/>
                             ))}
                         </div>
                     </div>

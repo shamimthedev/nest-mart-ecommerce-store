@@ -14,11 +14,19 @@ import { FiClipboard, FiHeart, FiSettings, FiTarget, FiUser } from "react-icons/
 import { GoSignOut } from "react-icons/go"
 import Navbar from "./Navbar"
 import { Link } from "react-router"
+import { useDispatch, useSelector } from "react-redux";
+import { removeFromCart } from "../redux/slices/cartSlice";
+import { RxCross2 } from "react-icons/rx";
 
 const Header = () => {
+  const cartItems = useSelector((state) => state.cart.cartItems) || [];
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
+  const [isCartOpen, setIsCartOpen] = useState(false);
   const [isAccOpen, setIsAccOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false);
+  const cartRef = useRef(null);
   const dropdownRef = useRef(null);
+  const dispatch = useDispatch();
 
   const categories = useMemo(() => [
     "All Categories", "Milks and Dairies", "Wines & Alcohol",
@@ -73,6 +81,19 @@ const Header = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Close cart when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (cartRef.current && !cartRef.current.contains(event.target)) {
+        setIsCartOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
   return (
@@ -164,14 +185,79 @@ const Header = () => {
                 </div>
                 <span className="hidden lg:block font-lato text-[#7E7E7E] text-sm xl:text-base">Wishlist</span>
               </div>
-              <div className="flex items-baseline gap-x-1 cursor-pointer">
-                <div className="relative">
+              <div className="flex items-baseline gap-x-1 cursor-pointer relative" ref={cartRef} onClick={() => setIsCartOpen(!isCartOpen)}>
+                <button className="relative cursor-pointer">
                   <img src={Cart} loading="lazy" alt="Cart icon" className="w-[20px] h-[px] 2xl:w-[25px] 2xl:h-[25px]" />
                   <span className="absolute right-[-10px] top-[-12px] h-4 w-4 xl:w-5 xl:h-5 bg-greeny text-white rounded-full flex items-center justify-center font-lato font-medium text-[10px] xl:text-xs">
-                    1
+                    {totalQuantity}
                   </span>
-                </div>
+
+                </button>
                 <span className="hidden lg:block font-lato text-[#7E7E7E] text-sm xl:text-base">Cart</span>
+
+                {/* Cart Dropdown */}
+                {isCartOpen && (
+                  <div className="absolute right-0 top-10 mt-2 w-80 bg-white border border-gray-300 shadow-lg p-4 rounded-md z-50">
+
+                    {cartItems.length === 0 ? (
+                      <p className="text-gray-500 text-sm">Your cart is empty.</p>
+                    ) : (
+                      <ul className="cart-item-list max-h-[300px] overflow-y-auto space-y-3 pr-2 custom-scrollbar">
+                        {cartItems.map((item) => (
+                          <li key={item.id} className="flex items-center gap-3 border-b border-[#ECECEC] pb-2">
+                            <img
+                              src={item.img}
+                              alt={item.title}
+                              className="w-16"
+                            />
+
+                            {/* Product Info */}
+                            <div className="flex-1 min-w-0">
+                              <div className="flex justify-between">
+                                <p className="text-sm text-greeny font-semibold truncate">{item.title}</p>
+
+                                {/* Delete Item */}
+                                <button
+                                  className="text-[#7E7E7E] text-lg cursor-pointer"
+                                  onClick={() => dispatch(removeFromCart(item.id))}
+                                >
+                                  <RxCross2 />
+                                </button>
+                              </div>
+
+                              {/* Price */}
+                              <div className="">
+                                <h4 className="flex gap-x-[6px] items-center text-xs text-[#7E7E7E]"><span>{item.quantity} × </span>${(item.price * item.quantity).toFixed(2)}</h4>
+                              </div>
+                            </div>
+
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+
+                    {/* Total Price Section */}
+                    {cartItems.length > 0 && (
+                      <div className="mt-4 flex justify-between items-center">
+                        <span className="font-bold text-sm">Total Price:</span>
+                        <span className="text-primary font-semibold text-lg">
+                          ${cartItems.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2)}
+                        </span>
+                      </div>
+                    )}
+
+                    {/* Checkout Button */}
+                    {cartItems.length > 0 && (
+                      <div className="mt-4">
+                        <button className="w-full bg-greeny text-white py-2 rounded-md text-sm font-bold">
+                          Go to Checkout
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                )}
+
+
               </div>
               <div ref={dropdownRef} className="relative">
                 <div onClick={() => setIsAccOpen(!isAccOpen)} className="cursor-pointer flex items-baseline gap-1">
