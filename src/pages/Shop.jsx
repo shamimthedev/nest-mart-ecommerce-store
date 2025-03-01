@@ -8,11 +8,13 @@ import { IoIosArrowDown } from "react-icons/io";
 import { PiSortAscendingLight } from "react-icons/pi";
 import { FiClipboard, FiHeart, FiSettings, FiTarget, FiUser } from 'react-icons/fi';
 import { GoSignOut } from 'react-icons/go';
-import {productsData} from '/src/data/DB'
+import { productsData } from '/src/data/DB'
 
 const Shop = () => {
     const [isSortOpen, setIsSortOpen] = useState(false)
     const [isShowOpen, setIsShowOpen] = useState(false)
+    const [currentPage, setCurrentPage] = useState(1);
+    const productsPerPage = 6;
 
     const sortDropdownRef = useRef(null);
     const showDropdownRef = useRef(null);
@@ -31,6 +33,17 @@ const Shop = () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, []);
+
+    // Pagination Logic
+    const indexOfLastProduct = currentPage * productsPerPage;
+    const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+    const currentProducts = productsData.slice(indexOfFirstProduct, indexOfLastProduct);
+    const totalPages = Math.ceil(productsData.length / productsPerPage);
+
+    const handlePageChange = (pageNumber) => {
+        setCurrentPage(pageNumber);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
 
     return (
         <>
@@ -102,8 +115,21 @@ const Shop = () => {
                         </div>
                         <div className="flex flex-wrap gap-x-6 gap-y-[30px]">
 
-                            {productsData.map((product, index) => (
-                                <Product key={index} product={product}/>
+                            {currentProducts.map((product, index) => (
+                                <Product key={index} product={product} />
+                            ))}
+                        </div>
+
+                        {/* Pagination Controls */}
+                        <div className="flex justify-center mt-8">
+                            {[...Array(totalPages)].map((_, index) => (
+                                <button
+                                    key={index}
+                                    onClick={() => handlePageChange(index + 1)}
+                                    className={`px-4 py-2 mx-1 border rounded cursor-pointer ${currentPage === index + 1 ? 'bg-greeny text-white' : 'bg-white text-gray-700'}`}
+                                >
+                                    {index + 1}
+                                </button>
                             ))}
                         </div>
                     </div>
