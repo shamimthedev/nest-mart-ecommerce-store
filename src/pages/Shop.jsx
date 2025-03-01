@@ -14,7 +14,7 @@ const Shop = () => {
     const [isSortOpen, setIsSortOpen] = useState(false)
     const [isShowOpen, setIsShowOpen] = useState(false)
     const [currentPage, setCurrentPage] = useState(1);
-    const productsPerPage = 6;
+    const productsPerPage = 12;
 
     const sortDropdownRef = useRef(null);
     const showDropdownRef = useRef(null);
@@ -126,7 +126,7 @@ const Shop = () => {
                                 <button
                                     key={index}
                                     onClick={() => handlePageChange(index + 1)}
-                                    className={`px-4 py-2 mx-1 border rounded cursor-pointer ${currentPage === index + 1 ? 'bg-greeny text-white' : 'bg-white text-gray-700'}`}
+                                    className={`w-10 h-10 mx-1 grid place-items-center font-bold leading-[40px] rounded-full cursor-pointer ${currentPage === index + 1 ? 'bg-greeny text-white' : 'bg-[#F2F3F4] text-[#7E7E7E]'}`}
                                 >
                                     {index + 1}
                                 </button>
