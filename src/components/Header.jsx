@@ -17,7 +17,7 @@ import { Link } from "react-router"
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromCart } from "../redux/slices/cartSlice";
 import { RxCross2 } from "react-icons/rx";
-import Navbar2 from './Navbar2';
+
 
 const Header = () => {
   const cartItems = useSelector((state) => state.cart.cartItems) || [];
@@ -220,7 +220,10 @@ const Header = () => {
                                 {/* Delete Item */}
                                 <button
                                   className="text-[#7E7E7E] text-lg cursor-pointer"
-                                  onClick={() => dispatch(removeFromCart(item.id))}
+                                  onClick={(event) => {
+                                    event.stopPropagation(); // Stop event propagation
+                                    dispatch(removeFromCart(item.id));
+                                  }}
                                 >
                                   <RxCross2 />
                                 </button>
@@ -297,7 +300,6 @@ const Header = () => {
 
             {/* Navigation Links */}
             <Navbar className={'mr-auto'} />
-            {/* <Navbar2 className={'mr-auto'} /> */}
             <div className="hidden xl:flex items-center gap-x-2 2xl:gap-x-3">
               <img src={Support} alt="" className="w-5 2xl:w-8" />
               <div className="flex flex-col">

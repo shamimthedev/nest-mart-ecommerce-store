@@ -2,7 +2,6 @@
 import { useEffect, useRef, useState } from 'react';
 import Product from '../components/Product'
 import Sidebar from '../components/Sidebar'
-import BreadcrumbImg from '/breadcrumb.png'
 import { CiGrid41 } from "react-icons/ci";
 import { IoIosArrowDown } from "react-icons/io";
 import { PiSortAscendingLight } from "react-icons/pi";
