@@ -17,6 +17,7 @@ import { Link } from "react-router"
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromCart } from "../redux/slices/cartSlice";
 import { RxCross2 } from "react-icons/rx";
+import Navbar2 from './Navbar2';
 
 const Header = () => {
   const cartItems = useSelector((state) => state.cart.cartItems) || [];
@@ -296,6 +297,7 @@ const Header = () => {
 
             {/* Navigation Links */}
             <Navbar className={'mr-auto'} />
+            {/* <Navbar2 className={'mr-auto'} /> */}
             <div className="hidden xl:flex items-center gap-x-2 2xl:gap-x-3">
               <img src={Support} alt="" className="w-5 2xl:w-8" />
               <div className="flex flex-col">
