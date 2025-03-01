@@ -15,7 +15,7 @@ import { GoSignOut } from "react-icons/go"
 import Navbar from "./Navbar"
 import { Link } from "react-router"
 import { useDispatch, useSelector } from "react-redux";
-import { removeFromCart } from "../redux/slices/cartSlice";
+import { removeFromCart, clearCart } from "../redux/slices/cartSlice";
 import { RxCross2 } from "react-icons/rx";
 
 
@@ -96,6 +96,10 @@ const Header = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  const handleClearCart = () => {
+    dispatch(clearCart()); // Dispatch the clearCart action
+  };
 
   return (
     <>
@@ -248,6 +252,15 @@ const Header = () => {
                           ${cartItems.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2)}
                         </span>
                       </div>
+                    )}
+                    {/* Clear Cart Btn  */}
+                    {cartItems.length > 0 && (
+                      <button
+                        onClick={handleClearCart}
+                        className="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 transition-colors"
+                      >
+                        Clear Cart
+                      </button>
                     )}
 
                     {/* Checkout Button */}
