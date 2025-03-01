@@ -9,6 +9,7 @@ import { PiSortAscendingLight } from "react-icons/pi";
 import { FiClipboard, FiHeart, FiSettings, FiTarget, FiUser } from 'react-icons/fi';
 import { GoSignOut } from 'react-icons/go';
 import { productsData } from '/src/data/DB'
+import Breadcrumb from '../components/Breadcrumb';
 
 const Shop = () => {
     const [isSortOpen, setIsSortOpen] = useState(false)
@@ -49,19 +50,7 @@ const Shop = () => {
         <>
             <section id="shopPage" className="max-w-[1610px] mx-auto">
                 {/* breadcrumb here */}
-                <div className="mt-[30px] mb-[50px] w-full h-[237px] rounded-[20px] relative">
-                    <img src={BreadcrumbImg} alt="" className="w-full h-full object-cover" />
-                    <div className="absolute top-[70px] left-[68px]">
-                        <div className="px-3">
-                            <h1 className="mb-[18px] text-[48px] leading-[58px] font-bold">Snack</h1>
-                            <ul className="flex font-semibold font-lato text-sm leading-6 text-[#7E7E7E] items-center gap-x-3">
-                                <li>Home</li>
-                                <li>Shop</li>
-                                <li>Snack</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <Breadcrumb/>
 
                 {/* Added 'relative' to the parent container */}
                 <div className="flex gap-x-3 relative">
