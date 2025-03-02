@@ -5,6 +5,7 @@ import { PiSortAscendingLight } from "react-icons/pi";
 import { CiGrid41 } from "react-icons/ci";
 import BlogIcon from '/blog-category-icon.svg'
 import BlogCard from "../components/BlogCard";
+import { blogData } from "../data/DB";
 
 const Blog = () => {
     return (
@@ -45,11 +46,11 @@ const Blog = () => {
 
                             {/* Articles Here  */}
                             <div className="mt-[50px] flex justify-between flex-wrap gap-x-6 gap-y-[30px]">
-                                <BlogCard />
-                                <BlogCard />
-                                <BlogCard />
-                                <BlogCard />
-                                <BlogCard />
+                                {blogData.map((item, index)=>(
+                                    <div key={index}>
+                                        <BlogCard item={item}/>
+                                    </div>
+                                ))}
                             </div>
                         </div>
 
