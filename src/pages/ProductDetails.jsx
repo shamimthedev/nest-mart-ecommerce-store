@@ -414,7 +414,7 @@ const ProductDetails = () => {
                         {/* Write Review Box  */}
                         <div className="my-[75px]">
                           <form action="#">
-                            <h3 className="font-bold text-leading-7 text-2xl mb-2">Add a review</h3>
+                            <h3 className="font-bold leading-7 text-2xl mb-2">Add a review</h3>
                             <Rating name="size-small" defaultValue={0} size="small" />
                             <div className="mt-6 mb-4">
                               <textarea className="w-full h-[180px] p-4 border border-[#ECECEC] outline-none rounded-[10px]" name="comment" id="comment" placeholder="Write comment"></textarea>

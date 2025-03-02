@@ -165,3 +165,8 @@ input[type="number"] {
   max-width: 150px; /* Adjust as needed */
   display: block;
 }
+
+/* Contact map z-index issue with header */
+.leaflet-container {
+  z-index: 1 !important; /* Lower than your fixed header */
+}

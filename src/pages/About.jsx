@@ -113,7 +113,7 @@ const About = () => {
           <Breadcrumb />
         </div>
 
-        <div className="max-w-[1341px] mx-auto mt-[50px]">
+        <div className="max-w-[1341px] mx-auto">
           <div className="flex items-center gap-x-[49px]">
             <div className="w-[646px] h-auto">
               <img src={AboutPerson} alt="" className='w-full h-full' />
