@@ -21,6 +21,7 @@ import TeamMember01 from '/team-member-01.png'
 import TeamMember02 from '/team-member-02.png'
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import Breadcrumb from '../components/Breadcrumb';
 
 const About = () => {
   var settings = {
@@ -108,6 +109,10 @@ const About = () => {
     <>
       {/* Welcome Section */}
       <section>
+        <div>
+          <Breadcrumb />
+        </div>
+
         <div className="max-w-[1341px] mx-auto mt-[50px]">
           <div className="flex items-center gap-x-[49px]">
             <div className="w-[646px] h-auto">
@@ -254,31 +259,31 @@ const About = () => {
             <div className="flex gap-6">
               <div className="relative group">
                 <div className="w-[420px]">
-                  <img src={TeamMember01} alt="" className='w-full'/>
+                  <img src={TeamMember01} alt="" className='w-full' />
                 </div>
                 <div className="absolute left-[42px] right-[42px] -bottom-20 text-center py-[30px] bg-white rounded-[15px] shadow-md leading-6 transition-all ease-in-out duration-300 group-hover:translate-y-[-6px]">
                   <h5 className='font-bold text-2xl mb-[6px]'>H. Merinda</h5>
                   <span className='text-[#7E7E7E] font-lato text-[17px]'>CEO & Co-Founder</span>
                   <div className="mt-[23px] mb-[7px] flex text-greeny items-center justify-center gap-3">
-                    <FaFacebookF className='w-5 h-5'/>
-                    <FaXTwitter className='w-5 h-5'/>
-                    <FaInstagram  className='w-5 h-5'/>
-                    <FaYoutube  className='w-5 h-5'/>
+                    <FaFacebookF className='w-5 h-5' />
+                    <FaXTwitter className='w-5 h-5' />
+                    <FaInstagram className='w-5 h-5' />
+                    <FaYoutube className='w-5 h-5' />
                   </div>
                 </div>
               </div>
               <div className="relative group">
                 <div className="w-[420px]">
-                  <img src={TeamMember02} alt="" className='w-full'/>
+                  <img src={TeamMember02} alt="" className='w-full' />
                 </div>
                 <div className="absolute left-[42px] right-[42px] -bottom-20 text-center py-[30px] bg-white rounded-[15px] shadow-md leading-6 transition-all ease-in-out duration-300 group-hover:translate-y-[-6px]">
                   <h5 className='font-bold text-2xl mb-[6px]'>Dilan Specter</h5>
                   <span className='text-[#7E7E7E] font-lato text-[17px]'>Head Engineer</span>
                   <div className="mt-[23px] mb-[7px] flex text-greeny items-center justify-center gap-3">
-                    <FaFacebookF className='w-5 h-5'/>
-                    <FaXTwitter className='w-5 h-5'/>
-                    <FaInstagram  className='w-5 h-5'/>
-                    <FaYoutube  className='w-5 h-5'/>
+                    <FaFacebookF className='w-5 h-5' />
+                    <FaXTwitter className='w-5 h-5' />
+                    <FaInstagram className='w-5 h-5' />
+                    <FaYoutube className='w-5 h-5' />
                   </div>
                 </div>
               </div>

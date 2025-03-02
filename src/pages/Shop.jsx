@@ -47,12 +47,12 @@ const Shop = () => {
 
     return (
         <>
-            <section id="shopPage" className="max-w-[1610px] mx-auto">
+            <section id="shopPage">
                 {/* breadcrumb here */}
                 <Breadcrumb/>
 
                 {/* Added 'relative' to the parent container */}
-                <div className="flex gap-x-3 relative">
+                <div className="max-w-[1610px] mx-auto flex gap-x-3 relative">
                     {/* Sidebar here */}
                     <div className="w-[20%]">
                         <Sidebar className="sticky top-[100px]" />
