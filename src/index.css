@@ -2,6 +2,7 @@
 
 @theme {
   --font-lato: "Lato", sans-serif;
+  --font-quicksand: "Quicksand", sans-serif;
   --color-greeny: #3bb77e;
   --shadow-3xl: 5px 5px 15px 0 rgba(0, 0, 0, 0.25);
 

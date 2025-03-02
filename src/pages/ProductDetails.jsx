@@ -472,7 +472,6 @@ const ProductDetails = () => {
                           <span><Link to='#'>How are ratings calculated?</Link></span>
                         </div>
                       </div>
-
                     </div>
                   )
                 }
