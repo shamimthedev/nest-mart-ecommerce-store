@@ -41,11 +41,11 @@ const Product = ({ product }) => {
                 </div>
                 <div className="absolute top-0 left-0 w-full h-full grid place-items-center opacity-0 transition-all ease-in-out duration-300 group-hover:opacity-100 group-hover:z-10">
                     <ul className='flex bg-white text-greeny rounded-[6px] border border-[#BCE3C9]'>
-                        <li className='px-[10px] py-[8px] text-sm hover:text-[#fd7e14] transition-colors duration-200 cursor-pointer wrapper'><FavoriteBorderOutlinedIcon className='w-3' />
+                        <li className='px-[10px] py-[8px] text-sm hover:text-[#fd7e14] transition-colors duration-200 cursor-pointer wrapper'><FavoriteBorderOutlinedIcon size={12} />
                             <span className='tooltip'>Add to Wishlist</span></li>
-                        <li className='px-[10px] py-[8px] text-sm hover:text-[#fd7e14] transition-colors duration-200 cursor-pointer wrapper border-x border-[#BCE3C9]'><CompareArrowsOutlinedIcon className='w-3' />
+                        <li className='px-[10px] py-[8px] text-sm hover:text-[#fd7e14] transition-colors duration-200 cursor-pointer wrapper border-x border-[#BCE3C9]'><CompareArrowsOutlinedIcon size={12} />
                             <span className='tooltip'>Compare</span></li>
-                        <li className='px-[10px] py-[8px] text-sm hover:text-[#fd7e14] transition-colors duration-200 cursor-pointer wrapper'><VisibilityOutlinedIcon className='w-3' />
+                        <li className='px-[10px] py-[8px] text-sm hover:text-[#fd7e14] transition-colors duration-200 cursor-pointer wrapper'><VisibilityOutlinedIcon size={12} />
                             <span className='tooltip'>Quickview</span></li>
                     </ul>
                 </div>

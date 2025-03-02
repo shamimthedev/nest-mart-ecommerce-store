@@ -1,11 +1,12 @@
 import { IoIosArrowDown } from "react-icons/io";
 import Breadcrumb2 from "../components/Breadcrumb2"
-import Sidebar from "../components/Sidebar";
 import { PiSortAscendingLight } from "react-icons/pi";
 import { CiGrid41 } from "react-icons/ci";
 import BlogIcon from '/blog-category-icon.svg'
 import BlogCard from "../components/BlogCard";
 import { blogData } from "../data/DB";
+import { Link } from "react-router";
+import BlogSidebar from "../components/BlogSidebar";
 
 const Blog = () => {
     return (
@@ -48,15 +49,15 @@ const Blog = () => {
                             <div className="mt-[50px] flex justify-between flex-wrap gap-x-6 gap-y-[30px]">
                                 {blogData.map((item, index)=>(
                                     <div key={index}>
-                                        <BlogCard item={item}/>
+                                        <Link to='blog/details'><BlogCard item={item}/></Link>
                                     </div>
                                 ))}
                             </div>
                         </div>
 
                         {/* Sidebar here */}
-                        <div className="w-[375px]">
-                            <Sidebar className="sticky top-[100px]" isBlog={true} />
+                        <div className="w-[20%]">
+                            <BlogSidebar className="sticky top-[100px]"/>
                         </div>
                     </div>
                 </div>

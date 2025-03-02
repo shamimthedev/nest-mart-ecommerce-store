@@ -7,6 +7,7 @@ import Error from "./pages/Error";
 import ProductDetails from "./pages/ProductDetails";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
+import BlogDetails from "./pages/BlogDetails";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="blog" element={<Blog />} />
           <Route path="shop" element={<Shop />} />
           <Route path="product/details" element={<ProductDetails />} />
+          <Route path="blog/blog/details" element={<BlogDetails />} />
           <Route path="*" element={<Error />} />
         </Route>
       </Routes>

@@ -39,12 +39,12 @@ const Category = () => {
   ]
   return (
     <>
-      <section className="w-[375px] p-[31px] bg-white rounded-[15px] border border-[#ECECEC] shadow-md">
+      <section className="w-full p-[31px] bg-white rounded-[15px] border border-[#ECECEC] shadow-md">
         <h2 className="font-bold text-2xl mb-[30px] pb-[17px] border-b border-[#ECECEC] relative after:absolute after:content-[''] after:w-[80px] after:h-[2px] after:bg-[#BCE3C9] after:bottom-0 after:left-0">Category</h2>
         <div className="flex flex-col gap-y-[15px]">
           {categoryData.map((category) => {
             return (
-              <div key={category.id} className="flex px-[19px] py-[10px] rounded-[5px] border border-[#F2F3F4] w-[236px] justify-between items-center font-lato">
+              <div key={category.id} className="w-full flex px-[19px] py-[10px] rounded-[5px] border border-[#F2F3F4] justify-between items-center font-lato">
                 <div className="flex gap-x-[15px] items-center">
                   <img src={category.img} alt={category.title} className='w-[30px] h-[30px]' />
                   <h3 className='text-sm leading-[21px]'>{category.title}</h3>

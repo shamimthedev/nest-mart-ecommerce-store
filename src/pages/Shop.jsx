@@ -53,7 +53,7 @@ const Shop = () => {
                     <Breadcrumb2 title={'Snack'} />
                 </div>
 
-                <div className="max-w-[1610px] mx-auto flex gap-x-3 relative">
+                <div className="max-w-[1610px] mx-auto flex gap-x-6 relative">
                     {/* Sidebar here */}
                     <div className="w-[20%]">
                         <Sidebar className="sticky top-[100px]" />
@@ -102,7 +102,7 @@ const Shop = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="flex flex-wrap gap-x-6 gap-y-[30px]">
+                        <div className="flex flex-wrap justify-between gap-x-4 gap-y-6">
 
                             {currentProducts.map((product, index) => (
                                 <Product key={index} product={product} />
