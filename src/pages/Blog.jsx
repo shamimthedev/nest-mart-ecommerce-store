@@ -1,13 +1,13 @@
-import Breadcrumb from "../components/Breadcrumb"
+import Breadcrumb2 from "../components/Breadcrumb2"
 
 
 const Blog = () => {
     return (
         <>
             <section>
-                <Breadcrumb />
+                <Breadcrumb2 title={'Blog & News'}/>
                 <div className="max-w-[1610px] mx-auto">
-<h1>Blog</h1>
+                    <h1>Blog</h1>
                 </div>
             </section>
         </>
