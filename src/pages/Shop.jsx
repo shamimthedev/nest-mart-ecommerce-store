@@ -53,7 +53,6 @@ const Shop = () => {
                     <Breadcrumb2 title={'Snack'} />
                 </div>
 
-                {/* Added 'relative' to the parent container */}
                 <div className="max-w-[1610px] mx-auto flex gap-x-3 relative">
                     {/* Sidebar here */}
                     <div className="w-[20%]">
