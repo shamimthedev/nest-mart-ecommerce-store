@@ -71,7 +71,7 @@ const Contact = () => {
                             <span>Phone: (123) 456-7890</span>
                             <span>Email: contact@Evara.com</span>
                         </div>
-                        <button className="rounded-sm bg-greeny h-10 w-[116px] flex items-center justify-center text-white font-bold text-xs leading-[22px]"><CiLocationOn />View map</button>
+                        <button className="rounded-sm bg-greeny h-10 w-[116px] flex items-center justify-center text-white font-bold text-xs gap-x-[5px] leading-[22px]"><CiLocationOn />View map</button>
                     </div>
                     <div className="">
                         <h4 className="font-bold text-2xl leading-7 text-greeny mb-[18px]">Studio</h4>
@@ -81,7 +81,7 @@ const Contact = () => {
                             <span>Phone: (123) 456-7890</span>
                             <span>Email: contact@Evara.com</span>
                         </div>
-                        <button className="rounded-sm bg-greeny h-10 w-[116px] flex items-center justify-center text-white font-bold text-xs leading-[22px]"><CiLocationOn />View map</button>
+                        <button className="rounded-sm bg-greeny h-10 w-[116px] flex items-center justify-center text-white font-bold text-xs gap-x-[5px] leading-[22px]"><CiLocationOn />View map</button>
                     </div>
                     <div className="">
                         <h4 className="font-bold text-2xl leading-7 text-greeny mb-[18px]">Shop</h4>
@@ -91,7 +91,7 @@ const Contact = () => {
                             <span>Phone: (123) 456-7890</span>
                             <span>Email: contact@Evara.com</span>
                         </div>
-                        <button className="rounded-sm bg-greeny h-10 w-[116px] flex items-center justify-center text-white font-bold text-xs leading-[22px]"><CiLocationOn />View map</button>
+                        <button className="rounded-sm bg-greeny h-10 w-[116px] flex items-center justify-center text-white font-bold text-xs gap-x-[5px] leading-[22px]"><CiLocationOn />View map</button>
                     </div>
                 </div>
 
