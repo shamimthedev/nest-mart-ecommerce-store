@@ -1,5 +1,9 @@
 import Breadcrumb from "../components/Breadcrumb"
 import { MdOutlineLogout, MdOutlineDeleteForever } from "react-icons/md";
+import { FaLongArrowAltLeft } from "react-icons/fa";
+import { RxUpdate } from "react-icons/rx";
+import { IoClipboardOutline } from "react-icons/io5";
+import { Link } from "react-router";
 
 const Cart = () => {
     return (
@@ -48,6 +52,20 @@ const Cart = () => {
                                     </tr>
                                 </tbody>
                             </table>
+                            <div className="mt-8 mb-10 flex justify-between">
+                                <Link to='shop'><button className="py-3 px-[30px] bg-greeny text-white font-semibold flex items-center gap-x-[6px] justify-center rounded-md cursor-pointer"><FaLongArrowAltLeft />Continue Shopping</button></Link>
+                                <Link to='#'><button className="py-3 px-[30px] bg-greeny text-white font-semibold flex items-center gap-x-[6px] justify-center rounded-md cursor-pointer"><RxUpdate />Update Cart</button></Link>
+                            </div>
+
+                            <div className="mb-12">
+                                <h3 className="text-2xl font-bold mb-2">Apply Coupon</h3>
+                                <span className="text-[#B6B6B6] text-[17px]">Using A Promo Code?</span>
+                                <form action="#" className='mt-8 flex items-center gap-x-5'>
+                                    <input className="py-3 px-4 rounded-md text-[#7e7e7e] border border-[#ECECEC] outline-none" type="text" name="" id="" placeholder="Enter coupon" />
+                                    <Link to='#'> <button className="py-3 px-[30px] bg-greeny text-white font-semibold flex items-center gap-x-[6px] justify-center rounded-md cursor-pointer">< IoClipboardOutline />Apply Coupon</button></Link>
+                                </form>
+                            </div>
+
                         </div>
 
                         {/* Checkout */}
@@ -81,7 +99,7 @@ const Cart = () => {
                                         </tr>
                                     </tbody>
                                 </table>
-                                <button className="w-full mb-2 bg-greeny text-white font-semibold flex items-center gap-x-[6px] py-3 px-4 justify-center rounded-md">Proceed To Checkout<MdOutlineLogout /></button>
+                                <button className="w-full mb-2 bg-greeny text-white font-semibold flex items-center gap-x-[6px] py-3 px-[30px] justify-center rounded-md">Proceed To Checkout<MdOutlineLogout /></button>
                             </div>
                         </div>
                     </div>
