@@ -1,7 +1,7 @@
-import Rating from '@mui/material/Rating';
+import { FaStar } from "react-icons/fa";
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
-const Deals = ({title, img, author, oldPrice, newPrice, rating}) => {
+const Deals = ({ title, img, author, oldPrice, newPrice, rating }) => {
 
     // const productsData = [
     //     {
@@ -119,15 +119,15 @@ const Deals = ({title, img, author, oldPrice, newPrice, rating}) => {
     // Detect Scroll to Add Background and Shadow
 
     return (
-        <div className="w-[378px] h-[462px] relative group">
+        <div className="w-full h-[462px] relative group">
             <div className="w-full">
                 <img src={img} alt={title} className='w-full object-cover' />
             </div>
-            <div className="absolute left-[26px] right-[26px] bottom-[-10px] rounded-[10px] bg-white shadow-md w-[325px] px-[30px] py-6 transition-all ease-in-out duration-300 group-hover:translate-y-[-6px]">
-                <div className="mt-[5px] mb-6 flex flex-col gap-y-[10px]">
+            <div className="w-[300px] absolute left-2 bottom-[-10px] rounded-[10px] bg-white shadow-md p-6 transition-all ease-in-out duration-300 group-hover:translate-y-[-6px]">
+                <div className="mt-[5px] mb-4 flex flex-col gap-y-[10px]">
                     <h3 className='leading-[20px] font-bold'>{title}</h3>
                     <div className="flex items-center gap-x-2">
-                        <Rating className='text-sm' name="half-rating" defaultValue={2.5} precision={0.5} />
+                        <FaStar className="text-yellow-400" />
                         <span className='text-[#B6B6B6] text-sm leading-6 font-lato'>({rating})</span>
                     </div>
                     <span className='text-[#B6B6B6] text-sm leading-6 font-lato'>By <span className='text-greeny'>{author}</span></span>

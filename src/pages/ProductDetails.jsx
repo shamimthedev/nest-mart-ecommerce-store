@@ -1,7 +1,6 @@
 import { AiOutlineHome } from "react-icons/ai";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import Sidebar from "../components/Sidebar";
-import SingleProduct from '/single-product.png'
 import Rating from '@mui/material/Rating';
 import { useRef, useState } from "react";
 import PrevArrow from "../components/PrevArrow";
@@ -9,12 +8,6 @@ import NextArrow from "../components/NextArrow";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-// import ProductImg1 from '/product-img-gallary-01.png'
-// import ProductImg2 from '/product-img-gallary-02.png'
-// import ProductImg3 from '/product-img-gallary-03.png'
-// import ProductImg4 from '/product-img-gallary-04.png'
-// import ProductImg5 from '/product-img-gallary-05.jpg'
-// import ProductImg6 from '/product-img-gallary-06.jpg'
 import { Link } from "react-router";
 import { MdKeyboardArrowUp } from "react-icons/md";
 import { MdKeyboardArrowDown, MdOutlineCompareArrows } from "react-icons/md";
@@ -24,6 +17,7 @@ import ReviewAuthor01 from '/review-author-01.png'
 import ReviewAuthor02 from '/review-author-02.png'
 import ReviewAuthor03 from '/review-author-03.png'
 import Product from "../components/Product";
+import { productsData } from "../data/DB";
 
 const ProductDetails = () => {
   const [value, setValue] = useState(2);
@@ -482,10 +476,11 @@ const ProductDetails = () => {
               <div className="mt-[60px] mb-[30px]">
                 <h2 className="font-bold text-2xl mb-[30px] pb-[17px] border-b border-[#ECECEC] relative after:absolute after:content-[''] after:w-[80px] after:h-[2px] after:bg-[#BCE3C9] after:bottom-0 after:left-0">Related Products</h2>
                 <div className="flex flex-wrap gap-5">
-                  <Product />
-                  <Product />
-                  <Product />
-                  <Product />
+                  {productsData.map((product, index) => (
+                    <div className="max-w-[20%]" key={index}>
+                      <Product product={product} />
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

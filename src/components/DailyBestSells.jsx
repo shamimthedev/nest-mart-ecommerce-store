@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import NextArrow from "./NextArrow";
 import PrevArrow from "./PrevArrow";
-import Product01 from '/product-01.png'
+import { productsData } from "../data/DB";
 
 const DailyBestSells = () => {
   var settings = {
@@ -20,32 +20,7 @@ const DailyBestSells = () => {
     prevArrow: <PrevArrow />,
   };
 
-  const productsData = [
-    {
-      id: 1,
-      title: "Cake & Milk",
-      qty: "24 items",
-      img: Product01,
-    },
-    {
-      id: 2,
-      title: "Organic Kiwi",
-      qty: "28 items",
-      img: Product01,
-    },
-    {
-      id: 3,
-      title: "Peach",
-      qty: "14 items",
-      img: Product01,
-    },
-    {
-      id: 4,
-      title: "Red Apple",
-      qty: "54 items",
-      img: Product01,
-    },
-  ];
+
   return (
     <>
       <section className="mt-[55px]" id="dealsOfTheDay">
@@ -62,7 +37,7 @@ const DailyBestSells = () => {
           </div>
           <div className="flex gap-x-6 h-[520px] ">
             {/* Left Side */}
-            <div className="w-[350px] h-full relative group cursor-pointer flex-shrink-0">
+            <div className="w-[375px] h-full relative group cursor-pointer flex-shrink-0">
               <img src={Nature} alt='Nature' className="w-full h-full object-cover rounded-[15px]" />
               <div className="absolute top-[49px] left-[50px]">
                 <h3 className="font-bold text-[40px] leading-[48px] mb-[99px] max-w-[246px] group-hover:translate-y-[-5px] transform transition-transform ease-in-out duration-300">Bring nature into your home</h3>
@@ -70,11 +45,11 @@ const DailyBestSells = () => {
               </div>
             </div>
             {/* Right Side (Slider) */}
-            <div className="flex-1 h-full overflow-hidden">
-              <Slider {...settings} className="h-full deals-slide">
-                {productsData.map((product) => (
-                  <div key={product.id} className="w-full h-full pr-3">
-                    <Product />
+            <div className="max-w-[1200px] flex-1 h-full overflow-hidden">
+              <Slider {...settings} className="w-full h-full overflow-hidden deals-slide">
+                {productsData.map((product, index) => (
+                  <div className="max-w-[20%]" key={index}>
+                    <Product product={product} />
                   </div>
                 ))}
               </Slider>

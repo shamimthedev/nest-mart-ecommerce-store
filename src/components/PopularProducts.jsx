@@ -1,5 +1,5 @@
 import Product from "./Product"
-
+import { productsData } from './../data/DB';
 
 const PopularProducts = () => {
   return (
@@ -21,15 +21,11 @@ const PopularProducts = () => {
             </div>
           </div>
           <div className="flex flex-wrap gap-5">
-            <Product/>
-            <Product/>
-            <Product/>
-            <Product/>
-            <Product/>
-            <Product/>
-            <Product/>
-            <Product/>
-            <Product/>
+            {productsData.map((product, index)=>(
+              <div className="" key={index}>
+                <Product product={product}/>
+              </div>
+            ))}
           </div>
         </div>
       </section>

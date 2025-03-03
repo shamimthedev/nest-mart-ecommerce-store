@@ -57,7 +57,7 @@ const DealsOfTheDay = () => {
           </div>
           <div className="flex gap-x-6">
             {productsData.map((product) => (
-              <div key={product.id} className="w-full h-full pr-3">
+              <div key={product.id} className="w-[350px]">
                 <Deals title={product.title} img={product.img} author={product.author} oldPrice={product.oldPrice} newPrice={product.newPrice} rating={product.rating}/>
               </div>
             ))}
