@@ -821,3 +821,71 @@ export const blogData = [
     cat: 'Dairy Free',
   }
 ]
+
+export const navList = [
+  {
+      id: 1,
+      name: 'Home',
+      url: '/',
+  },
+  {
+      id: 2,
+      name: 'About',
+      url: '/about'
+  },
+  {
+      id: 3,
+      name: 'Shop',
+      url: '/shop',
+  },
+  {
+      id: 4,
+      name: 'Vendors',
+      url: '#',
+      children: [
+          { name: "Vendor1", url: "/" },
+          { name: "Vendor2", url: "/" },
+          { name: "Vendor3", url: "/" },
+      ],
+  },
+  {
+      id: 5,
+      name: 'Mega Menu',
+      url: '#',
+      megaMenu: true,
+      categories: [
+          {
+              title: "Electronics",
+              items: ["Phones", "Laptops", "Cameras", "Accessories"],
+          },
+          {
+              title: "Fashion",
+              items: ["Men's Wear", "Women's Wear", "Shoes", "Bags"],
+          },
+          {
+              title: "Home & Living",
+              items: ["Furniture", "Kitchen", "Decor", "Lighting"],
+          },
+      ],
+  },
+  {
+      id: 6,
+      name: 'Blog',
+      url: '/blog',
+  },
+  {
+      id: 7,
+      name: 'Pages',
+      url: '#',
+      children: [
+          { name: "About Us", url: "/about" },
+          { name: "Contact", url: "/contact" },
+          { name: "FAQ", url: "/faq" },
+      ],
+  },
+  {
+      id: 8,
+      name: 'Contact',
+      url: '/contact'
+  },
+]
