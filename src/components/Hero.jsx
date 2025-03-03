@@ -34,7 +34,7 @@ const Hero = () => {
     autoplay: true,
     autoplaySpeed: 2000,
     nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+    prevArrow: <PrevArrow isHero={true}/>,
     customPaging: i => (
       <div
         style={{

@@ -35,7 +35,7 @@ const DailyBestSells = () => {
               </ul>
             </div>
           </div>
-          <div className="flex gap-x-6 h-[520px] ">
+          <div className="flex gap-x-6 h-[520px] justify-between">
             {/* Left Side */}
             <div className="w-[375px] h-full relative group cursor-pointer flex-shrink-0">
               <img src={Nature} alt='Nature' className="w-full h-full object-cover rounded-[15px]" />
@@ -45,10 +45,10 @@ const DailyBestSells = () => {
               </div>
             </div>
             {/* Right Side (Slider) */}
-            <div className="max-w-[1200px] flex-1 h-full overflow-hidden">
-              <Slider {...settings} className="w-full h-full overflow-hidden deals-slide">
+            <div className="max-w-[1200px] overflow-hidden">
+              <Slider {...settings} className="w-full overflow-hidden deals-slide">
                 {productsData.map((product, index) => (
-                  <div className="max-w-[20%]" key={index}>
+                  <div className="w-[300px]" key={index}>
                     <Product product={product} />
                   </div>
                 ))}

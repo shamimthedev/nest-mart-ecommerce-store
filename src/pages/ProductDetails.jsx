@@ -477,7 +477,7 @@ const ProductDetails = () => {
                 <h2 className="font-bold text-2xl mb-[30px] pb-[17px] border-b border-[#ECECEC] relative after:absolute after:content-[''] after:w-[80px] after:h-[2px] after:bg-[#BCE3C9] after:bottom-0 after:left-0">Related Products</h2>
                 <div className="flex flex-wrap gap-5">
                   {productsData.map((product, index) => (
-                    <div className="max-w-[20%]" key={index}>
+                    <div className="w-[300px]" key={index}>
                       <Product product={product} />
                     </div>
                   ))}

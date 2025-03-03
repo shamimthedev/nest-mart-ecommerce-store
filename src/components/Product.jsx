@@ -30,7 +30,7 @@ const Product = ({ product }) => {
     };
 
     return (
-        <div className="w-[300px] rounded-[15px] p-[25px] border border-[#ECECEC] transition-all ease-in-out duration-200 hover:border-green-200 hover:shadow-md relative group">
+        <div className="w-full rounded-[15px] p-[25px] border border-[#ECECEC] transition-all ease-in-out duration-200 hover:border-green-200 hover:shadow-md relative group">
             <div className="absolute top-0 left-0 bg-[#F74B81] rounded-tl-[15px] rounded-br-[15px]">
                 <span className="text-white font-lato text-xs px-5 py-2">Hot</span>
             </div>

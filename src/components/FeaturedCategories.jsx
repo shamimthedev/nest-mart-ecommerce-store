@@ -122,7 +122,7 @@ const FeaturedCategories = () => {
         slidesToScroll: 1,
         arrows: true,
         nextArrow: <NextArrow isFeatured={true} />,
-        prevArrow: <PrevArrow isFeatured={true}/>,
+        prevArrow: <PrevArrow isFeatured={true} />,
         cssEase: 'linear',
         centerMode: 'true'
     };

@@ -22,7 +22,7 @@ const PopularProducts = () => {
           </div>
           <div className="flex flex-wrap gap-5">
             {productsData.map((product, index)=>(
-              <div className="" key={index}>
+              <div className="w-[300px]" key={index}>
                 <Product product={product}/>
               </div>
             ))}
