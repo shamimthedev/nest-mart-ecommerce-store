@@ -89,17 +89,8 @@ const ProductDetails = () => {
   return (
     <>
       <section className="">
-          {/* Breadcrumb  */}
-          <Breadcrumb/>
-        {/* <div className="mb-[30px] border-b border-[#ECECEC]">
-          <ul className="max-w-[1610px] mx-auto h-[66px] flex items-center font-semibold text-sm text-greeny leading-6 gap-x-[10px]">
-            <li className="flex items-center gap-x-1"><AiOutlineHome />Home</li>
-            <li><MdKeyboardArrowRight /></li>
-            <li>Vegetables & tubers </li>
-            <li><MdKeyboardArrowRight /></li>
-            <li className="text-[#7E7E7E]"> Seeds of Change Organic</li>
-          </ul>
-        </div> */}
+        {/* Breadcrumb  */}
+        <Breadcrumb />
         <div className="max-w-[1610px] mx-auto">
           <div className="flex gap-x-6 overflow-hidden">
 

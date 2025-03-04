@@ -32,7 +32,10 @@ const Product = ({ product }) => {
 
     return (
         <div className="w-full rounded-[15px] p-[25px] border border-[#ECECEC] transition-all ease-in-out duration-200 hover:border-green-200 hover:shadow-md relative group">
-            {badge && <div className="absolute top-0 left-0 bg-[#F74B81] rounded-tl-[15px] rounded-br-[15px]">
+            {badge === 'Hot' && <div className="absolute top-0 left-0 bg-[#F74B81] rounded-tl-[15px] rounded-br-[15px]">
+                <span className="text-white font-lato text-xs px-5 py-2">{badge}</span>
+            </div>}
+            {badge === 'Sale' && <div className="absolute top-0 left-0 bg-greeny rounded-tl-[15px] rounded-br-[15px]">
                 <span className="text-white font-lato text-xs px-5 py-2">{badge}</span>
             </div>}
 
