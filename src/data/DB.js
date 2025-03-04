@@ -622,6 +622,158 @@ import Category5 from "/category-5.svg.svg";
   },
 ];
 
+export const navList = [
+  {
+    id: 1,
+    name: "Home",
+    url: "/",
+  },
+  {
+    id: 2,
+    name: "About",
+    url: "/about",
+  },
+  {
+    id: 3,
+    name: "Shop",
+    url: "/shop",
+  },
+  {
+    id: 4,
+    name: "Vendors",
+    url: "#",
+    children: [
+      { name: "Vendor1", url: "/" },
+      { name: "Vendor2", url: "/" },
+      { name: "Vendor3", url: "/" },
+    ],
+  },
+  {
+    id: 5,
+    name: "Mega Menu",
+    url: "#",
+    megaMenu: true,
+    categories: [
+      {
+        title: "Electronics",
+        items: ["Phones", "Laptops", "Cameras", "Accessories"],
+      },
+      {
+        title: "Fashion",
+        items: ["Men's Wear", "Women's Wear", "Shoes", "Bags"],
+      },
+      {
+        title: "Home & Living",
+        items: ["Furniture", "Kitchen", "Decor", "Lighting"],
+      },
+    ],
+  },
+  {
+    id: 6,
+    name: "Blog",
+    url: "/blog",
+  },
+  {
+    id: 7,
+    name: "Pages",
+    url: "#",
+    children: [
+      { name: "About Us", url: "/about" },
+      { name: "Contact", url: "/contact" },
+      { name: "FAQ", url: "/faq" },
+    ],
+  },
+  {
+    id: 8,
+    name: "Contact",
+    url: "/contact",
+  },
+];
+
+export const categoryData = [
+  {
+    id: 1,
+    img: Category3,
+    title: "Snack",
+    qty: 3,
+  },
+  {
+    id: 2,
+    img: Category2,
+    title: "Hodo Foods",
+    qty: 4,
+  },
+  {
+    id: 3,
+    img: Category4,
+    title: "Pet Foods",
+    qty: 5,
+  },
+  {
+    id: 4,
+    img: Category5,
+    title: "Vegetables",
+    qty: 8,
+  },
+  {
+    id: 5,
+    img: Category1,
+    title: "Fresh Fruit",
+    qty: 10,
+  },
+];
+export const allCategoryData = [
+  {
+    id: 1,
+    img: Category3,
+    title: "Snack",
+    qty: 3,
+  },
+  {
+    id: 2,
+    img: Category2,
+    title: "Hodo Foods",
+    qty: 4,
+  },
+  {
+    id: 3,
+    img: Category4,
+    title: "Pet Foods",
+    qty: 5,
+  },
+  {
+    id: 4,
+    img: Category5,
+    title: "Vegetables",
+    qty: 8,
+  },
+  {
+    id: 5,
+    img: Category1,
+    title: "Fresh Fruit",
+    qty: 10,
+  },
+  {
+    id: 6,
+    img: Category3,
+    title: "Bread & Juice",
+    qty: 3,
+  },
+  {
+    id: 7,
+    img: Category2,
+    title: "Fast Foods",
+    qty: 4,
+  },
+  {
+    id: 8,
+    img: Category4,
+    title: "Milk & Dairies",
+    qty: 5,
+  },
+];
+
+
 export const blogData = [
   {
     id: 1,
@@ -859,153 +1011,20 @@ export const blogData = [
   },
 ];
 
-export const navList = [
-  {
-    id: 1,
-    name: "Home",
-    url: "/",
-  },
-  {
-    id: 2,
-    name: "About",
-    url: "/about",
-  },
-  {
-    id: 3,
-    name: "Shop",
-    url: "/shop",
-  },
-  {
-    id: 4,
-    name: "Vendors",
-    url: "#",
-    children: [
-      { name: "Vendor1", url: "/" },
-      { name: "Vendor2", url: "/" },
-      { name: "Vendor3", url: "/" },
-    ],
-  },
-  {
-    id: 5,
-    name: "Mega Menu",
-    url: "#",
-    megaMenu: true,
-    categories: [
-      {
-        title: "Electronics",
-        items: ["Phones", "Laptops", "Cameras", "Accessories"],
-      },
-      {
-        title: "Fashion",
-        items: ["Men's Wear", "Women's Wear", "Shoes", "Bags"],
-      },
-      {
-        title: "Home & Living",
-        items: ["Furniture", "Kitchen", "Decor", "Lighting"],
-      },
-    ],
-  },
-  {
-    id: 6,
-    name: "Blog",
-    url: "/blog",
-  },
-  {
-    id: 7,
-    name: "Pages",
-    url: "#",
-    children: [
-      { name: "About Us", url: "/about" },
-      { name: "Contact", url: "/contact" },
-      { name: "FAQ", url: "/faq" },
-    ],
-  },
-  {
-    id: 8,
-    name: "Contact",
-    url: "/contact",
-  },
-];
+// Generating blog-url
+function generateSlug(title) {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9 ]/g, "") // Remove special characters
+    .replace(/\s+/g, "-"); // Replace spaces with hyphens
+}
 
-export const categoryData = [
-  {
-    id: 1,
-    img: Category3,
-    title: "Snack",
-    qty: 3,
-  },
-  {
-    id: 2,
-    img: Category2,
-    title: "Hodo Foods",
-    qty: 4,
-  },
-  {
-    id: 3,
-    img: Category4,
-    title: "Pet Foods",
-    qty: 5,
-  },
-  {
-    id: 4,
-    img: Category5,
-    title: "Vegetables",
-    qty: 8,
-  },
-  {
-    id: 5,
-    img: Category1,
-    title: "Fresh Fruit",
-    qty: 10,
-  },
-];
-export const allCategoryData = [
-  {
-    id: 1,
-    img: Category3,
-    title: "Snack",
-    qty: 3,
-  },
-  {
-    id: 2,
-    img: Category2,
-    title: "Hodo Foods",
-    qty: 4,
-  },
-  {
-    id: 3,
-    img: Category4,
-    title: "Pet Foods",
-    qty: 5,
-  },
-  {
-    id: 4,
-    img: Category5,
-    title: "Vegetables",
-    qty: 8,
-  },
-  {
-    id: 5,
-    img: Category1,
-    title: "Fresh Fruit",
-    qty: 10,
-  },
-  {
-    id: 6,
-    img: Category3,
-    title: "Bread & Juice",
-    qty: 3,
-  },
-  {
-    id: 7,
-    img: Category2,
-    title: "Fast Foods",
-    qty: 4,
-  },
-  {
-    id: 8,
-    img: Category4,
-    title: "Milk & Dairies",
-    qty: 5,
-  },
-];
+// Add slugs dynamically
+blogData.forEach((blog) => {
+  blog.slug = generateSlug(blog.title);
+});
+
+// Generating product-url
+productsData.forEach((product)=>{
+  product.slug = generateSlug(product.title)
+})

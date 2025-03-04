@@ -2,13 +2,13 @@ import { AiOutlineHome } from "react-icons/ai";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import Sidebar from "../components/Sidebar";
 import Rating from '@mui/material/Rating';
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import PrevArrow from "../components/PrevArrow";
 import NextArrow from "../components/NextArrow";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Link } from "react-router";
+import { Link, useParams } from "react-router";
 import { MdKeyboardArrowUp } from "react-icons/md";
 import { MdKeyboardArrowDown, MdOutlineCompareArrows } from "react-icons/md";
 import { IoCartOutline } from "react-icons/io5";
@@ -18,6 +18,7 @@ import ReviewAuthor02 from '/review-author-02.png'
 import ReviewAuthor03 from '/review-author-03.png'
 import Product from "../components/Product";
 import { productsData } from "../data/DB";
+import Breadcrumb from "../components/Breadcrumb";
 
 const ProductDetails = () => {
   const [value, setValue] = useState(2);
@@ -68,11 +69,29 @@ const ProductDetails = () => {
     nextArrow: <NextArrow isSingleProduct={true} />,
     prevArrow: <PrevArrow isSingleProduct={true} />
   };
+
+
+  const { slug } = useParams(); // Get slug from URL
+
+  // Find the product with the matching slug
+  const product = productsData.find((item) => item.slug === slug);
+
+  // Scroll to top when the component loads
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  // If product not found
+  if (!product) {
+    return <h2>Product not found!</h2>;
+  }
+
   return (
     <>
       <section className="">
-        <div className="mb-[30px] border-b border-[#ECECEC]">
           {/* Breadcrumb  */}
+          <Breadcrumb/>
+        {/* <div className="mb-[30px] border-b border-[#ECECEC]">
           <ul className="max-w-[1610px] mx-auto h-[66px] flex items-center font-semibold text-sm text-greeny leading-6 gap-x-[10px]">
             <li className="flex items-center gap-x-1"><AiOutlineHome />Home</li>
             <li><MdKeyboardArrowRight /></li>
@@ -80,7 +99,7 @@ const ProductDetails = () => {
             <li><MdKeyboardArrowRight /></li>
             <li className="text-[#7E7E7E]"> Seeds of Change Organic</li>
           </ul>
-        </div>
+        </div> */}
         <div className="max-w-[1610px] mx-auto">
           <div className="flex gap-x-6 overflow-hidden">
 
@@ -93,44 +112,44 @@ const ProductDetails = () => {
                   <div className="max-w-[500px] h-[500px] mb-[30px] overflow-hidden border border-[#ECECEC] rounded-[15px] flex items-center justify-center">
                     <Slider {...settings2} className="overflow-hidden" ref={productMainSlider}>
                       <div className="">
-                        <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-0-202305292130.jpg?im=Resize=(${productSliderImgSize[0], productSliderImgSize[1]})`} alt="" className="w-full h-full p-5 rounded-[15px]" />
+                        <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-0-202305292130.jpg?im=Resize=(${productSliderImgSize[0], productSliderImgSize[1]})`} alt="" className="w-full h-full p-5 rounded-[15px] cursor-grab" />
                       </div>
                       <div className="">
-                        <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-1-202305292130.jpg?im=Resize=(${productSliderImgSize[0], productSliderImgSize[1]})`} alt="" className="w-full h-full p-5 rounded-[15px]" />
+                        <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-1-202305292130.jpg?im=Resize=(${productSliderImgSize[0], productSliderImgSize[1]})`} alt="" className="w-full h-full p-5 rounded-[15px] cursor-grab" />
                       </div>
                       <div className="">
-                        <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-2-202305292130.jpg?im=Resize=(${productSliderImgSize[0], productSliderImgSize[1]})`} alt="" className="w-full h-full p-5 rounded-[15px]" />
+                        <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-2-202305292130.jpg?im=Resize=(${productSliderImgSize[0], productSliderImgSize[1]})`} alt="" className="w-full h-full p-5 rounded-[15px] cursor-grab" />
                       </div>
                       <div className="">
-                        <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-3-202305292130.jpg?im=Resize=(${productSliderImgSize[0], productSliderImgSize[1]})`} alt="" className="w-full h-full p-5 rounded-[15px]" />
+                        <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-3-202305292130.jpg?im=Resize=(${productSliderImgSize[0], productSliderImgSize[1]})`} alt="" className="w-full h-full p-5 rounded-[15px] cursor-grab" />
                       </div>
                       <div className="">
-                        <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-legal-images-o490000363-p490000363-4-202305292130.jpg?im=Resize=(${productSliderImgSize[0], productSliderImgSize[1]})`} alt="" className="w-full h-full p-5 rounded-[15px]" />
+                        <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-legal-images-o490000363-p490000363-4-202305292130.jpg?im=Resize=(${productSliderImgSize[0], productSliderImgSize[1]})`} alt="" className="w-full h-full p-5 rounded-[15px] cursor-grab" />
                       </div>
                       <div className="">
-                        <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-legal-images-o490000363-p490000363-5-202305292130.jpg?im=Resize=(${productSliderImgSize[0], productSliderImgSize[1]})`} alt="" className="w-full h-full p-5 rounded-[15px]" />
+                        <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-legal-images-o490000363-p490000363-5-202305292130.jpg?im=Resize=(${productSliderImgSize[0], productSliderImgSize[1]})`} alt="" className="w-full h-full p-5 rounded-[15px] cursor-grab" />
                       </div>
 
                     </Slider>
                   </div>
                   <div className="overflow-hidden max-w-[500px]">
                     <Slider {...settings} className="product-slide" ref={productSlider}>
-                      <div className="overflow-hidden rounded-[17px] border border-transparent outline-none item">
+                      <div className="cursor-pointer overflow-hidden rounded-[17px] border border-transparent outline-none item">
                         <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-0-202305292130.jpg?im=Resize=(${productGalleryImgSize[0], productGalleryImgSize[1]})`} alt="" className="w-[118px]" onClick={() => goto(0)} />
                       </div>
-                      <div className="overflow-hidden rounded-[17px] border border-transparent outline-none item">
+                      <div className="cursor-pointer overflow-hidden rounded-[17px] border border-transparent outline-none item">
                         <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-1-202305292130.jpg?im=Resize=(${productGalleryImgSize[0], productGalleryImgSize[1]})`} alt="" className="w-[118px]" onClick={() => goto(1)} />
                       </div>
-                      <div className="overflow-hidden rounded-[17px] border border-transparent outline-none item">
+                      <div className="cursor-pointer overflow-hidden rounded-[17px] border border-transparent outline-none item">
                         <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-2-202305292130.jpg?im=Resize=(${productGalleryImgSize[0], productGalleryImgSize[1]})`} alt="" className="w-[118px]" onClick={() => goto(2)} />
                       </div>
-                      <div className="overflow-hidden rounded-[17px] border border-transparent outline-none item">
+                      <div className="cursor-pointer overflow-hidden rounded-[17px] border border-transparent outline-none item">
                         <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-3-202305292130.jpg?im=Resize=(${productGalleryImgSize[0], productGalleryImgSize[1]})`} alt="" className="w-[118px]" onClick={() => goto(3)} />
                       </div>
-                      <div className="overflow-hidden rounded-[17px] border border-transparent outline-none item">
+                      <div className="cursor-pointer overflow-hidden rounded-[17px] border border-transparent outline-none item">
                         <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-legal-images-o490000363-p490000363-4-202305292130.jpg?im=Resize=(${productGalleryImgSize[0], productGalleryImgSize[1]})`} alt="" className="w-[118px]" onClick={() => goto(4)} />
                       </div>
-                      <div className="overflow-hidden rounded-[17px] border border-transparent outline-none item">
+                      <div className="cursor-pointer overflow-hidden rounded-[17px] border border-transparent outline-none item">
                         <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-legal-images-o490000363-p490000363-5-202305292130.jpg?im=Resize=(${productGalleryImgSize[0], productGalleryImgSize[1]})`} alt="" className="w-[118px]" onClick={() => goto(5)} />
                       </div>
                     </Slider>

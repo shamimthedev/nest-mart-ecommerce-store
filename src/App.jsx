@@ -1,6 +1,6 @@
-import { Routes, Route } from "react-router"
-import About from './pages/About';
-import Home from './pages/Home';
+import { Routes, Route } from "react-router";
+import About from "./pages/About";
+import Home from "./pages/Home";
 import RootLayout from "./layout/RootLayout";
 import Shop from "./pages/Shop";
 import Error from "./pages/Error";
@@ -11,7 +11,6 @@ import BlogDetails from "./pages/BlogDetails";
 import Cart from "./pages/Cart";
 
 function App() {
-
   return (
     <>
       <Routes>
@@ -22,13 +21,13 @@ function App() {
           <Route path="blog" element={<Blog />} />
           <Route path="shop" element={<Shop />} />
           <Route path="cart" element={<Cart />} />
-          <Route path="product/details" element={<ProductDetails />} />
-          <Route path="blog/blog/details" element={<BlogDetails />} />
+          <Route path="product/:slug" element={<ProductDetails />} />
+          <Route path="blog/:slug" element={<BlogDetails />} />
           <Route path="*" element={<Error />} />
         </Route>
       </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

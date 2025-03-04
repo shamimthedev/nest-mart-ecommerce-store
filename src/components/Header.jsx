@@ -92,7 +92,6 @@ const Header = () => {
     const handleClickOutside = (event) => {
       if (cartRef.current && !cartRef.current.contains(event.target)) {
         setIsCartOpen(false);
-        setIsAllCategoryOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);

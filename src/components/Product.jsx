@@ -10,7 +10,7 @@ import { addToCart } from "../redux/slices/cartSlice";
 
 
 const Product = ({ product }) => {
-    const { id, img, img2, title, cat, rating, author, price, oldPrice } = product
+    const { id, img, img2, title, cat, rating, author, badge, price, oldPrice } = product
     const dispatch = useDispatch();
 
     const handleAddToCart = () => {
@@ -32,9 +32,10 @@ const Product = ({ product }) => {
 
     return (
         <div className="w-full rounded-[15px] p-[25px] border border-[#ECECEC] transition-all ease-in-out duration-200 hover:border-green-200 hover:shadow-md relative group">
-            <div className="absolute top-0 left-0 bg-[#F74B81] rounded-tl-[15px] rounded-br-[15px]">
-                <span className="text-white font-lato text-xs px-5 py-2">Hot</span>
-            </div>
+            {badge && <div className="absolute top-0 left-0 bg-[#F74B81] rounded-tl-[15px] rounded-br-[15px]">
+                <span className="text-white font-lato text-xs px-5 py-2">{badge}</span>
+            </div>}
+
             <div className="relative">
                 <div className="overflow-hidden w-full h-[246px] relative group">
                     <img src={img} alt="" className='absolute w-full h-full object-cover top-0 left-0 z-1' />
@@ -55,7 +56,7 @@ const Product = ({ product }) => {
                 <span className='text-[#ADADAD] text-xs font-lato leading-6'>{cat}</span>
                 <h3 className='leading-[20px] font-bold'>{title}</h3>
                 <div className="">
-                    <span className='text-[#B6B6B6] text-sm leading-6 font-lato'>Rating: ⭐({rating})</span>
+                    <span className='text-[#B6B6B6] text-sm leading-6 font-lato'>Rating: ⭐ &nbsp; ({rating})</span>
                 </div>
                 <span className='text-[#B6B6B6] text-sm leading-6 font-lato'>By <span className='text-greeny'>{author}</span></span>
             </div>

@@ -47,9 +47,9 @@ const Blog = () => {
 
                             {/* Articles Here  */}
                             <div className="mt-[50px] flex justify-between flex-wrap gap-x-6 gap-y-[30px]">
-                                {blogData.map((item, index)=>(
+                                {blogData.map((blog, index)=>(
                                     <div key={index}>
-                                        <Link to='blog/details'><BlogCard item={item}/></Link>
+                                        <Link to={`/blog/${blog.slug}`}><BlogCard item={blog}/></Link>
                                     </div>
                                 ))}
                             </div>

@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setSelectedCategory, setProducts } from "../redux/slices/filterSlice";
 import { productsData } from "../data/DB";
 import { useEffect } from "react";
+import { Link } from "react-router";
 
 const PopularProducts = () => {
   const dispatch = useDispatch();
@@ -48,7 +49,7 @@ const PopularProducts = () => {
           <div className="flex flex-wrap gap-5">
             {filteredProducts.map((product, index) => (
               <div className="w-[300px]" key={index}>
-                <Product product={product} />
+                <Link to={`/product/${product.slug}`}><Product product={product} /></Link>
               </div>
             ))}
           </div>

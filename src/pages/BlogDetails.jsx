@@ -10,9 +10,25 @@ import { Rating } from "@mui/material"
 import ReviewAuthor01 from '/review-author-01.png'
 import ReviewAuthor02 from '/review-author-02.png'
 import ReviewAuthor03 from '/review-author-03.png'
-import { Link } from "react-router"
+import { Link, useParams } from "react-router"
+import { useEffect } from "react"
+import { blogData } from "../data/DB"
+
 
 const BlogDetails = () => {
+    const { slug } = useParams(); // Get slug from URL
+    // Scroll to top when the page loads
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    // Find the blog post by slug
+    const blog = blogData.find((post) => post.slug === slug);
+
+    if (!blog) {
+        return <h2>Blog post not found!</h2>;
+    }
+
     return (
         <>
             <section>
@@ -153,7 +169,7 @@ const BlogDetails = () => {
                                 <div className="p-4 mb-[30px] border border-[#ECECEC] rounded-[15px] transition-all ease-in-out duration-300 hover:-translate-y-[4px] hover:shadow-sm">
                                     <div className="flex gap-x-5">
                                         <div className="w-[20%]">
-                                            <img src={ReviewAuthor01} alt="" className="mx-auto"/>
+                                            <img src={ReviewAuthor01} alt="" className="mx-auto" />
                                             <span className="text-center block mt-2 text-greeny font-semibold">Sienna</span>
                                         </div>
                                         <div className="flex-1 group">
@@ -170,7 +186,7 @@ const BlogDetails = () => {
                                 <div className="p-4 mb-[30px] border border-[#ECECEC] rounded-[15px] transition-all ease-in-out duration-300 hover:-translate-y-[4px] hover:shadow-sm">
                                     <div className="flex gap-x-5">
                                         <div className="w-[20%]">
-                                            <img src={ReviewAuthor03} alt="" className="mx-auto"/>
+                                            <img src={ReviewAuthor03} alt="" className="mx-auto" />
                                             <span className="text-center block mt-2 text-greeny font-semibold">Sienna</span>
                                         </div>
                                         <div className="flex-1 group">
@@ -187,7 +203,7 @@ const BlogDetails = () => {
                                 <div className="p-4 border border-[#ECECEC] rounded-[15px] transition-all ease-in-out duration-300 hover:-translate-y-[4px] hover:shadow-sm">
                                     <div className="flex gap-x-5">
                                         <div className="w-[20%]">
-                                            <img src={ReviewAuthor02} alt="" className="mx-auto"/>
+                                            <img src={ReviewAuthor02} alt="" className="mx-auto" />
                                             <span className="text-center block mt-2 text-greeny font-semibold">Sienna</span>
                                         </div>
                                         <div className="flex-1 group">
