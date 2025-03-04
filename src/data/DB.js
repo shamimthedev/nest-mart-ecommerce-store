@@ -960,3 +960,53 @@ export const categoryData = [
     qty: 10
   },
 ]
+export const allCategoryData = [
+  {
+    id: 1,
+    img: Category3,
+    title: 'Snack',
+    qty: 3
+  },
+  {
+    id: 2,
+    img: Category2,
+    title: 'Hodo Foods',
+    qty: 4
+  },
+  {
+    id: 3,
+    img: Category4,
+    title: 'Pet Foods',
+    qty: 5
+  },
+  {
+    id: 4,
+    img: Category5,
+    title: 'Vegetables',
+    qty: 8
+  },
+  {
+    id: 5,
+    img: Category1,
+    title: 'Fresh Fruit',
+    qty: 10
+  },
+  {
+    id: 6,
+    img: Category3,
+    title: 'Bread & Juice',
+    qty: 3
+  },
+  {
+    id: 7,
+    img: Category2,
+    title: 'Fast Foods',
+    qty: 4
+  },
+  {
+    id: 8,
+    img: Category4,
+    title: 'Milk & Dairies',
+    qty: 5
+  },
+]

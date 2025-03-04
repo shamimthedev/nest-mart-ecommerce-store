@@ -1,6 +1,6 @@
 import { categoryData } from "../data/DB"
 
-const Category = ({onclick}) => {
+const Category = ({ onclick }) => {
 
   return (
     <>
