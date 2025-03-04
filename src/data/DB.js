@@ -956,7 +956,7 @@ export const categoryData = [
   {
     id: 5,
     img: Category1,
-    title: 'Meats',
+    title: 'Fresh Fruit',
     qty: 10
   },
 ]

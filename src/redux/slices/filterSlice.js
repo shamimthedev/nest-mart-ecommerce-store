@@ -3,10 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   searchQuery: "",
   category: "",
-  minPrice: 0,
-  maxPrice: 1000,
-  selectedColor: "",
-  condition: "", // new/used
+  priceRange: [500, 1000],  // Default price range
+  colorFilter: '',  // Empty means no color filter applied
+  conditionFilter: '',  // Empty means no condition filter applied
 };
 
 const filterSlice = createSlice({
@@ -20,14 +19,13 @@ const filterSlice = createSlice({
       state.category = action.payload;
     },
     setPriceRange: (state, action) => {
-      state.minPrice = action.payload.min;
-      state.maxPrice = action.payload.max;
+      state.priceRange = action.payload;
     },
-    setColor: (state, action) => {
-      state.selectedColor = action.payload;
+    setColorFilter: (state, action) => {
+      state.colorFilter = action.payload; // Set the selected color
     },
-    setCondition: (state, action) => {
-      state.condition = action.payload;
+    setConditionFilter: (state, action) => {
+      state.conditionFilter = action.payload; // Set the selected condition
     },
     resetFilters: (state) => {
       return initialState;
@@ -35,7 +33,7 @@ const filterSlice = createSlice({
   },
 });
 
-export const { setSearchQuery, setCategory, setPriceRange, setColor, setCondition, resetFilters } =
+export const { setSearchQuery, setCategory, setPriceRange, setColorFilter, setConditionFilter, resetFilters } =
   filterSlice.actions;
 
 export default filterSlice.reducer;

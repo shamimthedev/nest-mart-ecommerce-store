@@ -2,14 +2,15 @@ import { useEffect, useRef, useState } from "react";
 import Product from "../components/Product";
 import Sidebar from "../components/Sidebar";
 import Breadcrumb2 from "../components/Breadcrumb2";
-import { useSelector } from "react-redux";
 import { productsData } from "/src/data/DB"; // ✅ Use productsData directly
+import useFilteredProducts from "../hook/useFilteredProducts";
 
 const Shop = () => {
     const [isSortOpen, setIsSortOpen] = useState(false);
     const [isShowOpen, setIsShowOpen] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const productsPerPage = 12;
+    const filteredProducts = useFilteredProducts(productsData);
 
     const sortDropdownRef = useRef(null);
     const showDropdownRef = useRef(null);
@@ -29,23 +30,23 @@ const Shop = () => {
         };
     }, []);
 
-    // Search query & Category filter
-    const filters = useSelector((state) => state.filter);
-    const { searchQuery, category } = filters;
+    // // Search query & Category filter
+    // const filters = useSelector((state) => state.filter);
+    // const { searchQuery, category } = filters;
 
-    // Filter products based on category and searchQuery
-    const filteredProducts = productsData.filter((product) => {
-        // First check category filter
-        const matchesCategory = category ? product.cat === category : true;
+    // // Filter products based on category and searchQuery
+    // const filteredProducts = productsData.filter((product) => {
+    //     // First check category filter
+    //     const matchesCategory = category ? product.cat === category : true;
 
-        // Then check the search query (applies to multiple fields)
-        const matchesSearchQuery = product.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            product.cat?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            product.author?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            product.badge?.toLowerCase().includes(searchQuery.toLowerCase());
+    //     // Then check the search query (applies to multiple fields)
+    //     const matchesSearchQuery = product.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    //         product.cat?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    //         product.author?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    //         product.badge?.toLowerCase().includes(searchQuery.toLowerCase());
 
-        return matchesCategory && matchesSearchQuery; // Both conditions must be true
-    });
+    //     return matchesCategory && matchesSearchQuery; // Both conditions must be true
+    // });
 
     // Pagination logic based on filtered products
     const indexOfLastProduct = currentPage * productsPerPage;

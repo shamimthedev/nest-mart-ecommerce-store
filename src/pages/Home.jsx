@@ -5,7 +5,6 @@ import Hero from "../components/Hero"
 import PopularProducts from "../components/PopularProducts"
 import TopSelling from "../components/TopSelling"
 
-
 const Home = () => {
   return (
     <>
