@@ -54,9 +54,8 @@ const Product = ({ product }) => {
             <div className="mt-[5px] mb-6 flex flex-col gap-y-[10px]">
                 <span className='text-[#ADADAD] text-xs font-lato leading-6'>{cat}</span>
                 <h3 className='leading-[20px] font-bold'>{title}</h3>
-                <div className="flex items-center gap-x-2">
-                    <Rating className='text-sm' name="half-rating" defaultValue={3.0} precision={0.5} />
-                    <span className='text-[#B6B6B6] text-sm leading-6 font-lato'>({rating})</span>
+                <div className="">
+                    <span className='text-[#B6B6B6] text-sm leading-6 font-lato'>Rating: ⭐({rating})</span>
                 </div>
                 <span className='text-[#B6B6B6] text-sm leading-6 font-lato'>By <span className='text-greeny'>{author}</span></span>
             </div>

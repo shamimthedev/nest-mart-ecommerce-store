@@ -1,44 +1,43 @@
-import Product01 from '/product-01.png'
-import Product012 from '/product-1-2.jpg'
-import Product02 from '/product-02.png'
-import Product022 from '/product-2-2.jpg'
-import Product03 from '/product-03.png'
-import Product032 from '/product-3-2.jpg'
-import Product04 from '/product-04.png'
-import Product042 from '/product-4-2.jpg'
-import Product05 from '/product-05.png'
-import Product052 from '/product-5-2.jpg'
-import Product06 from '/product-06.png'
-import Product062 from '/product-6-2.jpg'
-import Product07 from '/product-07.png'
-import Product072 from '/product-7-2.jpg'
-import Product08 from '/product-08.png'
-import Product082 from '/product-8-2.jpg'
-import Product09 from '/product-09.png'
-import Product092 from '/product-9-2.jpg'
-import Product10 from '/product-10.png'
-import Product102 from '/product-10-2.jpg'
-import BlogCard01 from '/blog-post-01.png'
-import BlogCard02 from '/blog-post-02.png'
-import BlogCard03 from '/blog-post-03.png'
-import BlogCard04 from '/blog-post-04.png'
-import BlogCard05 from '/blog-post-05.png'
-import BlogCard06 from '/blog-post-06.png'
-import BlogCard07 from '/blog-post-07.png'
-import BlogCard08 from '/blog-post-08.png'
-import BlogCard09 from '/blog-post-09.png'
-import BlogCard10 from '/blog-post-10.png'
-import BlogCard11 from '/blog-post-11.png'
-import BlogCard12 from '/blog-post-12.png'
-import BlogCard14 from '/blog-post-14.png'
-import Category1 from '/category-1.svg.svg'
-import Category3 from '/category-2.svg.svg'
-import Category2 from '/category-3.svg.svg'
-import Category4 from '/category-4.svg.svg'
-import Category5 from '/category-5.svg.svg'
+import Product01 from "/product-01.png";
+import Product012 from "/product-1-2.jpg";
+import Product02 from "/product-02.png";
+import Product022 from "/product-2-2.jpg";
+import Product03 from "/product-03.png";
+import Product032 from "/product-3-2.jpg";
+import Product04 from "/product-04.png";
+import Product042 from "/product-4-2.jpg";
+import Product05 from "/product-05.png";
+import Product052 from "/product-5-2.jpg";
+import Product06 from "/product-06.png";
+import Product062 from "/product-6-2.jpg";
+import Product07 from "/product-07.png";
+import Product072 from "/product-7-2.jpg";
+import Product08 from "/product-08.png";
+import Product082 from "/product-8-2.jpg";
+import Product09 from "/product-09.png";
+import Product092 from "/product-9-2.jpg";
+import Product10 from "/product-10.png";
+import Product102 from "/product-10-2.jpg";
+import BlogCard01 from "/blog-post-01.png";
+import BlogCard02 from "/blog-post-02.png";
+import BlogCard03 from "/blog-post-03.png";
+import BlogCard04 from "/blog-post-04.png";
+import BlogCard05 from "/blog-post-05.png";
+import BlogCard06 from "/blog-post-06.png";
+import BlogCard07 from "/blog-post-07.png";
+import BlogCard08 from "/blog-post-08.png";
+import BlogCard09 from "/blog-post-09.png";
+import BlogCard10 from "/blog-post-10.png";
+import BlogCard11 from "/blog-post-11.png";
+import BlogCard12 from "/blog-post-12.png";
+import BlogCard14 from "/blog-post-14.png";
+import Category1 from "/category-1.svg.svg";
+import Category3 from "/category-2.svg.svg";
+import Category2 from "/category-3.svg.svg";
+import Category4 from "/category-4.svg.svg";
+import Category5 from "/category-5.svg.svg";
 
-
-export const productsData = [
+ export const productsData = [
   {
     id: 1,
     img: Product01,
@@ -49,7 +48,7 @@ export const productsData = [
     author: "Stouffer",
     oldPrice: 52.85,
     price: 55.8,
-    badge: 'Hot'
+    badge: "Hot",
   },
   {
     id: 2,
@@ -72,7 +71,7 @@ export const productsData = [
     author: "StarKist",
     oldPrice: 48.85,
     price: 52.8,
-    badge: 'Sale'
+    badge: "Sale",
   },
   {
     id: 4,
@@ -84,7 +83,7 @@ export const productsData = [
     author: "Old El Paso",
     oldPrice: 17.85,
     price: 19.8,
-    badge: 'New'
+    badge: "New",
   },
   {
     id: 5,
@@ -96,7 +95,7 @@ export const productsData = [
     author: "StarKist",
     oldPrice: 23.85,
     price: 25.8,
-    badge: 'Hot'
+    badge: "Hot",
   },
   {
     id: 6,
@@ -119,7 +118,7 @@ export const productsData = [
     author: "Stouffer",
     oldPrice: 32.85,
     price: 33.8,
-    badge: 'Hot'
+    badge: "Hot",
   },
   {
     id: 8,
@@ -131,7 +130,7 @@ export const productsData = [
     author: "Tyson",
     oldPrice: 5.85,
     price: 37.8,
-    badge: 'Sale'
+    badge: "Sale",
   },
   {
     id: 9,
@@ -154,7 +153,7 @@ export const productsData = [
     author: "Tyson",
     oldPrice: 22.85,
     price: 24.8,
-    badge: 'Hot'
+    badge: "Hot",
   },
   {
     id: 11,
@@ -177,7 +176,7 @@ export const productsData = [
     author: "NestFood",
     oldPrice: 28.85,
     price: 32.8,
-    badge: 'New'
+    badge: "New",
   },
   {
     id: 13,
@@ -189,7 +188,7 @@ export const productsData = [
     author: "StarKist",
     oldPrice: 48.85,
     price: 52.8,
-    badge: 'Hot'
+    badge: "Hot",
   },
   {
     id: 14,
@@ -201,7 +200,7 @@ export const productsData = [
     author: "Old El Paso",
     oldPrice: 17.85,
     price: 19.8,
-    badge: 'Sale'
+    badge: "Sale",
   },
   {
     id: 15,
@@ -213,7 +212,7 @@ export const productsData = [
     author: "StarKist",
     oldPrice: 23.85,
     price: 25.8,
-    badge: 'New'
+    badge: "New",
   },
   {
     id: 16,
@@ -225,7 +224,7 @@ export const productsData = [
     author: "NestFood",
     oldPrice: 54.85,
     price: 55.8,
-    badge: 'Hot'
+    badge: "Hot",
   },
   {
     id: 17,
@@ -237,7 +236,7 @@ export const productsData = [
     author: "Stouffer",
     oldPrice: 32.85,
     price: 33.8,
-    badge: 'Hot'
+    badge: "Hot",
   },
   {
     id: 18,
@@ -260,7 +259,7 @@ export const productsData = [
     author: "Old El Paso",
     oldPrice: 23.85,
     price: 25.8,
-    badge: 'Sale'
+    badge: "Sale",
   },
   {
     id: 20,
@@ -283,7 +282,7 @@ export const productsData = [
     author: "Stouffer",
     oldPrice: 52.85,
     price: 55.8,
-    badge: 'Hot'
+    badge: "Hot",
   },
   {
     id: 22,
@@ -306,7 +305,7 @@ export const productsData = [
     author: "StarKist",
     oldPrice: 48.85,
     price: 52.8,
-    badge: 'Sale'
+    badge: "Sale",
   },
   {
     id: 24,
@@ -318,7 +317,7 @@ export const productsData = [
     author: "Old El Paso",
     oldPrice: 17.85,
     price: 19.8,
-    badge: 'New'
+    badge: "New",
   },
   {
     id: 25,
@@ -341,7 +340,7 @@ export const productsData = [
     author: "NestFood",
     oldPrice: 54.85,
     price: 55.8,
-    badge: 'Hot'
+    badge: "Hot",
   },
   {
     id: 27,
@@ -353,7 +352,7 @@ export const productsData = [
     author: "Stouffer",
     oldPrice: 32.85,
     price: 33.8,
-    badge: 'Sale'
+    badge: "Sale",
   },
   {
     id: 28,
@@ -376,7 +375,7 @@ export const productsData = [
     author: "Old El Paso",
     oldPrice: 23.85,
     price: 25.8,
-    badge: 'New'
+    badge: "New",
   },
   {
     id: 30,
@@ -388,7 +387,7 @@ export const productsData = [
     author: "Tyson",
     oldPrice: 22.85,
     price: 24.8,
-    badge: 'Hot'
+    badge: "Hot",
   },
   {
     id: 31,
@@ -411,7 +410,7 @@ export const productsData = [
     author: "NestFood",
     oldPrice: 28.85,
     price: 32.8,
-    badge: 'Hot'
+    badge: "Hot",
   },
   {
     id: 33,
@@ -434,7 +433,7 @@ export const productsData = [
     author: "Old El Paso",
     oldPrice: 17.85,
     price: 19.8,
-    badge: 'Sale'
+    badge: "Sale",
   },
   {
     id: 35,
@@ -457,7 +456,7 @@ export const productsData = [
     author: "NestFood",
     oldPrice: 54.85,
     price: 55.8,
-    badge: 'Hot'
+    badge: "Hot",
   },
   {
     id: 37,
@@ -469,7 +468,7 @@ export const productsData = [
     author: "Stouffer",
     oldPrice: 32.85,
     price: 33.8,
-    badge: 'Sale'
+    badge: "Sale",
   },
   {
     id: 38,
@@ -503,7 +502,7 @@ export const productsData = [
     author: "Old El Paso",
     oldPrice: 23.85,
     price: 25.8,
-    badge: 'Hot'
+    badge: "Hot",
   },
   {
     id: 41,
@@ -515,7 +514,7 @@ export const productsData = [
     author: "Stouffer",
     oldPrice: 52.85,
     price: 55.8,
-    badge: 'Sale'
+    badge: "Sale",
   },
   {
     id: 42,
@@ -538,7 +537,7 @@ export const productsData = [
     author: "StarKist",
     oldPrice: 48.85,
     price: 52.8,
-    badge: 'Hot'
+    badge: "Hot",
   },
   {
     id: 44,
@@ -550,7 +549,7 @@ export const productsData = [
     author: "Old El Paso",
     oldPrice: 17.85,
     price: 19.8,
-    badge: 'Sale'
+    badge: "Sale",
   },
   {
     id: 45,
@@ -573,7 +572,7 @@ export const productsData = [
     author: "NestFood",
     oldPrice: 54.85,
     price: 55.8,
-    badge: 'Hot'
+    badge: "Hot",
   },
   {
     id: 47,
@@ -596,7 +595,7 @@ export const productsData = [
     author: "Tyson",
     oldPrice: 5.85,
     price: 37.8,
-    badge: 'Sale'
+    badge: "Sale",
   },
   {
     id: 49,
@@ -619,394 +618,394 @@ export const productsData = [
     author: "Old El Paso",
     oldPrice: 23.85,
     price: 25.8,
-    badge: 'Hot'
-  }
+    badge: "Hot",
+  },
 ];
 
 export const blogData = [
   {
     id: 1,
     img: BlogCard01,
-    title: 'The Intermediate Guide to Healthy Food',
-    cat: 'Side Dish',
+    title: "The Intermediate Guide to Healthy Food",
+    cat: "Side Dish",
   },
   {
     id: 2,
     img: BlogCard02,
-    title: 'Summer Quinoa Salad Jars with Lemon Dill',
-    cat: 'Soups and Stews',
+    title: "Summer Quinoa Salad Jars with Lemon Dill",
+    cat: "Soups and Stews",
   },
   {
     id: 3,
     img: BlogCard03,
-    title: 'Caprese Chicken with Smashed Potatoes',
-    cat: 'Salad',
+    title: "Caprese Chicken with Smashed Potatoes",
+    cat: "Salad",
   },
   {
     id: 4,
     img: BlogCard04,
-    title: 'Harissa Chickpeas with Whipped Feta',
-    cat: 'Dessert',
+    title: "Harissa Chickpeas with Whipped Feta",
+    cat: "Dessert",
   },
   {
     id: 5,
     img: BlogCard05,
-    title: 'Almond Butter Chocolate Chip Zucchini Bars',
-    cat: 'Breakfast',
+    title: "Almond Butter Chocolate Chip Zucchini Bars",
+    cat: "Breakfast",
   },
   {
     id: 6,
     img: BlogCard06,
-    title: 'Smoky Beans & Greens Tacos with Aji Verde',
-    cat: 'Vegan',
+    title: "Smoky Beans & Greens Tacos with Aji Verde",
+    cat: "Vegan",
   },
   {
     id: 7,
     img: BlogCard07,
-    title: 'Sticky Ginger Rice Bowls with Pickled Veg',
-    cat: 'Gluten Free',
+    title: "Sticky Ginger Rice Bowls with Pickled Veg",
+    cat: "Gluten Free",
   },
   {
     id: 8,
     img: BlogCard08,
-    title: 'Creamy Garlic Sun-Dried Tomato Pasta',
-    cat: 'Side Dish',
+    title: "Creamy Garlic Sun-Dried Tomato Pasta",
+    cat: "Side Dish",
   },
   {
     id: 9,
     img: BlogCard09,
-    title: 'The Absolute Easiest Spinach and Pizza',
-    cat: 'Dairy Free',
+    title: "The Absolute Easiest Spinach and Pizza",
+    cat: "Dairy Free",
   },
   {
     id: 10,
     img: BlogCard10,
-    title: 'Sticky Ginger Rice Bowls with Pickled',
-    cat: 'Salad',
+    title: "Sticky Ginger Rice Bowls with Pickled",
+    cat: "Salad",
   },
   {
     id: 11,
     img: BlogCard11,
-    title: 'The Best Soft Chocolate Chip Cookies',
-    cat: 'Soups',
+    title: "The Best Soft Chocolate Chip Cookies",
+    cat: "Soups",
   },
   {
     id: 12,
     img: BlogCard12,
-    title: 'Baked Mozzarella Chicken Rolls',
-    cat: 'Vegetarian',
+    title: "Baked Mozzarella Chicken Rolls",
+    cat: "Vegetarian",
   },
   {
     id: 13,
     img: BlogCard03,
-    title: 'The Best Avocado Egg Salad',
-    cat: 'Dessert',
+    title: "The Best Avocado Egg Salad",
+    cat: "Dessert",
   },
   {
     id: 14,
     img: BlogCard14,
-    title: 'The litigants on the screen are not actors',
-    cat: 'Vegetarian',
+    title: "The litigants on the screen are not actors",
+    cat: "Vegetarian",
   },
   {
     id: 15,
     img: BlogCard11,
-    title: 'The Best Soft Chocolate Chip Cookies',
-    cat: 'Soups',
+    title: "The Best Soft Chocolate Chip Cookies",
+    cat: "Soups",
   },
   {
     id: 16,
     img: BlogCard12,
-    title: 'Baked Mozzarella Chicken Rolls',
-    cat: 'Vegetarian',
+    title: "Baked Mozzarella Chicken Rolls",
+    cat: "Vegetarian",
   },
   {
     id: 17,
     img: BlogCard01,
-    title: 'The Best Avocado Egg Salad',
-    cat: 'Dessert',
+    title: "The Best Avocado Egg Salad",
+    cat: "Dessert",
   },
   {
     id: 18,
     img: BlogCard14,
-    title: 'The litigants on the screen are not actors',
-    cat: 'Vegetarian',
+    title: "The litigants on the screen are not actors",
+    cat: "Vegetarian",
   },
   {
     id: 19,
     img: BlogCard12,
-    title: 'The Best Avocado Egg Salad',
-    cat: 'Dessert',
+    title: "The Best Avocado Egg Salad",
+    cat: "Dessert",
   },
   {
     id: 20,
     img: BlogCard14,
-    title: 'The litigants on the screen are not actors',
-    cat: 'Vegetarian',
+    title: "The litigants on the screen are not actors",
+    cat: "Vegetarian",
   },
   {
     id: 21,
     img: BlogCard01,
-    title: 'The Intermediate Guide to Healthy Food',
-    cat: 'Side Dish',
+    title: "The Intermediate Guide to Healthy Food",
+    cat: "Side Dish",
   },
   {
     id: 22,
     img: BlogCard02,
-    title: 'Summer Quinoa Salad Jars with Lemon Dill',
-    cat: 'Soups and Stews',
+    title: "Summer Quinoa Salad Jars with Lemon Dill",
+    cat: "Soups and Stews",
   },
   {
     id: 23,
     img: BlogCard03,
-    title: 'Caprese Chicken with Smashed Potatoes',
-    cat: 'Salad',
+    title: "Caprese Chicken with Smashed Potatoes",
+    cat: "Salad",
   },
   {
     id: 24,
     img: BlogCard04,
-    title: 'Harissa Chickpeas with Whipped Feta',
-    cat: 'Dessert',
+    title: "Harissa Chickpeas with Whipped Feta",
+    cat: "Dessert",
   },
   {
     id: 25,
     img: BlogCard05,
-    title: 'Almond Butter Chocolate Chip Zucchini Bars',
-    cat: 'Breakfast',
+    title: "Almond Butter Chocolate Chip Zucchini Bars",
+    cat: "Breakfast",
   },
   {
     id: 26,
     img: BlogCard06,
-    title: 'Smoky Beans & Greens Tacos with Aji Verde',
-    cat: 'Vegan',
+    title: "Smoky Beans & Greens Tacos with Aji Verde",
+    cat: "Vegan",
   },
   {
     id: 27,
     img: BlogCard07,
-    title: 'Sticky Ginger Rice Bowls with Pickled Veg',
-    cat: 'Gluten Free',
+    title: "Sticky Ginger Rice Bowls with Pickled Veg",
+    cat: "Gluten Free",
   },
   {
     id: 28,
     img: BlogCard08,
-    title: 'Creamy Garlic Sun-Dried Tomato Pasta',
-    cat: 'Side Dish',
+    title: "Creamy Garlic Sun-Dried Tomato Pasta",
+    cat: "Side Dish",
   },
   {
     id: 29,
     img: BlogCard09,
-    title: 'The Absolute Easiest Spinach and Pizza',
-    cat: 'Dairy Free',
+    title: "The Absolute Easiest Spinach and Pizza",
+    cat: "Dairy Free",
   },
   {
     id: 30,
     img: BlogCard09,
-    title: 'The Absolute Easiest Spinach and Pizza',
-    cat: 'Dairy Free',
+    title: "The Absolute Easiest Spinach and Pizza",
+    cat: "Dairy Free",
   },
   {
     id: 31,
     img: BlogCard01,
-    title: 'The Intermediate Guide to Healthy Food',
-    cat: 'Side Dish',
+    title: "The Intermediate Guide to Healthy Food",
+    cat: "Side Dish",
   },
   {
     id: 32,
     img: BlogCard02,
-    title: 'Summer Quinoa Salad Jars with Lemon Dill',
-    cat: 'Soups and Stews',
+    title: "Summer Quinoa Salad Jars with Lemon Dill",
+    cat: "Soups and Stews",
   },
   {
     id: 33,
     img: BlogCard03,
-    title: 'Caprese Chicken with Smashed Potatoes',
-    cat: 'Salad',
+    title: "Caprese Chicken with Smashed Potatoes",
+    cat: "Salad",
   },
   {
     id: 34,
     img: BlogCard04,
-    title: 'Harissa Chickpeas with Whipped Feta',
-    cat: 'Dessert',
+    title: "Harissa Chickpeas with Whipped Feta",
+    cat: "Dessert",
   },
   {
     id: 35,
     img: BlogCard05,
-    title: 'Almond Butter Chocolate Chip Zucchini Bars',
-    cat: 'Breakfast',
+    title: "Almond Butter Chocolate Chip Zucchini Bars",
+    cat: "Breakfast",
   },
   {
     id: 36,
     img: BlogCard06,
-    title: 'Smoky Beans & Greens Tacos with Aji Verde',
-    cat: 'Vegan',
+    title: "Smoky Beans & Greens Tacos with Aji Verde",
+    cat: "Vegan",
   },
   {
     id: 37,
     img: BlogCard07,
-    title: 'Sticky Ginger Rice Bowls with Pickled Veg',
-    cat: 'Gluten Free',
+    title: "Sticky Ginger Rice Bowls with Pickled Veg",
+    cat: "Gluten Free",
   },
   {
     id: 38,
     img: BlogCard08,
-    title: 'Creamy Garlic Sun-Dried Tomato Pasta',
-    cat: 'Side Dish',
+    title: "Creamy Garlic Sun-Dried Tomato Pasta",
+    cat: "Side Dish",
   },
   {
     id: 39,
     img: BlogCard09,
-    title: 'The Absolute Easiest Spinach and Pizza',
-    cat: 'Dairy Free',
-  }
-]
+    title: "The Absolute Easiest Spinach and Pizza",
+    cat: "Dairy Free",
+  },
+];
 
 export const navList = [
   {
-      id: 1,
-      name: 'Home',
-      url: '/',
+    id: 1,
+    name: "Home",
+    url: "/",
   },
   {
-      id: 2,
-      name: 'About',
-      url: '/about'
+    id: 2,
+    name: "About",
+    url: "/about",
   },
   {
-      id: 3,
-      name: 'Shop',
-      url: '/shop',
+    id: 3,
+    name: "Shop",
+    url: "/shop",
   },
   {
-      id: 4,
-      name: 'Vendors',
-      url: '#',
-      children: [
-          { name: "Vendor1", url: "/" },
-          { name: "Vendor2", url: "/" },
-          { name: "Vendor3", url: "/" },
-      ],
+    id: 4,
+    name: "Vendors",
+    url: "#",
+    children: [
+      { name: "Vendor1", url: "/" },
+      { name: "Vendor2", url: "/" },
+      { name: "Vendor3", url: "/" },
+    ],
   },
   {
-      id: 5,
-      name: 'Mega Menu',
-      url: '#',
-      megaMenu: true,
-      categories: [
-          {
-              title: "Electronics",
-              items: ["Phones", "Laptops", "Cameras", "Accessories"],
-          },
-          {
-              title: "Fashion",
-              items: ["Men's Wear", "Women's Wear", "Shoes", "Bags"],
-          },
-          {
-              title: "Home & Living",
-              items: ["Furniture", "Kitchen", "Decor", "Lighting"],
-          },
-      ],
+    id: 5,
+    name: "Mega Menu",
+    url: "#",
+    megaMenu: true,
+    categories: [
+      {
+        title: "Electronics",
+        items: ["Phones", "Laptops", "Cameras", "Accessories"],
+      },
+      {
+        title: "Fashion",
+        items: ["Men's Wear", "Women's Wear", "Shoes", "Bags"],
+      },
+      {
+        title: "Home & Living",
+        items: ["Furniture", "Kitchen", "Decor", "Lighting"],
+      },
+    ],
   },
   {
-      id: 6,
-      name: 'Blog',
-      url: '/blog',
+    id: 6,
+    name: "Blog",
+    url: "/blog",
   },
   {
-      id: 7,
-      name: 'Pages',
-      url: '#',
-      children: [
-          { name: "About Us", url: "/about" },
-          { name: "Contact", url: "/contact" },
-          { name: "FAQ", url: "/faq" },
-      ],
+    id: 7,
+    name: "Pages",
+    url: "#",
+    children: [
+      { name: "About Us", url: "/about" },
+      { name: "Contact", url: "/contact" },
+      { name: "FAQ", url: "/faq" },
+    ],
   },
   {
-      id: 8,
-      name: 'Contact',
-      url: '/contact'
+    id: 8,
+    name: "Contact",
+    url: "/contact",
   },
-]
+];
 
 export const categoryData = [
   {
     id: 1,
     img: Category3,
-    title: 'Snack',
-    qty: 3
+    title: "Snack",
+    qty: 3,
   },
   {
     id: 2,
     img: Category2,
-    title: 'Hodo Foods',
-    qty: 4
+    title: "Hodo Foods",
+    qty: 4,
   },
   {
     id: 3,
     img: Category4,
-    title: 'Pet Foods',
-    qty: 5
+    title: "Pet Foods",
+    qty: 5,
   },
   {
     id: 4,
     img: Category5,
-    title: 'Vegetables',
-    qty: 8
+    title: "Vegetables",
+    qty: 8,
   },
   {
     id: 5,
     img: Category1,
-    title: 'Fresh Fruit',
-    qty: 10
+    title: "Fresh Fruit",
+    qty: 10,
   },
-]
+];
 export const allCategoryData = [
   {
     id: 1,
     img: Category3,
-    title: 'Snack',
-    qty: 3
+    title: "Snack",
+    qty: 3,
   },
   {
     id: 2,
     img: Category2,
-    title: 'Hodo Foods',
-    qty: 4
+    title: "Hodo Foods",
+    qty: 4,
   },
   {
     id: 3,
     img: Category4,
-    title: 'Pet Foods',
-    qty: 5
+    title: "Pet Foods",
+    qty: 5,
   },
   {
     id: 4,
     img: Category5,
-    title: 'Vegetables',
-    qty: 8
+    title: "Vegetables",
+    qty: 8,
   },
   {
     id: 5,
     img: Category1,
-    title: 'Fresh Fruit',
-    qty: 10
+    title: "Fresh Fruit",
+    qty: 10,
   },
   {
     id: 6,
     img: Category3,
-    title: 'Bread & Juice',
-    qty: 3
+    title: "Bread & Juice",
+    qty: 3,
   },
   {
     id: 7,
     img: Category2,
-    title: 'Fast Foods',
-    qty: 4
+    title: "Fast Foods",
+    qty: 4,
   },
   {
     id: 8,
     img: Category4,
-    title: 'Milk & Dairies',
-    qty: 5
+    title: "Milk & Dairies",
+    qty: 5,
   },
-]
+];

@@ -2,8 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import Product from "../components/Product";
 import Sidebar from "../components/Sidebar";
 import Breadcrumb2 from "../components/Breadcrumb2";
-import { productsData } from "/src/data/DB"; // ✅ Use productsData directly
 import useFilteredProducts from "../hook/useFilteredProducts";
+import { productsData } from "../data/DB";
+
 
 const Shop = () => {
     const [isSortOpen, setIsSortOpen] = useState(false);

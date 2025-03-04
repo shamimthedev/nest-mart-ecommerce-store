@@ -26,7 +26,7 @@ const Header = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isAccOpen, setIsAccOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isAllCategoryOpen, setIsAllCategoryOpen] = useState(true);
+  const [isAllCategoryOpen, setIsAllCategoryOpen] = useState(false);
   const categoryRef = useRef(null);
   const cartRef = useRef(null);
   const dropdownRef = useRef(null);
@@ -92,6 +92,7 @@ const Header = () => {
     const handleClickOutside = (event) => {
       if (cartRef.current && !cartRef.current.contains(event.target)) {
         setIsCartOpen(false);
+        setIsAllCategoryOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
