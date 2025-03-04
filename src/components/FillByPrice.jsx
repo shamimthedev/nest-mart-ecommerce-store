@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setPriceRange, setColorFilter, setConditionFilter } from '../redux/slices/filterSlice';
 import { CiFilter } from "react-icons/ci";
+import ResetFiltersButton from './ResetFiltersButton';
 
 function valuetext(value) {
     return `$${value}`;
@@ -86,11 +87,13 @@ const FillByPrice = () => {
                     ))}
                 </ul>
             </div>
-
-            <button className="font-bold leading-[21px] tracking-[0.5px] text-sm bg-greeny rounded-sm text-white py-3 px-4 flex items-center gap-2 hover:bg-[#FDC040]">
-                <CiFilter className="w-4 h-4" />
-                Filter
-            </button>
+            <div className="flex justify-between">
+                <button className="font-bold leading-[21px] tracking-[0.5px] text-sm bg-greeny rounded-sm text-white py-3 px-4 flex items-center gap-2 hover:bg-[#FDC040]">
+                    <CiFilter className="w-4 h-4" />
+                    Filter
+                </button>
+                <ResetFiltersButton/>
+            </div>
         </section>
     );
 };
