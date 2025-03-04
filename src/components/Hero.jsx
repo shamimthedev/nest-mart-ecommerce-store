@@ -32,7 +32,7 @@ const Hero = () => {
     arrows: true,
     fade: true,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow isHero={true}/>,
     customPaging: i => (

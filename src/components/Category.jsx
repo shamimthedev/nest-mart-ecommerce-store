@@ -1,42 +1,7 @@
-import Category1 from '/category-1.svg.svg'
-import Category3 from '/category-2.svg.svg'
-import Category2 from '/category-3.svg.svg'
-import Category4 from '/category-4.svg.svg'
-import Category5 from '/category-5.svg.svg'
+import { categoryData } from "../data/DB"
 
-const Category = () => {
-  const categoryData = [
-    {
-      id: 1,
-      img: Category3,
-      title: 'Milks & Dairies',
-      qty: 3
-    },
-    {
-      id: 2,
-      img: Category2,
-      title: 'Clothing',
-      qty: 4
-    },
-    {
-      id: 3,
-      img: Category4,
-      title: 'Pet Foods',
-      qty: 5
-    },
-    {
-      id: 4,
-      img: Category5,
-      title: 'Baking material',
-      qty: 8
-    },
-    {
-      id: 5,
-      img: Category1,
-      title: 'Fresh Fruit',
-      qty: 10
-    },
-  ]
+const Category = ({onclick}) => {
+
   return (
     <>
       <section className="w-full p-[31px] bg-white rounded-[15px] border border-[#ECECEC] shadow-md">
@@ -44,7 +9,7 @@ const Category = () => {
         <div className="flex flex-col gap-y-[15px]">
           {categoryData.map((category) => {
             return (
-              <div key={category.id} className="w-full flex px-[19px] py-[10px] rounded-[5px] border border-[#F2F3F4] justify-between items-center font-lato">
+              <div key={category.id} className="w-full flex px-[19px] py-[10px] rounded-[5px] border border-[#F2F3F4] justify-between items-center font-lato cursor-pointer transition-all ease-in-out duration-200 hover:border-green-200 hover:shadow-sm" onClick={onclick}>
                 <div className="flex gap-x-[15px] items-center">
                   <img src={category.img} alt={category.title} className='w-[30px] h-[30px]' />
                   <h3 className='text-sm leading-[21px]'>{category.title}</h3>
@@ -61,4 +26,4 @@ const Category = () => {
   )
 }
 
-export default Category
+export default Category;

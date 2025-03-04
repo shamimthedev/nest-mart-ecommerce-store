@@ -8,6 +8,7 @@ import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/slices/cartSlice";
 
+
 const Product = ({ product }) => {
     const { id, img, img2, title, cat, rating, author, price, oldPrice } = product
     const dispatch = useDispatch();

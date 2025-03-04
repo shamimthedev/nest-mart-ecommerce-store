@@ -1,18 +1,13 @@
-
-import { useEffect, useRef, useState } from 'react';
-import Product from '../components/Product'
-import Sidebar from '../components/Sidebar'
-import { CiGrid41 } from "react-icons/ci";
-import { IoIosArrowDown } from "react-icons/io";
-import { PiSortAscendingLight } from "react-icons/pi";
-import { FiClipboard, FiHeart, FiSettings, FiTarget, FiUser } from 'react-icons/fi';
-import { GoSignOut } from 'react-icons/go';
-import { productsData } from '/src/data/DB'
-import Breadcrumb2 from '../components/Breadcrumb2';
+import { useEffect, useRef, useState } from "react";
+import Product from "../components/Product";
+import Sidebar from "../components/Sidebar";
+import Breadcrumb2 from "../components/Breadcrumb2";
+import { useSelector } from "react-redux";
+import { productsData } from "/src/data/DB"; // ✅ Use productsData directly
 
 const Shop = () => {
-    const [isSortOpen, setIsSortOpen] = useState(false)
-    const [isShowOpen, setIsShowOpen] = useState(false)
+    const [isSortOpen, setIsSortOpen] = useState(false);
+    const [isShowOpen, setIsShowOpen] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const productsPerPage = 12;
 
@@ -34,11 +29,29 @@ const Shop = () => {
         };
     }, []);
 
-    // Pagination Logic
+    // Search query & Category filter
+    const filters = useSelector((state) => state.filter);
+    const { searchQuery, category } = filters;
+
+    // Filter products based on category and searchQuery
+    const filteredProducts = productsData.filter((product) => {
+        // First check category filter
+        const matchesCategory = category ? product.cat === category : true;
+
+        // Then check the search query (applies to multiple fields)
+        const matchesSearchQuery = product.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            product.cat?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            product.author?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            product.badge?.toLowerCase().includes(searchQuery.toLowerCase());
+
+        return matchesCategory && matchesSearchQuery; // Both conditions must be true
+    });
+
+    // Pagination logic based on filtered products
     const indexOfLastProduct = currentPage * productsPerPage;
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-    const currentProducts = productsData.slice(indexOfFirstProduct, indexOfLastProduct);
-    const totalPages = Math.ceil(productsData.length / productsPerPage);
+    const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
+    const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
 
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
@@ -48,13 +61,12 @@ const Shop = () => {
     return (
         <>
             <section id="shopPage">
-                {/* breadcrumb here */}
                 <div>
-                    <Breadcrumb2 title={'Snack'} />
+                    <Breadcrumb2 title={"Shop"} />
                 </div>
 
                 <div className="max-w-[1610px] mx-auto flex gap-x-6 relative">
-                    {/* Sidebar here */}
+                    {/* Sidebar */}
                     <div className="w-[20%]">
                         <Sidebar className="sticky top-[100px]" />
                     </div>
@@ -62,51 +74,20 @@ const Shop = () => {
                     {/* Products Section */}
                     <div className="flex-1">
                         <div className="mb-[30px] flex items-center justify-between leading-6 font-lato">
-                            <p className='text-[#7E7E7E] text-sm'>We found <span className='text-greeny'>29</span> items for you!</p>
-                            <div className="flex gap-x-[10px]">
-                                <div className="w-[180px] relative z-10" ref={showDropdownRef}>
-                                    <div className="w-full flex py-[14px] items-center border border-[#ECECEC] justify-center rounded-[10px] gap-x-[10px] text-[#777777] text-[13px] font-semibold cursor-pointer select-none" onClick={(e) => {
-                                        e.stopPropagation();  // Prevent event bubbling
-                                        setIsShowOpen(prev => !prev);
-                                    }}>
-                                        <CiGrid41 />
-                                        <span>Show: 50</span>
-                                        <IoIosArrowDown />
-                                    </div>
-                                    {isShowOpen && (<ul className="w-full absolute right-0 top-[120%] rounded-[10px] px-5 py-7 bg-white shadow-lg border border-[#ECECEC] h-auto z-50 mt-2 flex flex-col gap-y-2">
-                                        <li className="flex items-center text-sm gap-x-3 rounded-md cursor-pointer hover:bg-greeny hover:text-white p-2"><FiUser /><span>My Account</span></li>
-                                        <li className="flex items-center text-sm gap-x-3 rounded-md cursor-pointer hover:bg-greeny hover:text-white p-2"><FiTarget /><span>Order Tracking</span></li>
-                                        <li className="flex items-center text-sm gap-x-3 rounded-md cursor-pointer hover:bg-greeny hover:text-white p-2"><FiClipboard /><span>My Voucher</span></li>
-                                        <li className="flex items-center text-sm gap-x-3 rounded-md cursor-pointer hover:bg-greeny hover:text-white p-2"><FiHeart /><span>My Wishlist</span></li>
-                                        <li className="flex items-center text-sm gap-x-3 rounded-md cursor-pointer hover:bg-greeny hover:text-white p-2"><FiSettings /><span>Setting</span></li>
-                                        <li className="flex items-center text-sm gap-x-3 rounded-md cursor-pointer hover:bg-greeny hover:text-white p-2"><GoSignOut /><span>Sign out</span></li>
-                                    </ul>)}
-                                </div>
-                                <div className="w-[185px] relative z-10" ref={sortDropdownRef}>
-                                    <div className="flex w-full py-[14px] items-center border border-[#ECECEC] justify-center rounded-[10px] gap-x-[10px] text-[#777777] text-[13px] font-semibold cursor-pointer select-none" onClick={(e) => {
-                                        e.stopPropagation();  // Prevent event bubbling
-                                        setIsSortOpen(prev => !prev);
-                                    }}>
-                                        <PiSortAscendingLight />
-                                        <span>Sort by: Featured</span>
-                                        <IoIosArrowDown />
-                                    </div>
-                                    {isSortOpen && (<ul className="w-full absolute right-0 top-[120%] rounded-[10px] px-5 py-7 bg-white shadow-lg border border-[#ECECEC] h-auto z-50 mt-2 flex flex-col gap-y-2">
-                                        <li className="flex items-center text-sm gap-x-3 rounded-md cursor-pointer hover:bg-greeny hover:text-white p-2"><FiUser /><span>My Account</span></li>
-                                        <li className="flex items-center text-sm gap-x-3 rounded-md cursor-pointer hover:bg-greeny hover:text-white p-2"><FiTarget /><span>Order Tracking</span></li>
-                                        <li className="flex items-center text-sm gap-x-3 rounded-md cursor-pointer hover:bg-greeny hover:text-white p-2"><FiClipboard /><span>My Voucher</span></li>
-                                        <li className="flex items-center text-sm gap-x-3 rounded-md cursor-pointer hover:bg-greeny hover:text-white p-2"><FiHeart /><span>My Wishlist</span></li>
-                                        <li className="flex items-center text-sm gap-x-3 rounded-md cursor-pointer hover:bg-greeny hover:text-white p-2"><FiSettings /><span>Setting</span></li>
-                                        <li className="flex items-center text-sm gap-x-3 rounded-md cursor-pointer hover:bg-greeny hover:text-white p-2"><GoSignOut /><span>Sign out</span></li>
-                                    </ul>)}
-                                </div>
-                            </div>
+                            <p className="text-[#7E7E7E] text-sm">
+                                We found <span className="text-greeny">{filteredProducts.length}</span> items for you!
+                            </p>
                         </div>
                         <div className="flex flex-wrap justify-between gap-x-4 gap-y-6">
-
-                            {currentProducts.map((product, index) => (
-                                <Product key={index} product={product} />
-                            ))}
+                            {currentProducts.length > 0 ? (
+                                currentProducts.map((product, index) => (
+                                    <div key={index} className="w-[300px]">
+                                        <Product product={product} />
+                                    </div>
+                                ))
+                            ) : (
+                                <p className="text-center w-full text-gray-500">No products found.</p>
+                            )}
                         </div>
 
                         {/* Pagination Controls */}
@@ -115,7 +96,8 @@ const Shop = () => {
                                 <button
                                     key={index}
                                     onClick={() => handlePageChange(index + 1)}
-                                    className={`w-10 h-10 mx-1 grid place-items-center font-bold leading-[40px] rounded-full cursor-pointer ${currentPage === index + 1 ? 'bg-greeny text-white' : 'bg-[#F2F3F4] text-[#7E7E7E]'}`}
+                                    className={`w-10 h-10 mx-1 grid place-items-center font-bold leading-[40px] rounded-full cursor-pointer ${currentPage === index + 1 ? "bg-greeny text-white" : "bg-[#F2F3F4] text-[#7E7E7E]"
+                                        }`}
                                 >
                                     {index + 1}
                                 </button>
@@ -125,7 +107,7 @@ const Shop = () => {
                 </div>
             </section>
         </>
-    )
-}
+    );
+};
 
 export default Shop;

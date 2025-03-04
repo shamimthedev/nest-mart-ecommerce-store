@@ -16,12 +16,13 @@ import Navbar from "./Navbar"
 import { Link } from "react-router"
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromCart, clearCart } from "../redux/slices/cartSlice";
+import { setSearchQuery } from "../redux/slices/filterSlice";
 import { RxCross2 } from "react-icons/rx";
-
 
 const Header = () => {
   const cartItems = useSelector((state) => state.cart.cartItems) || [];
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
+  const searchQuery = useSelector((state) => state.filter.searchQuery);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isAccOpen, setIsAccOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false);
@@ -162,6 +163,8 @@ const Header = () => {
                   className="w-full h-full outline-none border-none text-[#838383] text-xs xl:text-sm placeholder-gray-400"
                   type="text"
                   placeholder="Search for items..."
+                  value={searchQuery}
+                  onChange={(e) => dispatch(setSearchQuery(e.target.value))}
                 />
                 <IoIosSearch className="absolute top-1/2 -translate-y-1/2 right-3 text-gray-400" />
               </div>
@@ -213,7 +216,7 @@ const Header = () => {
                             <img
                               src={item.img}
                               alt={item.title}
-                              className="w-16"
+                              className="w-[60px]"
                             />
 
                             {/* Product Info */}

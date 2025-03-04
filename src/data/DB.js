@@ -31,6 +31,12 @@ import BlogCard10 from '/blog-post-10.png'
 import BlogCard11 from '/blog-post-11.png'
 import BlogCard12 from '/blog-post-12.png'
 import BlogCard14 from '/blog-post-14.png'
+import Category1 from '/category-1.svg.svg'
+import Category3 from '/category-2.svg.svg'
+import Category2 from '/category-3.svg.svg'
+import Category4 from '/category-4.svg.svg'
+import Category5 from '/category-5.svg.svg'
+
 
 export const productsData = [
   {
@@ -43,6 +49,7 @@ export const productsData = [
     author: "Stouffer",
     oldPrice: 52.85,
     price: 55.8,
+    badge: 'Hot'
   },
   {
     id: 2,
@@ -65,6 +72,7 @@ export const productsData = [
     author: "StarKist",
     oldPrice: 48.85,
     price: 52.8,
+    badge: 'Sale'
   },
   {
     id: 4,
@@ -76,6 +84,7 @@ export const productsData = [
     author: "Old El Paso",
     oldPrice: 17.85,
     price: 19.8,
+    badge: 'New'
   },
   {
     id: 5,
@@ -87,6 +96,7 @@ export const productsData = [
     author: "StarKist",
     oldPrice: 23.85,
     price: 25.8,
+    badge: 'Hot'
   },
   {
     id: 6,
@@ -109,6 +119,7 @@ export const productsData = [
     author: "Stouffer",
     oldPrice: 32.85,
     price: 33.8,
+    badge: 'Hot'
   },
   {
     id: 8,
@@ -120,6 +131,7 @@ export const productsData = [
     author: "Tyson",
     oldPrice: 5.85,
     price: 37.8,
+    badge: 'Sale'
   },
   {
     id: 9,
@@ -142,6 +154,7 @@ export const productsData = [
     author: "Tyson",
     oldPrice: 22.85,
     price: 24.8,
+    badge: 'Hot'
   },
   {
     id: 11,
@@ -164,6 +177,7 @@ export const productsData = [
     author: "NestFood",
     oldPrice: 28.85,
     price: 32.8,
+    badge: 'New'
   },
   {
     id: 13,
@@ -175,6 +189,7 @@ export const productsData = [
     author: "StarKist",
     oldPrice: 48.85,
     price: 52.8,
+    badge: 'Hot'
   },
   {
     id: 14,
@@ -186,6 +201,7 @@ export const productsData = [
     author: "Old El Paso",
     oldPrice: 17.85,
     price: 19.8,
+    badge: 'Sale'
   },
   {
     id: 15,
@@ -197,6 +213,7 @@ export const productsData = [
     author: "StarKist",
     oldPrice: 23.85,
     price: 25.8,
+    badge: 'New'
   },
   {
     id: 16,
@@ -208,6 +225,7 @@ export const productsData = [
     author: "NestFood",
     oldPrice: 54.85,
     price: 55.8,
+    badge: 'Hot'
   },
   {
     id: 17,
@@ -219,6 +237,7 @@ export const productsData = [
     author: "Stouffer",
     oldPrice: 32.85,
     price: 33.8,
+    badge: 'Hot'
   },
   {
     id: 18,
@@ -241,6 +260,7 @@ export const productsData = [
     author: "Old El Paso",
     oldPrice: 23.85,
     price: 25.8,
+    badge: 'Sale'
   },
   {
     id: 20,
@@ -263,6 +283,7 @@ export const productsData = [
     author: "Stouffer",
     oldPrice: 52.85,
     price: 55.8,
+    badge: 'Hot'
   },
   {
     id: 22,
@@ -285,6 +306,7 @@ export const productsData = [
     author: "StarKist",
     oldPrice: 48.85,
     price: 52.8,
+    badge: 'Sale'
   },
   {
     id: 24,
@@ -296,6 +318,7 @@ export const productsData = [
     author: "Old El Paso",
     oldPrice: 17.85,
     price: 19.8,
+    badge: 'New'
   },
   {
     id: 25,
@@ -318,6 +341,7 @@ export const productsData = [
     author: "NestFood",
     oldPrice: 54.85,
     price: 55.8,
+    badge: 'Hot'
   },
   {
     id: 27,
@@ -329,6 +353,7 @@ export const productsData = [
     author: "Stouffer",
     oldPrice: 32.85,
     price: 33.8,
+    badge: 'Sale'
   },
   {
     id: 28,
@@ -351,6 +376,7 @@ export const productsData = [
     author: "Old El Paso",
     oldPrice: 23.85,
     price: 25.8,
+    badge: 'New'
   },
   {
     id: 30,
@@ -362,6 +388,7 @@ export const productsData = [
     author: "Tyson",
     oldPrice: 22.85,
     price: 24.8,
+    badge: 'Hot'
   },
   {
     id: 31,
@@ -384,6 +411,7 @@ export const productsData = [
     author: "NestFood",
     oldPrice: 28.85,
     price: 32.8,
+    badge: 'Hot'
   },
   {
     id: 33,
@@ -406,6 +434,7 @@ export const productsData = [
     author: "Old El Paso",
     oldPrice: 17.85,
     price: 19.8,
+    badge: 'Sale'
   },
   {
     id: 35,
@@ -428,6 +457,7 @@ export const productsData = [
     author: "NestFood",
     oldPrice: 54.85,
     price: 55.8,
+    badge: 'Hot'
   },
   {
     id: 37,
@@ -439,6 +469,7 @@ export const productsData = [
     author: "Stouffer",
     oldPrice: 32.85,
     price: 33.8,
+    badge: 'Sale'
   },
   {
     id: 38,
@@ -472,6 +503,7 @@ export const productsData = [
     author: "Old El Paso",
     oldPrice: 23.85,
     price: 25.8,
+    badge: 'Hot'
   },
   {
     id: 41,
@@ -483,6 +515,7 @@ export const productsData = [
     author: "Stouffer",
     oldPrice: 52.85,
     price: 55.8,
+    badge: 'Sale'
   },
   {
     id: 42,
@@ -505,6 +538,7 @@ export const productsData = [
     author: "StarKist",
     oldPrice: 48.85,
     price: 52.8,
+    badge: 'Hot'
   },
   {
     id: 44,
@@ -516,6 +550,7 @@ export const productsData = [
     author: "Old El Paso",
     oldPrice: 17.85,
     price: 19.8,
+    badge: 'Sale'
   },
   {
     id: 45,
@@ -538,6 +573,7 @@ export const productsData = [
     author: "NestFood",
     oldPrice: 54.85,
     price: 55.8,
+    badge: 'Hot'
   },
   {
     id: 47,
@@ -560,6 +596,7 @@ export const productsData = [
     author: "Tyson",
     oldPrice: 5.85,
     price: 37.8,
+    badge: 'Sale'
   },
   {
     id: 49,
@@ -582,6 +619,7 @@ export const productsData = [
     author: "Old El Paso",
     oldPrice: 23.85,
     price: 25.8,
+    badge: 'Hot'
   }
 ];
 
@@ -887,5 +925,38 @@ export const navList = [
       id: 8,
       name: 'Contact',
       url: '/contact'
+  },
+]
+
+export const categoryData = [
+  {
+    id: 1,
+    img: Category3,
+    title: 'Snack',
+    qty: 3
+  },
+  {
+    id: 2,
+    img: Category2,
+    title: 'Hodo Foods',
+    qty: 4
+  },
+  {
+    id: 3,
+    img: Category4,
+    title: 'Pet Foods',
+    qty: 5
+  },
+  {
+    id: 4,
+    img: Category5,
+    title: 'Vegetables',
+    qty: 8
+  },
+  {
+    id: 5,
+    img: Category1,
+    title: 'Meats',
+    qty: 10
   },
 ]

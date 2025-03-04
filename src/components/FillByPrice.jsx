@@ -1,47 +1,23 @@
-import Slider from '@mui/material/Slider';
-import { useState } from 'react';
+
 import { CiFilter } from "react-icons/ci";
 import FilterBg from '/filter-by-price-bg.png'
+import CustomPriceRangeSlider from "./CustomPriceRangeSlider";
 
-function valuetext(value) {
-    return `${value}°C`;
-}
-const minDistance = 10;
+
 const FillByPrice = () => {
-    const [value, setValue] = useState([500, 1000]);
 
-    const handleChange = (event, newValue, activeThumb) => {
-        if (!Array.isArray(newValue)) {
-            return;
-        }
-
-        if (activeThumb === 0) {
-            setValue([Math.min(newValue[0], value[1] - minDistance), value[1]]);
-        } else {
-            setValue([value[0], Math.max(newValue[1], value[0] + minDistance)]);
-        }
-    };
 
     return (
         <>
             <section className="w-full p-[31px] bg-white rounded-[15px] border border-[#ECECEC] shadow-md relative">
                 <div className="">
                     <h2 className="font-bold text-2xl mb-[30px] pb-[17px] border-b border-[#ECECEC] relative after:absolute after:content-[''] after:w-[80px] after:h-[2px] after:bg-[#BCE3C9] after:bottom-0 after:left-0">Fill By Price</h2>
-                    <Slider
-                        getAriaLabel={() => 'Minimum distance'}
-                        value={value}
-                        onChange={handleChange}
-                        valueLabelDisplay="auto"
-                        getAriaValueText={valuetext}
-                        sx={{ color: '#3BB77E' }}
-                        step={1}
-                        min={500}
-                        max={1000}
-                    />
-                    <div className="mt-3 mb-[14px] flex justify-between text-[#7E7E7E] text-sm font-lato leading-6">
+                    
+                    <CustomPriceRangeSlider/>
+                    {/* <div className="mt-3 mb-[14px] flex justify-between text-[#7E7E7E] text-sm font-lato leading-6">
                         <span>From: <span className='text-greeny font-semibold'>${value[0]}</span></span>
                         <span>To: <span className='text-greeny font-semibold'>${value[1]}</span></span>
-                    </div>
+                    </div> */}
                     <div className="mb-[23px] text-sm leading-6 font-lato">
                         <h3 className='text-[#7E7E7E] mb-[10px] font-black'>Color</h3>
                         <ul className="text-[#687188] ">
