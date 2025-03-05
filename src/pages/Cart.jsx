@@ -34,23 +34,23 @@ const Cart = () => {
                             <table className="w-full mb-4 table-auto border-spacing-2 border border-[#ECECEC] leading-6 font-semibold">
                                 <tbody>
                                     <tr className="w-full border text-[17px] font-bold border-[#ECECEC] bg-[#ececec]">
-                                        <th className="text-left px-12 py-[18px] text- ">Product </th>
-                                        <th className="text-left px-3 py-[18px] text- ">Unit Price</th>
-                                        <th className="text-left px-3 py-[18px] text- ">Quantity</th>
-                                        <th className="text-left px-3 py-[18px] text- ">Subtotal</th>
-                                        <th className="text-left px-3 py-[18px] text- ">Remove</th>
+                                        <th className="text-left px-4 py-[18px] text- ">Product </th>
+                                        <th className="text-left px-2 py-[18px] text- ">Unit Price</th>
+                                        <th className="text-left px-2 py-[18px] text- ">Quantity</th>
+                                        <th className="text-left px-2 py-[18px] text- ">Subtotal</th>
+                                        <th className="text-left px-2 py-[18px] text- ">Remove</th>
                                     </tr>
                                     {cartItems.length === 0 ? <p className="py-5 px-12">Your cart is empty</p> : null}
                                     {cartItems.map((item) => (
                                         <tr key={item.id} className="w-full border border-[#ECECEC]">
-                                            <th className="text-left flex items-center px-3 py-[15px] text-[#7e7e7e]">
-                                                <img src={item.img} alt="" />
+                                            <th className="px-4 text-left flex items-center gap-x-4 py-[15px] text-[#7e7e7e]">
+                                                <img src={item.img} alt=""className="w-[120px] border border-[#ECECEC]" />
                                                 <h3>{item.title}</h3>
                                             </th>
-                                            <td className=" px-2 py-2 ">
+                                            <td className="px-2 py-2 ">
                                                 <p className="font-bold text-2xl text-[#7e7e7e]">${item.price}</p>
                                             </td>
-                                            <td className=" px-3 py-[15px]">
+                                            <td className="px-2 py-[15px]">
                                                 <div className="h-[50px] w-[90px] relative font-lato font-bold text-xl">
                                                     <input type="number" value={item.quantity} className="border-[2px] border-greeny rounded-[5px] outline-none w-full h-full px-7" />
                                                     <MdKeyboardArrowUp onClick={() => dispatch(increaseQuantity(item.id))} className="absolute top-1 right-2 text-greeny cursor-pointer" />
@@ -59,10 +59,10 @@ const Cart = () => {
                                                         className="absolute bottom-1 right-2 text-greeny cursor-pointer" />
                                                 </div>
                                             </td>
-                                            <td className=" px-3 py-[15px] ">
+                                            <td className="px-2 py-[15px] ">
                                                 <p className="font-bold text-2xl text-greeny">${(item.price * item.quantity).toFixed(2)}</p>
                                             </td>
-                                            <td className=" px-3 py-[15px]">
+                                            <td className="px-2 py-[15px]">
                                                 <p className="font-bold  cursor-pointer" onClick={() => dispatch(removeFromCart(item.id))}><MdOutlineDeleteForever size={25} /></p>
                                             </td>
                                         </tr>
