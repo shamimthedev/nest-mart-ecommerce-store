@@ -49,7 +49,7 @@ const PopularProducts = () => {
           <div className="flex flex-wrap gap-5">
             {filteredProducts.map((product, index) => (
               <div className="w-[300px]" key={index}>
-                <Link to={`/product/${product.slug}`}><Product product={product} /></Link>
+                <Link to={`/shop/${product.slug}`}><Product product={product} /></Link>
               </div>
             ))}
           </div>

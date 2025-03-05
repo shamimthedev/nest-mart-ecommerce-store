@@ -17,13 +17,13 @@ const cartSlice = createSlice({
       );
 
       if (existingItem) {
-        existingItem.quantity += 1;
+        existingItem.quantity += product.quantity; // ✅ Increase by selected quantity
       } else {
-        state.cartItems.push({ ...product, quantity: 1 });
+        state.cartItems.push({ ...product }); // ✅ Store correct quantity
       }
 
-      state.totalQuantity += 1;
-      state.totalPrice += product.price;
+      state.totalQuantity += product.quantity; // ✅ Add correct quantity
+      state.totalPrice += product.price * product.quantity; // ✅ Update price accordingly
     },
 
     removeFromCart: (state, action) => {

@@ -19,6 +19,8 @@ import ReviewAuthor03 from '/review-author-03.png'
 import Product from "../components/Product";
 import { productsData } from "../data/DB";
 import Breadcrumb from "../components/Breadcrumb";
+import { addToCart } from "../redux/slices/cartSlice";
+import { useDispatch } from "react-redux";
 
 const ProductDetails = () => {
   const [value, setValue] = useState(2);
@@ -27,6 +29,7 @@ const ProductDetails = () => {
   const [activeTab, setActiveTab] = useState(0)
   const productSlider = useRef()
   const productMainSlider = useRef()
+  const dispatch = useDispatch();
 
   const [productSliderImg, setProductSliderImg] = useState('https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-0-202305292130.jpg')
   const [productSliderImgSize, setProductSliderImgSize] = useState([1500, 1500])
@@ -34,15 +37,6 @@ const ProductDetails = () => {
 
   const isActive = (index) => {
     setActiveSize(index)
-  }
-
-  const plus = () => {
-    setInputValue(inputValue + 1)
-  }
-  const minus = () => {
-    if (inputValue !== 1) {
-      setInputValue(inputValue - 1)
-    }
   }
 
   const goto = (index) => {
@@ -81,10 +75,26 @@ const ProductDetails = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const [quantity, setQuantity] = useState(1);
+
   // If product not found
   if (!product) {
     return <h2>Product not found!</h2>;
   }
+
+  const handleIncrease = () => {
+    setQuantity((prev) => prev + 1);
+  };
+
+  const handleDecrease = () => {
+    if (quantity > 1) {
+      setQuantity((prev) => prev - 1);
+    }
+  };
+
+  const handleAddToCart = () => {
+    dispatch(addToCart({ ...product, quantity }));
+  };
 
   return (
     <>
@@ -175,13 +185,13 @@ const ProductDetails = () => {
                   </div>
                   <div className="flex gap-x-[9px]">
                     <div className="h-[50px] w-[90px] relative font-lato font-normal">
-                      <input type="number" value={inputValue} className="border-[2px] border-greeny rounded-[5px] outline-none w-full h-full px-7" />
-                      <MdKeyboardArrowUp onClick={plus} className="absolute top-1 right-2 text-greeny cursor-pointer" />
+                      <input type="number" value={quantity} className="border-[2px] border-greeny rounded-[5px] outline-none w-full h-full px-7" />
+                      <MdKeyboardArrowUp onClick={handleIncrease} className="absolute top-1 right-2 text-greeny cursor-pointer" />
                       <MdKeyboardArrowDown
-                        onClick={minus}
+                        onClick={handleDecrease}
                         className="absolute bottom-1 right-2 text-greeny cursor-pointer" />
                     </div>
-                    <button className="h-[50px] w-[160px] flex items-center justify-center gap-x-[10px] text-white bg-greeny rounded-[5px] font-black leading-[50px] tracking-[0.5px] cursor-pointer">
+                    <button className="h-[50px] w-[160px] flex items-center justify-center gap-x-[10px] text-white bg-greeny rounded-[5px] font-black leading-[50px] tracking-[0.5px] cursor-pointer" onClick={handleAddToCart}>
                       <IoCartOutline className="text-lg" />
                       Add to cart
                     </button>
@@ -488,7 +498,7 @@ const ProductDetails = () => {
                 <div className="flex flex-wrap gap-5">
                   {productsData.map((product, index) => (
                     <div className="w-[300px]" key={index}>
-                      <Product product={product} />
+                      <Link to={`/shop/${product.slug}`}><Product product={product} /></Link>
                     </div>
                   ))}
                 </div>

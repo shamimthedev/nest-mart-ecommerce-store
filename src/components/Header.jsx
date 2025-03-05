@@ -1,4 +1,4 @@
-import { IoIosArrowDown, IoIosSearch } from "react-icons/io"
+import { IoIosArrowDown } from "react-icons/io"
 import Logo from '/logo.png'
 import { IoLocationOutline } from "react-icons/io5"
 import Browse from '/browse.svg'
