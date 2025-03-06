@@ -40,7 +40,7 @@ const Cart = () => {
                                         <th className="text-left px-2 py-[18px] text- ">Subtotal</th>
                                         <th className="text-left px-2 py-[18px] text- ">Remove</th>
                                     </tr>
-                                    {cartItems.length === 0 ? <p className="py-5 px-12">Your cart is empty</p> : null}
+                                    {cartItems.length === 0 ? <p className="py-5 px-4">Your cart is empty!</p> : null}
                                     {cartItems.map((item) => (
                                         <tr key={item.id} className="w-full border border-[#ECECEC]">
                                             <th className="px-4 text-left flex items-center gap-x-4 py-[15px] text-[#7e7e7e]">

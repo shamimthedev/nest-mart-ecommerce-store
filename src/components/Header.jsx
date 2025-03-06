@@ -192,7 +192,6 @@ const Header = () => {
                   <span className="absolute right-[-10px] top-[-12px] h-4 w-4 xl:w-5 xl:h-5 bg-greeny text-white rounded-full flex items-center justify-center font-lato font-medium text-[10px] xl:text-xs">
                     {totalQuantity}
                   </span>
-
                 </button>
                 <span className="hidden lg:block font-lato text-[#7E7E7E] text-sm xl:text-base">Cart</span>
 
@@ -272,7 +271,7 @@ const Header = () => {
 
 
               </div>
-              <div ref={dropdownRef} className="relative">
+              <div ref={dropdownRef} className="hidden lg:block relative">
                 <div onClick={() => setIsAccOpen(!isAccOpen)} className="cursor-pointer flex items-baseline gap-1">
                   <img src={Account} alt="Account icon" className="w-[20px] h-[18px]" />
                   <span className="font-lato text-[#7E7E7E] text-sm">Account</span>

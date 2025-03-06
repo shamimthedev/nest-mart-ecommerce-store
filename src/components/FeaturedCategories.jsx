@@ -131,7 +131,7 @@ const FeaturedCategories = () => {
         <>
             <section className="mt-[55px] mb-50px]">
                 <div className="max-w-[1610px] mx-auto">
-                    <div className="flex gap-x-7 items-baseline">
+                    <div className="flex flex-col lg:flex-row gap-y-5 gap-x-7 items-baseline">
                         <h2 className="font-bold text-[32px] leading-[38px]">Featured Categories</h2>
                         <div>
                             <ul className="flex gap-x-7 items-center font-semibold">

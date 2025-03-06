@@ -51,7 +51,7 @@ const Hero = () => {
   };
   return (
     <>
-      <div className="overflow-hidden mx-auto max-w-[1610px] ">
+      <div className="overflow-hidden mx-auto max-w-[1610px] hidden lg:block">
         <Slider {...settings}>
           {
             slides.map((slide) => (
