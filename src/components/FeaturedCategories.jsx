@@ -114,17 +114,49 @@ const FeaturedCategories = () => {
         },
     ]
 
-    var settings = {
+    const settings = {
         dots: false,
         infinite: true,
         speed: 500,
-        slidesToShow: 10,
+        slidesToShow: 8, // Show more slides on large screens
         slidesToScroll: 1,
         arrows: true,
         nextArrow: <NextArrow isFeatured={true} />,
         prevArrow: <PrevArrow isFeatured={true} />,
         cssEase: 'linear',
-        centerMode: 'true'
+        centerMode: false, // Set to false unless needed
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 4, // More reasonable than 10
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: false
+                }
+            },
+            {
+                breakpoint: 768, // Adjusted for tablets
+                settings: {
+                    slidesToShow: 3, // Display 3 items
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2, // Display 2 items on smaller screens
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 2, // Display only 1 item on very small screens
+                    slidesToScroll: 1
+                }
+            }
+        ]
     };
 
     return (
@@ -142,7 +174,7 @@ const FeaturedCategories = () => {
                             </ul>
                         </div>
                     </div>
-                    <div className="mt-[43px] mb-[23px]">
+                    <div className="mt-[43px] mb-[23px] w-full">
                         <Slider {...settings} className="cat-slide pb-5">
                             {catSlides.map((slide) => (
                                 <div key={slide.id} className="h-[180px] flex flex-col text-center bg-[#FEEFEA] rounded-[10px] p-4 border border-[#F4F6FA] cursor-pointer hover:drop-shadow-md transition-shadow ease-in-out duration-200 group hover:border-green-200">
