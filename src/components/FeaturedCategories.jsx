@@ -185,10 +185,14 @@ const FeaturedCategories = () => {
                             ))}
                         </Slider>
                     </div>
-                    <div className="flex justify-between">
-                        {catBanners.map((banner) => {
+                    <div className="flex justify-between gap-5">
+                        {catBanners.map((banner, index) => {
                             return (
-                                <div key={banner.id} className="relative group cursor-pointer">
+                                <div key={index} className={`
+                                    relative group cursor-pointer w-full
+                                    ${index > 1 ? "lg:block hidden" : ""}
+                                    ${index > 0 ? "md:block hidden" : ""}
+                                `}>
                                     <img src={banner.img} alt={banner.title} className="w-full" />
                                     <div className="absolute top-20 left-[50px]">
                                         <h3 className="font-bold text-2xl leading-[29px] mb-7 max-w-[245px] group-hover:translate-y-[-5px] transform transition-transform ease-in-out duration-300">{banner.title}</h3>
