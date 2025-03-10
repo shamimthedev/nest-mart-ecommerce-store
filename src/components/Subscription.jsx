@@ -5,19 +5,19 @@ import { Link } from "react-router"
 const Subscription = () => {
   return (
     <>
-      <div className="mx-auto max-w-[1610px] mt-[54px] mb-10 overflow-hidden relative">
-        <img src={SubscriptionImg} alt="Subscription Img" className="w-full rounded-[30px]" />
-        <div className="absolute top-20 left-[78px]">
-          <h1 className='text-[#253D4E] max-w-[529px] text-[40px] leading-[48px] font-bold mb-[20px]'>Stay home & get your daily needs from our shop</h1>
-          <p className='font-lato text-[#7E7E7E] text-lg leading-6 mb-[46px]'>Start You'r Daily Shopping with <span className="text-greeny"><Link to='/'>Nest Mart</Link></span></p>
-          <div className="flex items-center w-[480px] bg-white rounded-full shadow-md overflow-hidden">
-            <IoPaperPlaneOutline className="text-gray-500 text-2xl ml-4" />
+      <div className="container mt-[30px] mb-10 h-[200px] overflow-hidden relative">
+        <img src={SubscriptionImg} alt="Subscription Img" className="w-full h-full object-left rounded-[30px]" />
+        <div className="absolute top-5 left-10">
+          <h1 className='text-[#253D4E] text- leading-5 font-bold mb-4 max-w-[220px]'>Stay home & get your daily needs from our shop</h1>
+          <p className='font-lato text-[#7E7E7E] text-xs mb-6'>Start You'r Daily Shopping with <span className="text-greeny"><Link to='/'>Nest Mart</Link></span></p>
+          <div className="flex items-center w-full sm:w-[480px] bg-white rounded-full shadow-md overflow-hidden">
+            <IoPaperPlaneOutline className="text-gray-500 text-xl ml-3" />
             <input
-              className="flex-1 px-4 h-16 text-gray-700 outline-none bg-transparent text-lg"
+              className="w-[140px] sm:flex-1 px-4 h-10 sm:h-16 text-gray-700 outline-none bg-transparent text-md"
               type="email"
-              placeholder="Enter your email"
+              placeholder="Enter email"
             />
-            <button className="h-16 px-10 bg-greeny hover:bg-[#29A56C] text-white rounded-full font-medium transition">
+            <button className="h-10 sm:h-16 px-4 sm:px-10 bg-greeny hover:bg-[#29A56C] text-white rounded-full font-medium transition">
               Subscribe
             </button>
           </div>

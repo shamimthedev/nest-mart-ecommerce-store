@@ -3,7 +3,7 @@ import TopSelling01 from '/top-selling-01.png'
 import TopSelling02 from '/top-selling-02.png'
 import TopSelling03 from '/top-selling-03.png'
 
-const TopSelling = ({title}) => {
+const TopSelling = ({title, className}) => {
   const productsData = [
       {
         id: 1,
@@ -31,7 +31,7 @@ const TopSelling = ({title}) => {
       },
     ];
   return (
-    <section className="mt-0 mx-3 mb-3 pt-[30px]">
+    <section className={`mt-0 mx-3 mb-3 pt-[30px] ${className}`}>
       <h2 className="font-bold text-2xl mb-[30px] pb-[17px] border-b border-[#ECECEC] relative after:absolute after:content-[''] after:w-[80px] after:h-[2px] after:bg-[#BCE3C9] after:bottom-0 after:left-0">{title}</h2>
       <div className="flex flex-col gap-y-[15px]">
         {productsData.map((product) => (

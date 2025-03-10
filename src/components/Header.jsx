@@ -108,7 +108,7 @@ const Header = () => {
     <>
       {/* Top Header  */}
       <div id="topSection" className="hidden lg:block border-b border-[#ECECEC] font-lato">
-        <div className="max-w-[1610px] mx-auto">
+        <div className="container">
           <div className="h-[37px] flex justify-between items-center text-[#7E7E7E] text-[13px] leading-[13px]">
             <ul className="flex gap-3 xl:gap-5 font-medium">
               <li className="relative after:absolute after:content-[''] after:bg-[#DEDFE2] after:w-[1px] after:h-[100%] after:right-[-7px] xl:after:right-[-10px]">About Us</li>
@@ -138,8 +138,8 @@ const Header = () => {
 
 
       {/* Middle Section */}
-      <div id="middleSection" className='' >
-        <div className="max-w-[1610px] mx-auto ">
+      <div id="middleSection" className='border-b border-[#ECECEC]' >
+        <div className="container ">
           <div className="flex justify-between items-center gap-x-10 2xl:gap-x-11 lg:h-[96px] h-[70px]">
 
             {/* Mobile Menu  */}
@@ -294,7 +294,7 @@ const Header = () => {
       {isScrolled && <div className="h-[70px] lg:h-[96px]"></div>}
       {/* Category with Menu Section  - Fixed Header */}
       <div id="header-bottom" className={`hidden lg:block border-y border-[#ECECEC] transition-all duration-300 ${isScrolled ? "fixed top-0 left-0 w-full z-50 bg-white shadow-md py-1" : " bg-transparent py-4"}`}>
-        <div className="max-w-[1610px] mx-auto">
+        <div className="container">
           <div className="h-[73px] py-[15px] flex items-center justify-between gap-x-5 2xl:gap-x-[35px] relative">
             {/* Browse Categories Button */}
             <div

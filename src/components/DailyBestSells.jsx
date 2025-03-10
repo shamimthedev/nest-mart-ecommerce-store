@@ -20,14 +20,47 @@ const DailyBestSells = () => {
     arrows: true,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4, // More reasonable than 10
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false
+        }
+      },
+      {
+        breakpoint: 768, // Adjusted for tablets
+        settings: {
+          slidesToShow: 2, // Display 3 items
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2, // Display 2 items on smaller screens
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1, // Display only 1 item on very small screens
+          slidesToScroll: 1,
+          arrows: true,
+        }
+      }
+    ]
   };
 
 
   return (
     <>
-      <section className="mt-[55px]" id="dealsOfTheDay">
-        <div className="max-w-[1610px] mx-auto">
-          <div className="flex items-baseline justify-between mb-12">
+      <section className="mt-[55px]">
+        <div className="container">
+          <div className="flex flex-col gap-6 items-baseline justify-between mb-12">
             <h2 className="font-bold text-[32px] leading-[38px]">Daily Best Sells</h2>
             <div>
               <ul className="flex gap-x-7 items-center font-semibold">
@@ -39,7 +72,7 @@ const DailyBestSells = () => {
           </div>
           <div className="flex gap-x-6 h-[520px] justify-between">
             {/* Left Side */}
-            <div className="w-[375px] h-full relative group cursor-pointer flex-shrink-0">
+            <div className="hidden w-[375px] h-full relative group cursor-pointer flex-shrink-0">
               <img src={Nature} alt='Nature' className="w-full h-full object-cover rounded-[15px]" />
               <div className="absolute top-[49px] left-[50px]">
                 <h3 className="font-bold text-[40px] leading-[48px] mb-[99px] max-w-[246px] group-hover:translate-y-[-5px] transform transition-transform ease-in-out duration-300">Bring nature into your home</h3>
@@ -50,7 +83,7 @@ const DailyBestSells = () => {
             <div className="max-w-[1200px] overflow-hidden">
               <Slider {...settings} className="w-full overflow-hidden deals-slide">
                 {productsData.map((product, index) => (
-                  <div className="w-[300px]" key={index}>
+                  <div className="w-[300px] pr-5" key={index}>
                     <Product product={product} />
                   </div>
                 ))}

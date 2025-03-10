@@ -40,10 +40,12 @@ const FooterFeature = () => {
     ]
     return (
         <>
-            <div className="mx-auto max-w-[1610px] mb-16 flex gap-x-6 justify-between">
+            <div className="container grid grid-cols-1 gap-[15px] place-items-center">
                 {featureData.map((feature) => {
                     return (
-                        <Feature key={feature.id} title={feature.title} sub={feature.sub} img={feature.img} />
+                        <div className="w-full sm:w-[300px]" key={feature.id}>
+                            <Feature title={feature.title} sub={feature.sub} img={feature.img} />
+                        </div>
                     )
                 })}
             </div>

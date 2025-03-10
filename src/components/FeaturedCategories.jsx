@@ -138,7 +138,7 @@ const FeaturedCategories = () => {
             {
                 breakpoint: 768, // Adjusted for tablets
                 settings: {
-                    slidesToShow: 3, // Display 3 items
+                    slidesToShow: 2, // Display 3 items
                     slidesToScroll: 1
                 }
             },
@@ -162,15 +162,15 @@ const FeaturedCategories = () => {
     return (
         <>
             <section className="mt-[55px] mb-50px]">
-                <div className="max-w-[1610px] mx-auto">
+                <div className="container">
                     <div className="flex flex-col lg:flex-row gap-y-5 gap-x-7 items-baseline">
                         <h2 className="font-bold text-[32px] leading-[38px]">Featured Categories</h2>
                         <div>
-                            <ul className="flex gap-x-7 items-center font-semibold">
-                                <li>Cake & Milk</li>
-                                <li>Coffees & Teas</li>
-                                <li>Pet Foods</li>
-                                <li>Vegetables</li>
+                            <ul className="flex gap-x-7 items-center flex-wrap font-semibold">
+                                <li className="w-max">Cake & Milk</li>
+                                <li className="w-max">Coffees & Teas</li>
+                                <li className="w-max">Pet Foods</li>
+                                <li className="w-max">Vegetables</li>
                             </ul>
                         </div>
                     </div>
@@ -190,12 +190,12 @@ const FeaturedCategories = () => {
                             return (
                                 <div key={index} className={`
                                     relative group cursor-pointer w-full
-                                    ${index > 1 ? "lg:block hidden" : ""}
+                                    ${index > 1 ? "sm:block hidden" : ""}
                                     ${index > 0 ? "md:block hidden" : ""}
                                 `}>
                                     <img src={banner.img} alt={banner.title} className="w-full" />
-                                    <div className="absolute top-20 left-[50px]">
-                                        <h3 className="font-bold text-2xl leading-[29px] mb-7 max-w-[245px] group-hover:translate-y-[-5px] transform transition-transform ease-in-out duration-300">{banner.title}</h3>
+                                    <div className="absolute top-11 left-12">
+                                        <h3 className="font-bold text-lg leading-[21px] mb-[14px] max-w-[152px] group-hover:translate-y-[-5px] transform transition-transform ease-in-out duration-300">{banner.title}</h3>
                                         <button className="px-3 py-2 bg-greeny text-white flex items-center gap-x-1 rounded-sm font-bold text-xs leading-[16px] tracking-[0.5px]">Shop Now <IoIosArrowRoundForward /></button>
                                     </div>
                                 </div>

@@ -119,26 +119,28 @@ const Deals = ({ title, img, author, oldPrice, newPrice, rating }) => {
     // Detect Scroll to Add Background and Shadow
 
     return (
-        <div className="w-full h-[462px] relative group">
-            <div className="w-full">
-                <img src={img} alt={title} className='w-full object-cover' />
-            </div>
-            <div className="w-[300px] absolute left-2 bottom-[-10px] rounded-[10px] bg-white shadow-md p-6 transition-all ease-in-out duration-300 group-hover:translate-y-[-6px]">
-                <div className="mt-[5px] mb-4 flex flex-col gap-y-[10px]">
-                    <h3 className='leading-[20px] font-bold'>{title}</h3>
-                    <div className="flex items-center gap-x-2">
-                        <FaStar className="text-yellow-400" />
-                        <span className='text-[#B6B6B6] text-sm leading-6 font-lato'>({rating})</span>
-                    </div>
-                    <span className='text-[#B6B6B6] text-sm leading-6 font-lato'>By <span className='text-greeny'>{author}</span></span>
+        <div className="w-full h-[420px] ">
+            <div className="relative group w-full">
+                <div className="w-full">
+                    <img src={img} alt={title} className='w-full object-cover' />
                 </div>
-                <div className="flex justify-between items-center font-bold leading-6">
-                    <span className='mr-[10px] text-2xl text-greeny '>{oldPrice}</span>
-                    <span className='mr-auto text-sm text-[#ADADAD] line-through'>{newPrice}</span>
-                    <button className="flex items-center gap-x-[5px] rounded-sm bg-[#DEF9EC] text-greeny font-lato font-bold text-sm leading-6 px-5 py-[10px] cursor-pointer transition-colors hover:bg-greeny hover:text-white">
-                        <ShoppingCartOutlinedIcon />
-                        Add
-                    </button>
+                <div className="w-[full] sm:w-[315px] md:w-[340px] lg:w-[300px] absolute left-[10px] lg:left-[20px] right-[10px] lg:right-[20px] bottom-[-120px] rounded-[10px] bg-white shadow-md p-6 transition-all ease-in-out duration-300 group-hover:translate-y-[-6px]">
+                    <div className="mt-[5px] mb-4 flex flex-col gap-y-[10px]">
+                        <h3 className='leading-[20px] font-bold'>{title}</h3>
+                        <div className="flex items-center gap-x-2">
+                            <FaStar className="text-yellow-400" />
+                            <span className='text-[#B6B6B6] text-sm leading-6 font-lato'>({rating})</span>
+                        </div>
+                        <span className='text-[#B6B6B6] text-sm leading-6 font-lato'>By <span className='text-greeny'>{author}</span></span>
+                    </div>
+                    <div className="flex justify-between items-center font-bold leading-6">
+                        <span className='mr-[10px] text-2xl text-greeny '>{oldPrice}</span>
+                        <span className='mr-auto text-sm text-[#ADADAD] line-through'>{newPrice}</span>
+                        <button className="flex items-center gap-x-[5px] rounded-sm bg-[#DEF9EC] text-greeny font-lato font-bold text-sm leading-6 px-5 py-[10px] cursor-pointer transition-colors hover:bg-greeny hover:text-white">
+                            <ShoppingCartOutlinedIcon />
+                            Add
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

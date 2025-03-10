@@ -25,8 +25,8 @@ const PopularProducts = () => {
   return (
     <>
       <section className="mt-[55px]">
-        <div className="max-w-[1610px] mx-auto">
-          <div className="flex items-baseline justify-between mb-12">
+        <div className="container">
+          <div className="flex flex-col gap-6 items-baseline justify-between mb-12">
             <h2 className="font-bold text-[32px] leading-[38px]">Popular Products</h2>
 
             {/* Category buttons */}
@@ -46,7 +46,7 @@ const PopularProducts = () => {
             </ul>
 
           </div>
-          <div className="flex flex-wrap gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 place-items-center gap-5">
             {filteredProducts.map((product, index) => (
               <div className="w-[300px]" key={index}>
                 <Link to={`/shop/${product.slug}`}><Product product={product} /></Link>

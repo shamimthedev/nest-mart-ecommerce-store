@@ -48,17 +48,58 @@ const DealsOfTheDay = () => {
   return (
     <>
       <section className="mt-[55px]" id="dealsOfTheDay">
-        <div className="max-w-[1610px] mx-auto">
+        <div className="container">
           <div className="flex items-baseline justify-between mb-12">
             <h2 className="font-bold text-[32px] leading-[38px]">Deals Of The Day</h2>
-            <span className="flex gap-x-1 items-center font-semibold">
+            <span className="hidden md:flex gap-x-1 items-center font-semibold">
               All deals <MdKeyboardArrowRight />
             </span>
           </div>
-          <div className="flex gap-x-6">
+          
+          {/* Show only 2 items on small devices */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:hidden">
+            {productsData.slice(0, 2).map((product) => (
+              <div key={product.id} className="w-full sm:w-[336px] md:w-[360px]">
+                <Deals
+                  title={product.title}
+                  img={product.img}
+                  author={product.author}
+                  oldPrice={product.oldPrice}
+                  newPrice={product.newPrice}
+                  rating={product.rating}
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Show the rest of the items on larger devices */}
+          <div className="hidden lg:grid lg:grid-cols-3 gap-6 xl:hidden">
+            {productsData.slice(0, 3).map((product) => (
+              <div key={product.id} className="lg:w-[340px]">
+                <Deals
+                  title={product.title}
+                  img={product.img}
+                  author={product.author}
+                  oldPrice={product.oldPrice}
+                  newPrice={product.newPrice}
+                  rating={product.rating}
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Show the rest of the items on larger devices */}
+          <div className="hidden xl:grid xl:grid-cols-4 gap-6">
             {productsData.map((product) => (
-              <div key={product.id} className="w-[350px]">
-                <Deals title={product.title} img={product.img} author={product.author} oldPrice={product.oldPrice} newPrice={product.newPrice} rating={product.rating}/>
+              <div key={product.id} className="xl:w-[340px]">
+                <Deals
+                  title={product.title}
+                  img={product.img}
+                  author={product.author}
+                  oldPrice={product.oldPrice}
+                  newPrice={product.newPrice}
+                  rating={product.rating}
+                />
               </div>
             ))}
           </div>

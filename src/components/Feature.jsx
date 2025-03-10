@@ -1,7 +1,7 @@
 
 const Feature = ({title, sub, img}) => {
     return (
-        <div className="w-[300px] flex gap-x-5 bg-[#F4F6FA] rounded-[10px] p-5 group">
+        <div className="w-full flex gap-x-5 bg-[#F4F6FA] rounded-[10px] p-5 group">
             <img src={img} alt="" className="transition-all ease-in-out duration-200 group-hover:translate-y-[-5px]"/>
             <div>
                 <p className='mb-[5px] font-semibold text-lg leading-[21px]'>{title}</p>
