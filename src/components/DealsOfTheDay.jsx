@@ -57,7 +57,7 @@ const DealsOfTheDay = () => {
           </div>
           
           {/* Show only 2 items on small devices */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:hidden">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:hidden">
             {productsData.slice(0, 2).map((product) => (
               <div key={product.id} className="w-full sm:w-[336px] md:w-[360px]">
                 <Deals

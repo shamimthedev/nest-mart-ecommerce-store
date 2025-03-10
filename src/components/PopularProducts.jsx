@@ -46,9 +46,9 @@ const PopularProducts = () => {
             </ul>
 
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 place-items-center gap-5">
+          <div className="flex flex-wrap justify-center gap-5">
             {filteredProducts.map((product, index) => (
-              <div className="w-[300px]" key={index}>
+              <div className="w-full sm:w-[300px]" key={index}>
                 <Link to={`/shop/${product.slug}`}><Product product={product} /></Link>
               </div>
             ))}

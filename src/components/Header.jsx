@@ -273,7 +273,7 @@ const Header = () => {
               </div>
               <div ref={dropdownRef} className="hidden lg:block relative">
                 <div onClick={() => setIsAccOpen(!isAccOpen)} className="cursor-pointer flex items-baseline gap-1">
-                  <img src={Account} alt="Account icon" className="w-[20px] h-[18px]" />
+                  <img src={Account} alt="Account icon" className="size-5 object-cover" />
                   <span className="font-lato text-[#7E7E7E] text-sm">Account</span>
                 </div>
                 {isAccOpen && (<ul className="absolute right-0 top-[150%] rounded-[10px] px-5 py-7 bg-white shadow-lg border border-[#ECECEC] min-w-[220px] h-auto z-50 mt-2 flex flex-col gap-y-2">
@@ -314,7 +314,7 @@ const Header = () => {
             )}
             {/* Navigation Links */}
             <Navbar className={'mr-auto'} />
-            <div className="hidden xl:flex items-center gap-x-2 2xl:gap-x-3">
+            <div className="hidden lg:flex items-center gap-x-2 2xl:gap-x-3">
               <img src={Support} alt="" className="w-5 2xl:w-8" />
               <div className="flex flex-col">
                 <span className="text-greeny font-bold text-lg 2xl:text-[26px]">1900 - 888</span>

@@ -127,6 +127,15 @@ const FeaturedCategories = () => {
         centerMode: false, // Set to false unless needed
         responsive: [
             {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 6, // More reasonable than 10
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: false
+                }
+            },
+            {
                 breakpoint: 1024,
                 settings: {
                     slidesToShow: 4, // More reasonable than 10
@@ -191,11 +200,11 @@ const FeaturedCategories = () => {
                                 <div key={index} className={`
                                     relative group cursor-pointer w-full
                                     ${index > 1 ? "sm:block hidden" : ""}
-                                    ${index > 0 ? "md:block hidden" : ""}
+                                    ${index > 0 ? "lg:block hidden" : ""}
                                 `}>
                                     <img src={banner.img} alt={banner.title} className="w-full" />
-                                    <div className="absolute top-11 left-12">
-                                        <h3 className="font-bold text-lg leading-[21px] mb-[14px] max-w-[152px] group-hover:translate-y-[-5px] transform transition-transform ease-in-out duration-300">{banner.title}</h3>
+                                    <div className="absolute top-11 md:top-12 md:left-14 left-12">
+                                        <h3 className="font-bold text-lg md:text-xl leading-[21px] mb-[14px] md:mb-4 max-w-[152px] md:max-w-[180px] group-hover:translate-y-[-5px] transform transition-transform ease-in-out duration-300">{banner.title}</h3>
                                         <button className="px-3 py-2 bg-greeny text-white flex items-center gap-x-1 rounded-sm font-bold text-xs leading-[16px] tracking-[0.5px]">Shop Now <IoIosArrowRoundForward /></button>
                                     </div>
                                 </div>

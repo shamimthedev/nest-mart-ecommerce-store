@@ -6,10 +6,12 @@
   --color-greeny: #3bb77e;
   --shadow-3xl: 5px 5px 15px 0 rgba(0, 0, 0, 0.25);
 
-  --breakpoint-sm: 23rem;   /* 368px (small phones) */
-  --breakpoint-md: 48rem;   /* 768px (tablets) */
-  --breakpoint-lg: 75rem;   /* 1200px (desktops) */
-  --breakpoint-xl: 101rem;  /* 1610px (large screens) */
+  --breakpoint-sm: 23rem;    /* 368px */
+  --breakpoint-md: 48rem;    /* 768px */
+  --breakpoint-lg: 64rem;    /* 1024px */
+  --breakpoint-xl: 75rem;    /* 1200px */
+  --breakpoint-2xl: 96rem;   /* 1536px */
+  --breakpoint-3xl: 101rem;  /* 1610px */
 }
 
 body {

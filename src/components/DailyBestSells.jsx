@@ -24,7 +24,7 @@ const DailyBestSells = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 4, // More reasonable than 10
+          slidesToShow: 1, // More reasonable than 10
           slidesToScroll: 1,
           infinite: true,
           dots: false
@@ -72,7 +72,7 @@ const DailyBestSells = () => {
           </div>
           <div className="flex gap-x-6 h-[520px] justify-between">
             {/* Left Side */}
-            <div className="hidden w-[375px] h-full relative group cursor-pointer flex-shrink-0">
+            <div className="hidden md:block w-[375px] h-full relative group cursor-pointer flex-shrink-0">
               <img src={Nature} alt='Nature' className="w-full h-full object-cover rounded-[15px]" />
               <div className="absolute top-[49px] left-[50px]">
                 <h3 className="font-bold text-[40px] leading-[48px] mb-[99px] max-w-[246px] group-hover:translate-y-[-5px] transform transition-transform ease-in-out duration-300">Bring nature into your home</h3>

@@ -51,15 +51,14 @@ const Hero = () => {
   };
   return (
     <>
-      <div className="overflow-hidden mx-auto max-w-[1610px] hidden lg:block">
+      <div className="container overflow-hidden hidden lg:block">
         <Slider {...settings}>
-          {
-            slides.map((slide) => (
+          {slides.map((slide) => (
               <div className="my-[30px] outline-none overflow-hidden relative" key={slide.id}>
                 <img src={slide.img} alt="" className="w-full rounded-[30px]" />
-                <div className="absolute top-20 left-24">
-                  <h1 className='text-[#253D4E] max-w-[680px] text-[72px] leading-[72px] font-bold mb-[31px]'>{slide.title}</h1>
-                  <p className='font-lato text-[#7E7E7E] text-[30px] leading-[24px] mb-[65px]'>{slide.sub}</p>
+                <div className="absolute top-14 left-20">
+                  <h1 className='text-[#253D4E] max-w-[680px] text-6xl xl:text-7xl leading-16 xl:leading-18 font-bold mb-7'>{slide.title}</h1>
+                  <p className='font-lato text-[#7E7E7E] text-[30px] leading-[24px] mb-12 xl:mb-16'>{slide.sub}</p>
                   <div className="flex items-center w-[480px] bg-white rounded-full shadow-md overflow-hidden">
                     <IoPaperPlaneOutline className="text-gray-500 text-2xl ml-4" />
                     <input
