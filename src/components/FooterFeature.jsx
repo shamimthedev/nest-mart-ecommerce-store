@@ -4,6 +4,7 @@ import Feature2 from '/feature02.svg'
 import Feature3 from '/feature03.svg'
 import Feature4 from '/feature04.svg'
 import Feature5 from '/feature05.svg'
+import Feature6 from '/feature-06.svg'
 
 const FooterFeature = () => {
     const featureData = [
@@ -35,6 +36,12 @@ const FooterFeature = () => {
             id: 5,
             img: Feature5,
             title: 'Easy returns',
+            sub: 'Within 30 days'
+        },
+        {
+            id: 6,
+            img: Feature6,
+            title: 'Safe delivery',
             sub: 'Within 30 days'
         },
     ]

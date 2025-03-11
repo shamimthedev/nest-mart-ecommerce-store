@@ -117,7 +117,7 @@ const Header = () => {
               <li>Order Tracking</li>
             </ul>
             <p className="text-xs xl:text-sm leading-4 text-center">
-              100% Secure delivery without contacting the courier <br /> Supper Value Deals - Save more with coupons
+              Supper Value Deals - <span className="text-greeny">Save</span> more with coupons
             </p>
             <div className="flex gap-3 xl:gap-5">
               <p className="relative after:absolute after:content-[''] after:bg-[#DEDFE2] after:w-[1px] after:h-[100%] after:right-[-7px] xl:after:right-[-10px]">
@@ -273,7 +273,7 @@ const Header = () => {
               </div>
               <div ref={dropdownRef} className="hidden lg:block relative">
                 <div onClick={() => setIsAccOpen(!isAccOpen)} className="cursor-pointer flex items-baseline gap-1">
-                  <img src={Account} alt="Account icon" className="w-5 object-cover" />
+                  <img src={Account} alt="Account icon" className="w-4 object-cover" />
                   <span className="font-lato text-[#7E7E7E] text-sm">Account</span>
                 </div>
                 {isAccOpen && (<ul className="absolute right-0 top-[150%] rounded-[10px] px-5 py-7 bg-white shadow-lg border border-[#ECECEC] min-w-[220px] h-auto z-50 mt-2 flex flex-col gap-y-2">
