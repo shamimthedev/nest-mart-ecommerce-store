@@ -123,8 +123,6 @@ const FeaturedCategories = () => {
         arrows: true,
         nextArrow: <NextArrow isFeatured={true} />,
         prevArrow: <PrevArrow isFeatured={true} />,
-        cssEase: 'linear',
-        centerMode: false, // Set to false unless needed
         responsive: [
             {
                 breakpoint: 1200,
@@ -138,7 +136,7 @@ const FeaturedCategories = () => {
             {
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 4, // More reasonable than 10
+                    slidesToShow: 5, // More reasonable than 10
                     slidesToScroll: 1,
                     infinite: true,
                     dots: false
@@ -147,14 +145,14 @@ const FeaturedCategories = () => {
             {
                 breakpoint: 768, // Adjusted for tablets
                 settings: {
-                    slidesToShow: 2, // Display 3 items
+                    slidesToShow: 4, // Display 3 items
                     slidesToScroll: 1
                 }
             },
             {
                 breakpoint: 600,
                 settings: {
-                    slidesToShow: 2, // Display 2 items on smaller screens
+                    slidesToShow: 3, // Display 2 items on smaller screens
                     slidesToScroll: 1
                 }
             },
@@ -194,17 +192,17 @@ const FeaturedCategories = () => {
                             ))}
                         </Slider>
                     </div>
-                    <div className="flex justify-between gap-5">
+                    <div className="hidden sm:flex justify-between gap-5">
                         {catBanners.map((banner, index) => {
                             return (
                                 <div key={index} className={`
                                     relative group cursor-pointer w-full
-                                    ${index > 1 ? "sm:block hidden" : ""}
+                                    ${index > 1 ? "md:block hidden" : ""}
                                     ${index > 0 ? "lg:block hidden" : ""}
                                 `}>
                                     <img src={banner.img} alt={banner.title} className="w-full" />
-                                    <div className="absolute top-11 md:top-12 md:left-14 left-12">
-                                        <h3 className="font-bold text-lg md:text-xl leading-[21px] mb-[14px] md:mb-4 max-w-[152px] md:max-w-[180px] group-hover:translate-y-[-5px] transform transition-transform ease-in-out duration-300">{banner.title}</h3>
+                                    <div className="absolute top-[15%] md:top-14 lg:top-11 lg:left-11 2xl:top-14 2xl:left-14 md:left-14 left-[15%]">
+                                        <h3 className="font-bold text-2xl md:text-xl leading-8 md:leading-6 md:mb-4 mb-5 max-w-[280px] md:max-w-[240px] group-hover:translate-y-[-5px] transform transition-transform ease-in-out duration-300">{banner.title}</h3>
                                         <button className="px-3 py-2 bg-greeny text-white flex items-center gap-x-1 rounded-sm font-bold text-xs leading-[16px] tracking-[0.5px]">Shop Now <IoIosArrowRoundForward /></button>
                                     </div>
                                 </div>

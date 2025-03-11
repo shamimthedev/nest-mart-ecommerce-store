@@ -124,7 +124,7 @@ const Deals = ({ title, img, author, oldPrice, newPrice, rating }) => {
                 <div className="w-full">
                     <img src={img} alt={title} className='w-full object-cover' />
                 </div>
-                <div className="w-[full] sm:w-[315px] md:w-[340px] lg:w-[300px] absolute left-[10px] lg:left-[20px] right-[10px] lg:right-[20px] bottom-[-120px] rounded-[10px] bg-white shadow-md p-6 transition-all ease-in-out duration-300 group-hover:translate-y-[-6px]">
+                <div className="w-[full] xs:w-[315px] absolute left-[10px] right-[10px] bottom-[-120px] rounded-[10px] bg-white shadow-md p-6 transition-all ease-in-out duration-300 group-hover:translate-y-[-6px]">
                     <div className="mt-[5px] mb-4 flex flex-col gap-y-[10px]">
                         <h3 className='leading-[20px] font-bold'>{title}</h3>
                         <div className="flex items-center gap-x-2">

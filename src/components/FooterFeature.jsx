@@ -40,7 +40,7 @@ const FooterFeature = () => {
     ]
     return (
         <>
-            <div className="container grid grid-cols-1 gap-[15px] place-items-center">
+            <div className="container flex flex-wrap gap-[15px]">
                 {featureData.map((feature) => {
                     return (
                         <div className="w-full sm:w-[300px]" key={feature.id}>

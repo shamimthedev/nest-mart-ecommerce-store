@@ -6,7 +6,8 @@
   --color-greeny: #3bb77e;
   --shadow-3xl: 5px 5px 15px 0 rgba(0, 0, 0, 0.25);
 
-  --breakpoint-sm: 23rem;    /* 368px */
+  --breakpoint-xs: 23rem;    /* 368px */
+  --breakpoint-sm: 30rem;    /* 480px */
   --breakpoint-md: 48rem;    /* 768px */
   --breakpoint-lg: 64rem;    /* 1024px */
   --breakpoint-xl: 75rem;    /* 1200px */

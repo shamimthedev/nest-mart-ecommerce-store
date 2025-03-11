@@ -57,9 +57,9 @@ const DealsOfTheDay = () => {
           </div>
           
           {/* Show only 2 items on small devices */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:hidden">
+          <div className="flex flex-wrap gap-6 lg:hidden">
             {productsData.slice(0, 2).map((product) => (
-              <div key={product.id} className="w-full sm:w-[336px] md:w-[360px]">
+              <div key={product.id} className="w-full xs:w-[340px]">
                 <Deals
                   title={product.title}
                   img={product.img}
@@ -73,7 +73,7 @@ const DealsOfTheDay = () => {
           </div>
 
           {/* Show the rest of the items on larger devices */}
-          <div className="hidden lg:grid lg:grid-cols-3 gap-6 xl:hidden">
+          <div className="hidden lg:grid lg:grid-cols-3 gap-6 2xl:hidden">
             {productsData.slice(0, 3).map((product) => (
               <div key={product.id} className="lg:w-[340px]">
                 <Deals
@@ -89,9 +89,9 @@ const DealsOfTheDay = () => {
           </div>
 
           {/* Show the rest of the items on larger devices */}
-          <div className="hidden xl:grid xl:grid-cols-4 gap-6">
+          <div className="hidden 2xl:grid 2xl:grid-cols-4 gap-6">
             {productsData.map((product) => (
-              <div key={product.id} className="xl:w-[340px]">
+              <div key={product.id} className="2xl:w-[340px]">
                 <Deals
                   title={product.title}
                   img={product.img}

@@ -17,11 +17,11 @@ const Home = () => {
       <DailyBestSells/>
       <DealsOfTheDay />
       {/* <ShopByCategories /> */}
-      <div className="mt-[50px] container grid grid-cols-1 gap-8">
+      <div className="mt-[50px] container grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-8">
         <TopSelling title={'Top Selling'}/>
         <TopSelling title={'Trending Products'}/>
-        <TopSelling title={'Recently Added'} className={'hidden'}/>
-        <TopSelling title={'Top Rated'} className={'hidden'}/>
+        <TopSelling title={'Recently Added'} className={'hidden xl:block'}/>
+        <TopSelling title={'Top Rated'} className={'hidden 2xl:block'}/>
       </div>
     </>
   )

@@ -26,7 +26,7 @@ const PopularProducts = () => {
     <>
       <section className="mt-[55px]">
         <div className="container">
-          <div className="flex flex-col gap-6 items-baseline justify-between mb-12">
+          <div className="flex flex-col lg:flex-row gap-6 items-baseline justify-between mb-12">
             <h2 className="font-bold text-[32px] leading-[38px]">Popular Products</h2>
 
             {/* Category buttons */}

@@ -1,6 +1,3 @@
-import Product01 from '/product-01.png'
-import Product012 from '/product-1-2.jpg'
-import Rating from '@mui/material/Rating';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import CompareArrowsOutlinedIcon from '@mui/icons-material/CompareArrowsOutlined';

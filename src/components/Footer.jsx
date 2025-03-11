@@ -15,8 +15,8 @@ const Footer = () => {
   return (
     <>
       <section className="container mt-20">
-        <div className="grid grid-cols-2 gap-10 sm:place-items-center pb-[45px] border-b border-[#BCE3C9]">
-          <div className="col-span-2">
+        <div className="grid grid-cols-2 md:grid-cols-3 3xl:grid-cols-6 gap-10 pb-[45px] border-b border-[#BCE3C9]">
+          <div className="col-span-2 lg:col-span-1">
             <Link to='/'><img src={Logo} loading="lazy" alt="Logo" className="w-[215px] mb-[22px]" /></Link>
             <p className='text-[17px] leading-6 font-lato max-w-[237px] mb-[35px]'>Awesome grocery store website
               template</p>
@@ -75,7 +75,7 @@ const Footer = () => {
               <li>Cheese</li>
             </ul>
           </div>
-          <div className="leading-6 col-span-2">
+          <div className="leading-6 col-span-2 lg:col-span-1">
             <h3 className='font-bold text-2xl mb-5'>Install App</h3>
             <span className='mb-[25px] font-lato text-[15px]'>From App Store or Google Play</span>
             <div className="flex gap-x-3 mb-12">
@@ -91,7 +91,7 @@ const Footer = () => {
             <p>© 2022, <span className='text-greeny'><Link to='/'>Nest</Link></span> - HTML Ecommerce Template <br />
               All rights reserved</p>
           </div>
-          <div className="hidden sm:flex gap-x-5">
+          <div className="hidden xl:flex gap-x-5">
             <div className="flex gap-x-3 items-center text-greeny">
               <FiPhoneCall className='text-3xl' />
               <div>
@@ -107,7 +107,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className='hidden'>
+          <div className='hidden md:block'>
             <div className="flex items-center gap-x-[15px]">
               <span className='font-bold leading-[20px]'>Follow Us</span>
               <div className="flex gap-x-[5px]">

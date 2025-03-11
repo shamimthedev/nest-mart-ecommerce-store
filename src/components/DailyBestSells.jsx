@@ -22,6 +22,24 @@ const DailyBestSells = () => {
     prevArrow: <PrevArrow />,
     responsive: [
       {
+        breakpoint: 1560,
+        settings: {
+          slidesToShow: 3, // More reasonable than 10
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false
+        }
+      },
+      {
+        breakpoint: 1300,
+        settings: {
+          slidesToShow: 2, // More reasonable than 10
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false
+        }
+      },
+      {
         breakpoint: 1024,
         settings: {
           slidesToShow: 1, // More reasonable than 10
@@ -40,7 +58,7 @@ const DailyBestSells = () => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2, // Display 2 items on smaller screens
+          slidesToShow: 1, // Display 2 items on smaller screens
           slidesToScroll: 1
         }
       },
@@ -60,7 +78,7 @@ const DailyBestSells = () => {
     <>
       <section className="mt-[55px]">
         <div className="container">
-          <div className="flex flex-col gap-6 items-baseline justify-between mb-12">
+          <div className="flex flex-col md:flex-row gap-6 items-baseline justify-between mb-12">
             <h2 className="font-bold text-[32px] leading-[38px]">Daily Best Sells</h2>
             <div>
               <ul className="flex gap-x-7 items-center font-semibold">
