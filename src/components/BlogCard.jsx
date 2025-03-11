@@ -1,7 +1,7 @@
 const BlogCard = ({item}) => {
     const {img, title, cat} = item
     return (
-        <div className="w-[375px] text-center">
+        <div className="w-full text-center">
             <img src={img} alt="" className='w-full object-cover' />
             <h6 className='font-bold text-sm text-[#B6B6B6] mt-[19px] mb-[9px]'>{cat}</h6>
             <h3 className='font-bold text-2xl leading-7 mb-3'>{title}</h3>
