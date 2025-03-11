@@ -101,7 +101,7 @@ const ProductDetails = () => {
       <section className="">
         {/* Breadcrumb  */}
         <Breadcrumb />
-        <div className="max-w-[1610px] mx-auto">
+        <div className="container">
           <div className="flex gap-x-6 overflow-hidden">
 
             {/* Product Details */}

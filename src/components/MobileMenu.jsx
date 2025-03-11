@@ -61,7 +61,7 @@ const MobileMenu = () => {
     return (
         <div className="lg:hidden relative">
             {/* Menu Icon */}
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-3xl p-2">
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-3xl p-2 cursor-pointer">
                 &equiv;
             </button>
 
@@ -78,7 +78,7 @@ const MobileMenu = () => {
                 {/* Close Button */}
                 <button
                     onClick={() => setIsMenuOpen(false)}
-                    className="absolute top-4 right-4 text-xl font-bold"
+                    className="absolute top-4 right-4 text-xl font-bold cursor-pointer"
                 >
                     ✖
                 </button>

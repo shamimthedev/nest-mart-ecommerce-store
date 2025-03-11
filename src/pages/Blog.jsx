@@ -16,7 +16,7 @@ const Blog = () => {
                     <Breadcrumb2 title={'Blog & News'} />
                 </div>
 
-                <div className="max-w-[1610px] mx-auto ">
+                <div className="container">
                     <div className="flex justify-between gap-x-[42px] relative">
                         {/* Articles Section */}
                         <div className="flex-1">

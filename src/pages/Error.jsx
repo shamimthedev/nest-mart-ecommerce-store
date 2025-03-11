@@ -5,7 +5,7 @@ import { AiOutlineHome } from "react-icons/ai";
 const Error = () => {
     return (
         <>
-            <section className="max-w-[1610px] mx-auto py-11">
+            <section className="container py-11">
                 <div className="w-[75%] p-[100px] text-center m-auto h-auto">
                     <img src={NotFound} alt="Not Found" className='max-w-[350px] mx-auto mb-5 transition-all ease-in-out duration-300 hover:translate-y-[-6px]' />
                     <h1 className='mb-6 font-bold text-7xl leading-[72px]'>Page Not Found</h1>

@@ -19,7 +19,7 @@ const Cart = () => {
                 </div>
 
 
-                <div className="max-w-[1610px] mx-auto">
+                <div className="container">
                     {/* Header */}
                     <h1 className="font-bold text-5xl mb-[10px]">Your Cart</h1>
                     <div className="max-w-[1050px] flex items-center justify-between font-semibold">

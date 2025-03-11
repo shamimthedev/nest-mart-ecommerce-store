@@ -36,7 +36,7 @@ const BlogDetails = () => {
                     <Breadcrumb />
                 </div>
 
-                <div className="max-w-[1610px] mx-auto">
+                <div className="container">
                     <div className="flex justify-between">
                         {/* Blog Content */}
                         <div className="flex-1">

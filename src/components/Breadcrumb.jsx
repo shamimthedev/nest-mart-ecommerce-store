@@ -7,7 +7,7 @@ const Breadcrumb = () => {
 
     return (
         <nav className="text-sm py-6 mb-[50px] w-full border-b border-[#ECECEC]">
-            <div className="max-w-[1610px] mx-auto">
+            <div className="container">
                 <ul className="flex items-center justify-start space-x-2 text-gray-600 font-semibold leading-6">
                     <li>
                         <Link to="/" className="flex items-center gap-x-1 text-greeny"><AiOutlineHome />Home</Link>

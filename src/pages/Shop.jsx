@@ -31,24 +31,6 @@ const Shop = () => {
         };
     }, []);
 
-    // // Search query & Category filter
-    // const filters = useSelector((state) => state.filter);
-    // const { searchQuery, category } = filters;
-
-    // // Filter products based on category and searchQuery
-    // const filteredProducts = productsData.filter((product) => {
-    //     // First check category filter
-    //     const matchesCategory = category ? product.cat === category : true;
-
-    //     // Then check the search query (applies to multiple fields)
-    //     const matchesSearchQuery = product.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    //         product.cat?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    //         product.author?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    //         product.badge?.toLowerCase().includes(searchQuery.toLowerCase());
-
-    //     return matchesCategory && matchesSearchQuery; // Both conditions must be true
-    // });
-
     // Pagination logic based on filtered products
     const indexOfLastProduct = currentPage * productsPerPage;
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
@@ -67,7 +49,7 @@ const Shop = () => {
                     <Breadcrumb2 title={"Shop"} />
                 </div>
 
-                <div className="max-w-[1610px] mx-auto flex gap-x-6 relative">
+                <div className="container flex gap-x-6 relative">
                     {/* Sidebar */}
                     <div className="w-[20%]">
                         <Sidebar className="sticky top-[100px]" />

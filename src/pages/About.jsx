@@ -113,7 +113,7 @@ const About = () => {
           <Breadcrumb />
         </div>
 
-        <div className="max-w-[1341px] mx-auto">
+        <div className="max-w-[1341px] mx-auto px-4 sm:px-6 md:px-8">
           <div className="flex items-center gap-x-[49px]">
             <div className="w-[646px] h-auto">
               <img src={AboutPerson} alt="" className='w-full h-full' />
@@ -206,7 +206,7 @@ const About = () => {
 
       {/* Counter Section  */}
       <section>
-        <div className="max-w-[1610px] mx-auto relative rounded-[15px] overflow-hidden">
+        <div className="container relative rounded-[15px] overflow-hidden">
           <div className="w-full">
             <img src={AboutCounter} alt="" className='w-full' />
           </div>

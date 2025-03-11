@@ -8,7 +8,7 @@ const Breadcrumb2 = ({title}) => {
 
     return (
         <nav className="text-sm mt-[30px] mb-[50px] w-full">
-            <div className="max-w-[1610px] mx-auto relative">
+            <div className="container relative">
                 <img src={Breadcrumb2Img} alt="" className="w-full h-full object-cover" />
                 <div className="absolute top-[70px] left-[68px]">
                     <h1 className="mb-[18px] text-[48px] leading-[58px] font-bold">{title}</h1>
