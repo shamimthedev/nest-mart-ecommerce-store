@@ -3,7 +3,7 @@ import { GoSignOut } from "react-icons/go";
 import { IoLocationOutline } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
 import SearchInput from "./SearchInput";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 import SelectDrop from "./SelectDrop";
 import Logo from '/logo.png'
 import Compare from '/compare.svg'
@@ -14,6 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Cart from '/cart.svg'
 import Account from '/account.svg'
 import { removeFromCart, clearCart } from "../redux/slices/cartSlice";
+import MobileMenu from "./MobileMenu";
 
 const HeaderMiddle = () => {
     const cartItems = useSelector((state) => state.cart.cartItems) || [];
@@ -50,26 +51,17 @@ const HeaderMiddle = () => {
         getCountry();
     }, []);
 
-    // Close Account when clicking outside
+    // Close Account/Cart when clicking outside
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
                 setIsAccOpen(false);
             }
-        };
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, []);
-
-    // Close cart when clicking outside
-    useEffect(() => {
-        const handleClickOutside = (event) => {
             if (cartRef.current && !cartRef.current.contains(event.target)) {
                 setIsCartOpen(false);
             }
         };
+
         document.addEventListener("mousedown", handleClickOutside);
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
@@ -86,10 +78,8 @@ const HeaderMiddle = () => {
                 <div className="container ">
                     <div className="flex justify-between items-center gap-x-10 2xl:gap-x-11 lg:h-[96px] h-[70px]">
 
-                        {/* Mobile Menu  */}
-                        <div className="w-[44px] text-3xl lg:hidden">
-                            &equiv;
-                        </div>
+                        {/* Mobile Menu */}
+                        <MobileMenu/>
 
                         {/* Logo here  */}
                         <div className="w-[150px] 2xl:w-[180px]">

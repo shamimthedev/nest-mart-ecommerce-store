@@ -52,7 +52,7 @@ const Navbar = ({ className }) => {
     return (
         <nav className={`${className}`}>
             {/* Main Navigation */}
-            <div className="max-w-[1600px] mx-auto flex justify-between items-center py-4 px-6">
+            <div className="container flex justify-between items-center py-4 px-6">
                 <ul className="flex items-center gap-x-6 xl:gap-x-7 2xl:gap-x-[34px]">
                     {navList.map((nav) => (
                         <li
@@ -101,7 +101,7 @@ const Navbar = ({ className }) => {
                     onMouseEnter={() => handleMouseEnter(openDropdown)} // Keep open when hovering over mega-menu
                     onMouseLeave={handleMouseLeave} // Close with delay when mouse leaves mega-menu
                 >
-                    <div className="max-w-[1600px] mx-auto px-10 grid grid-cols-4 gap-6">
+                    <div className="container px-10 grid grid-cols-4 gap-6">
                         {navList
                             .find((nav) => nav.id === openDropdown)
                             ?.categories.map((category, index) => (
