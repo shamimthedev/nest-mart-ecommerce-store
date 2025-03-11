@@ -79,7 +79,7 @@ const HeaderMiddle = () => {
                     <div className="flex justify-between items-center gap-x-10 2xl:gap-x-11 lg:h-[96px] h-[70px]">
 
                         {/* Mobile Menu */}
-                        <MobileMenu/>
+                        <MobileMenu />
 
                         {/* Logo here  */}
                         <div className="w-[150px] 2xl:w-[180px]">
@@ -182,21 +182,19 @@ const HeaderMiddle = () => {
                                                 </span>
                                             </div>
                                         )}
-                                        {/* Clear Cart Btn  */}
-                                        {cartItems.length > 0 && (
-                                            <button
-                                                onClick={handleClearCart}
-                                                className="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 transition-colors"
-                                            >
-                                                Clear Cart
-                                            </button>
-                                        )}
 
-                                        {/* Checkout Button */}
                                         {cartItems.length > 0 && (
-                                            <div className="mt-4">
-                                                <button className="w-full bg-greeny text-white py-2 rounded-md text-sm font-bold">
-                                                    Go to Checkout
+                                            <div className="flex mt-4 justify-between">
+                                                {/* View Cart Button */}
+                                                <Link to="/cart">
+                                                    <button className="w-max border border-greeny text-greeny py-2 px-5 rounded-sm text-sm cursor-pointer">
+                                                        View Cart
+                                                    </button>
+                                                </Link>
+
+                                                {/* Checkout Button */}
+                                                <button className="w-max bg-greeny text-white py-2 px-5 rounded-sm cursor-pointer text-sm">
+                                                    Checkout
                                                 </button>
                                             </div>
                                         )}

@@ -179,3 +179,14 @@ input[type="number"] {
 .leaflet-container {
   z-index: 1 !important; /* Lower than your fixed header */
 }
+
+/* Cart Page Table */
+@media (max-width: 640px) {
+  table {
+    font-size: 14px;
+  }
+  th,
+  td {
+    padding: 10px;
+  }
+}
