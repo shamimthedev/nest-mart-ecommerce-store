@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { AiOutlineHome } from "react-icons/ai";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 const Breadcrumb = () => {
     const location = useLocation();
@@ -8,7 +9,7 @@ const Breadcrumb = () => {
     return (
         <nav className="text-sm py-6 mb-[50px] w-full border-b border-[#ECECEC]">
             <div className="container">
-                <ul className="flex items-center justify-start space-x-2 text-gray-600 font-semibold leading-6">
+                <ul className="flex items-center flex-wrap justify-start space-x-2 text-gray-600 font-semibold leading-6">
                     <li>
                         <Link to="/" className="flex items-center gap-x-1 text-greeny"><AiOutlineHome />Home</Link>
                     </li>
@@ -18,7 +19,7 @@ const Breadcrumb = () => {
 
                         return (
                             <li key={to} className="flex items-center">
-                                <span className="mx-2">/</span>
+                                <span className="mx-2"><MdKeyboardArrowRight /></span>
                                 {isLast ? (
                                     <span className="capitalize text-[#7E7E7E]">{value}</span>
                                 ) : (

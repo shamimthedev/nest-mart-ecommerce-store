@@ -32,7 +32,7 @@ const BlogDetails = () => {
     return (
         <>
             <section>
-                <div className="hidden md:block">
+                <div className="">
                     <Breadcrumb />
                 </div>
 

@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setSelectedCategory, setProducts } from "../redux/slices/filterSlice";
 import { productsData } from "../data/DB";
 import { useEffect } from "react";
-import { Link } from "react-router";
+import { addToCart } from "../redux/slices/cartSlice";
 
 const PopularProducts = () => {
   const dispatch = useDispatch();
@@ -21,6 +21,24 @@ const PopularProducts = () => {
       ? products
       : products.filter((product) => product.cat === selectedCategory)
     : [];
+
+  // 🛒 Function to add a product to the cart
+  const handleAddToCart = (product) => {
+    dispatch(
+      addToCart({
+        id: product.id,
+        img: product.img,
+        img2: product.img2,
+        title: product.title,
+        cat: product.cat,
+        rating: product.rating,
+        author: product.author,
+        price: product.price,
+        oldPrice: product.oldPrice,
+        quantity: 1, // Default quantity when adding the item
+      })
+    );
+  };
 
   return (
     <>
@@ -49,7 +67,7 @@ const PopularProducts = () => {
           <div className="flex flex-wrap justify-center gap-5">
             {filteredProducts.map((product, index) => (
               <div className="w-full sm:w-[300px]" key={index}>
-                <Link to={`/shop/${product.slug}`}><Product product={product} /></Link>
+                <Product product={product} handleAddToCart={handleAddToCart} />
               </div>
             ))}
           </div>

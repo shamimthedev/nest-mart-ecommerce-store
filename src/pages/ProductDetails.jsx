@@ -25,13 +25,11 @@ import { useDispatch } from "react-redux";
 const ProductDetails = () => {
   const [value, setValue] = useState(2);
   const [activeSize, setActiveSize] = useState(0)
-  const [inputValue, setInputValue] = useState(1)
   const [activeTab, setActiveTab] = useState(0)
   const productSlider = useRef()
   const productMainSlider = useRef()
   const dispatch = useDispatch();
 
-  const [productSliderImg, setProductSliderImg] = useState('https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-0-202305292130.jpg')
   const [productSliderImgSize, setProductSliderImgSize] = useState([1500, 1500])
   const [productGalleryImgSize, setProductGalleryImgSize] = useState([150, 150])
 
@@ -57,11 +55,45 @@ const ProductDetails = () => {
     dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 6,
     slidesToScroll: 1,
     arrows: true,
     nextArrow: <NextArrow isSingleProduct={true} />,
-    prevArrow: <PrevArrow isSingleProduct={true} />
+    prevArrow: <PrevArrow isSingleProduct={true} />,
+    responsive: [
+      {
+        breakpoint: 1390,
+        settings: {
+          slidesToShow: 5, // More reasonable than 10
+          slidesToScroll: 1,
+          infinite: true,
+        }
+      },
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 4, // More reasonable than 10
+          slidesToScroll: 1,
+          infinite: true,
+        }
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3, // More reasonable than 10
+          slidesToScroll: 1,
+          infinite: true,
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2, // More reasonable than 10
+          slidesToScroll: 1,
+          infinite: true,
+        }
+      },
+    ]
   };
 
 
@@ -100,40 +132,42 @@ const ProductDetails = () => {
     <>
       <section className="">
         {/* Breadcrumb  */}
-        <Breadcrumb />
+        <div className="">
+          <Breadcrumb />
+        </div>
+
         <div className="container">
-          <div className="flex gap-x-6 overflow-hidden">
+          <div className="flex gap-6 overflow-hidden">
 
             {/* Product Details */}
             <div className="flex-1">
-              <div className="flex gap-x-8 mb-[50px]">
+              <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center gap-8 mb-[50px]">
 
                 {/* Product Image  */}
-                <div className="w-[48%] ">
-                  <div className="max-w-[500px] h-[500px] mb-[30px] overflow-hidden border border-[#ECECEC] rounded-[15px] flex items-center justify-center">
+                <div className="">
+                  <div className="w-[380px] sm:min-w-[380px] sm:max-w-[520px] mb-[30px] overflow-hidden border border-[#ECECEC] rounded-[15px] flex items-center justify-center">
                     <Slider {...settings2} className="overflow-hidden" ref={productMainSlider}>
-                      <div className="">
+                      <div className="w-full">
                         <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-0-202305292130.jpg?im=Resize=(${productSliderImgSize[0], productSliderImgSize[1]})`} alt="" className="w-full h-full p-5 rounded-[15px] cursor-grab" />
                       </div>
-                      <div className="">
+                      <div className="w-full">
                         <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-1-202305292130.jpg?im=Resize=(${productSliderImgSize[0], productSliderImgSize[1]})`} alt="" className="w-full h-full p-5 rounded-[15px] cursor-grab" />
                       </div>
-                      <div className="">
+                      <div className="w-full">
                         <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-2-202305292130.jpg?im=Resize=(${productSliderImgSize[0], productSliderImgSize[1]})`} alt="" className="w-full h-full p-5 rounded-[15px] cursor-grab" />
                       </div>
-                      <div className="">
+                      <div className="w-full">
                         <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-3-202305292130.jpg?im=Resize=(${productSliderImgSize[0], productSliderImgSize[1]})`} alt="" className="w-full h-full p-5 rounded-[15px] cursor-grab" />
                       </div>
-                      <div className="">
+                      <div className="w-full">
                         <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-legal-images-o490000363-p490000363-4-202305292130.jpg?im=Resize=(${productSliderImgSize[0], productSliderImgSize[1]})`} alt="" className="w-full h-full p-5 rounded-[15px] cursor-grab" />
                       </div>
-                      <div className="">
+                      <div className="w-full">
                         <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-legal-images-o490000363-p490000363-5-202305292130.jpg?im=Resize=(${productSliderImgSize[0], productSliderImgSize[1]})`} alt="" className="w-full h-full p-5 rounded-[15px] cursor-grab" />
                       </div>
-
                     </Slider>
                   </div>
-                  <div className="overflow-hidden max-w-[500px]">
+                  <div className="overflow-hidden w-[380px] sm:min-w-[380px] sm:max-w-[520px]">
                     <Slider {...settings} className="product-slide" ref={productSlider}>
                       <div className="cursor-pointer overflow-hidden rounded-[17px] border border-transparent outline-none item">
                         <img src={`https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-0-202305292130.jpg?im=Resize=(${productGalleryImgSize[0], productGalleryImgSize[1]})`} alt="" className="w-[118px]" onClick={() => goto(0)} />
@@ -158,9 +192,9 @@ const ProductDetails = () => {
                 </div>
 
                 {/* Product Info */}
-                <div className="w-[48%] font-bold">
+                <div className=" font-bold">
                   <button className="text-[#F74B81] text-sm leading-[14px] bg-[#FDE0E9] rounded-[5px] px-3 py-[6px] mb-[19px]">Sale Off</button>
-                  <h1 className="mb-[19px] text-[40px] leading-12 max-w-[448px]">Seeds of Change Organic Quinoa, Brown</h1>
+                  <h1 className="mb-[19px] text-3xl 2xl:text-[40px] leading-9 2xl:leading-12 max-w-[448px]">Seeds of Change Organic Quinoa, Brown</h1>
                   <div className="mb-[34px] flex items-center gap-x-2">
                     <Rating name="read-only" value={value} readOnly />
                     <span className='text-[#B6B6B6] text-sm leading-6 font-lato'>(32 reviews)</span>
@@ -183,7 +217,7 @@ const ProductDetails = () => {
                       <li className="leading-8 font-normal"><Link className={`px-3 py-2 rounded-[5px] tag ${activeSize === 4 ? 'bg-greeny text-white' : ""}`} onClick={() => isActive(4)}>150g</Link></li>
                     </ul>
                   </div>
-                  <div className="flex gap-x-[9px]">
+                  <div className="flex flex-wrap gap-x-[9px]">
                     <div className="h-[50px] w-[90px] relative font-lato font-normal">
                       <input type="number" value={quantity} className="border-[2px] border-greeny rounded-[5px] outline-none w-full h-full px-7" />
                       <MdKeyboardArrowUp onClick={handleIncrease} className="absolute top-1 right-2 text-greeny cursor-pointer" />
@@ -195,10 +229,10 @@ const ProductDetails = () => {
                       <IoCartOutline className="text-lg" />
                       Add to cart
                     </button>
-                    <div className="border border-[#F1F1F1] rounded-[5px] h-[50px] w-[50px] flex items-center justify-center text-lg cursor-pointer text-[#333333]">
+                    <div className="hidden border border-[#F1F1F1] rounded-[5px] h-[50px] w-[50px] sm:flex items-center justify-center text-lg cursor-pointer text-[#333333]">
                       <IoMdHeartEmpty />
                     </div>
-                    <div className="border border-[#F1F1F1] rounded-[5px] h-[50px] w-[50px] flex items-center justify-center text-lg cursor-pointer text-[#333333]">
+                    <div className="hidden border border-[#F1F1F1] rounded-[5px] h-[50px] w-[50px] sm:flex items-center justify-center text-lg cursor-pointer text-[#333333]">
                       <MdOutlineCompareArrows />
                     </div>
                   </div>
@@ -206,9 +240,9 @@ const ProductDetails = () => {
               </div>
 
               {/* Details Tab */}
-              <div className="border border-[#ECECEC] rounded-[15px] px-[51px] py-41px]">
+              <div className="border border-[#ECECEC] rounded-[15px] px-3 py-4 xl:px-[51px] xl:py-41px]">
                 <div className="">
-                  <ul className="flex gap-x-[10px] my-[42px]">
+                  <ul className="flex flex-wrap gap-3 mt-7 mb-[42px]">
                     <li className="px-[25px] py-3 border border-[#ECECEC] rounded-[30px] text-[17px] leading-[17px] font-bold transition-all ease-in-out duration-300 hover:-translate-y-[4px] hover:shadow-sm hover:text-greeny cursor-pointer"><button className={`cursor-pointer ${activeTab === 0 ? 'text-greeny' : ''}`} onClick={() => setActiveTab(0)}>Description</button></li>
                     <li className="px-[25px] py-3 border border-[#ECECEC] rounded-[30px] text-[17px] leading-[17px] font-bold transition-all ease-in-out duration-300 hover:-translate-y-[4px] hover:shadow-sm hover:text-greeny cursor-pointer"><button className={`cursor-pointer ${activeTab === 1 ? 'text-greeny' : ''}`} onClick={() => setActiveTab(1)}>Additional info</button></li>
                     <li className="px-[25px] py-3 border border-[#ECECEC] rounded-[30px] text-[17px] leading-[17px] font-bold transition-all ease-in-out duration-300 hover:-translate-y-[4px] hover:shadow-sm hover:text-greeny cursor-pointer"><button className={`cursor-pointer ${activeTab === 2 ? 'text-greeny' : ''}`} onClick={() => setActiveTab(2)}>Reviews (3)</button></li>
@@ -371,9 +405,9 @@ const ProductDetails = () => {
                 {/* Reviews Tab Content  */}
                 {
                   activeTab === 2 && (
-                    <div className="flex justify-between">
+                    <div className="flex flex-col lg:flex-row justify-between">
                       {/* Q&A  */}
-                      <div className="w-[60%]">
+                      <div className="w-full xl:w-[60%]">
                         <h4 className="font-bold text-lg leading-7 mb-6">Customer questions & answers</h4>
 
                         {/* Review Card */}
@@ -446,9 +480,9 @@ const ProductDetails = () => {
                       </div>
 
                       {/* Reviews  */}
-                      <div className="w-[37%]">
+                      <div className="w-full xl:w-[37%]">
                         <h4 className="font-bold text-lg leading-7 mb-6">Customer reviews</h4>
-                        <div className="mb-7 flex items-center gap-x-4 leading-6">
+                        <div className="mb-7 flex flex-col items-center gap-x-4 leading-6">
                           <Rating name="size-small" defaultValue={4} size="small" />
                           <p className="font-semibold">4.8 out of 5</p>
                         </div>
@@ -506,7 +540,7 @@ const ProductDetails = () => {
             </div>
 
             {/* Sidebar  */}
-            <div className="w-[20%]">
+            <div className="hidden xl:block w-[25%] 2xl:w-[20%]">
               <Sidebar />
             </div>
           </div>
