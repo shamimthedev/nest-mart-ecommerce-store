@@ -4,6 +4,9 @@ import Sidebar from "../components/Sidebar";
 import Breadcrumb2 from "../components/Breadcrumb2";
 import useFilteredProducts from "../hook/useFilteredProducts";
 import { productsData } from "../data/DB";
+import { CiGrid41 } from "react-icons/ci";
+import { IoIosArrowDown } from "react-icons/io";
+import { PiSortAscendingLight } from "react-icons/pi";
 
 
 const Shop = () => {
@@ -45,13 +48,13 @@ const Shop = () => {
     return (
         <>
             <section id="shopPage">
-                <div>
+                <div className="hidden lg:block">
                     <Breadcrumb2 title={"Shop"} />
                 </div>
 
-                <div className="container flex gap-x-6 relative">
+                <div className="container flex gap-x-6 relative mt-12">
                     {/* Sidebar */}
-                    <div className="w-[20%]">
+                    <div className="hidden 2xl:block w-[20%]">
                         <Sidebar className="sticky top-[100px]" />
                     </div>
 
@@ -61,6 +64,24 @@ const Shop = () => {
                             <p className="text-[#7E7E7E] text-sm">
                                 We found <span className="text-greeny">{filteredProducts.length}</span> items for you!
                             </p>
+                            <div className="hidden lg:flex items-center gap-x-[10px]">
+                                <div className="w-[180px] relative z-10">
+                                    <div className="w-full flex py-[14px] items-center border border-[#ECECEC] justify-center rounded-[10px] gap-x-[10px] text-[#777777] text-[13px] font-semibold cursor-pointer select-none">
+                                        <CiGrid41 />
+                                        <span>Show: 50</span>
+                                        <IoIosArrowDown />
+                                    </div>
+
+                                </div>
+                                <div className="w-[185px] relative z-10">
+                                    <div className="flex w-full py-[14px] items-center border border-[#ECECEC] justify-center rounded-[10px] gap-x-[10px] text-[#777777] text-[13px] font-semibold cursor-pointer select-none">
+                                        <PiSortAscendingLight />
+                                        <span>Sort by: Featured</span>
+                                        <IoIosArrowDown />
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                         <div className="flex flex-wrap justify-between gap-x-4 gap-y-6">
                             {currentProducts.length > 0 ? (

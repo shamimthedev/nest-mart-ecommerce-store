@@ -10,7 +10,7 @@ const Breadcrumb2 = ({title}) => {
         <nav className="text-sm mt-[30px] mb-[50px] w-full">
             <div className="container relative">
                 <img src={Breadcrumb2Img} alt="" className="w-full h-full object-cover" />
-                <div className="absolute top-[70px] left-[68px]">
+                <div className="absolute top-1/2 left-20 2xl:left-24 transform -translate-y-1/2">
                     <h1 className="mb-[18px] text-[48px] leading-[58px] font-bold">{title}</h1>
                     <ul className="flex items-center justify-start space-x-2 text-gray-600 font-semibold leading-6">
                         <li>
