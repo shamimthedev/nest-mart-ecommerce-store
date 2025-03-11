@@ -33,7 +33,6 @@ const About = () => {
     arrows: true,
     nextArrow: <NextArrow isAbout={true} />,
     prevArrow: <PrevArrow isAbout={true} />,
-    cssEase: 'linear',
   };
 
   const catSlides = [
@@ -113,9 +112,9 @@ const About = () => {
           <Breadcrumb />
         </div>
 
-        <div className="max-w-[1341px] mx-auto px-4 sm:px-6 md:px-8">
-          <div className="flex items-center gap-x-[49px]">
-            <div className="w-[646px] h-auto">
+        <div className="container2">
+          <div className="flex flex-col xl:flex-row items-center gap-12">
+            <div className="w-full sm:w-[420px] lg:w-[646px] h-auto">
               <img src={AboutPerson} alt="" className='w-full h-full' />
             </div>
             <div className="flex-1">
@@ -131,7 +130,7 @@ const About = () => {
                 reprehenderit in voluptate id est laborum.</p>
 
               {/* Slider Part  */}
-              <div className="mt-[53px] overflow-hidden max-w-[620px] h-auto">
+              <div className="hidden 2xl:block mt-[53px] overflow-hidden max-w-[620px] h-auto">
                 <Slider {...settings} className="overflow-hidden cat-slide">
                   {catSlides.map((slide, index) => (
                     <div key={index} className="w-[192px]">
@@ -147,15 +146,15 @@ const About = () => {
 
       {/* What We Provide Section */}
       <section>
-        <div className="max-w-[1341px] mx-auto mt-[57px]">
+        <div className="container2 mt-[57px]">
           <div className="relative mb-10">
             <h2 className='font-bold text-[40px] text-center leading-12 pb-6'>What We Provide?</h2>
             <img src={Divider} alt="" className='absolute bottom-0 left-1/2 -translate-x-1/2' />
           </div>
-          <div className="flex flex-wrap gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {featureData.map((feature, index) => {
               return (
-                <div key={index}>
+                <div key={index} className='w-full '>
                   <AboutFeatureCard feature={feature} />
                 </div>
               )
@@ -166,10 +165,10 @@ const About = () => {
 
       {/* Performance Section  */}
       <section>
-        <div className="max-w-[1341px] mx-auto mt-[74px]">
-          <div className="flex items-center gap-x-[30px]">
-            <img src={AboutPerformance} alt="" />
-            <div className="">
+        <div className="container2 mt-[74px]">
+          <div className="flex flex-col lg:flex-row items-center gap-8">
+            <img src={AboutPerformance} alt="" className='w-full lg:w-1/2 object-cover'/>
+            <div className="flex-1">
               <h5 className='mb-[18px] font-bold text-2xl leading-[29px] text-[#B6B6B6]'>Our performance</h5>
               <h2 className='mb-[41px] font-bold text-5xl leading-[58px]'>Your Partner for e-
                 commerce grocery
@@ -181,7 +180,7 @@ const About = () => {
                 ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia</p>
             </div>
           </div>
-          <div className="my-[50px] flex justify-between">
+          <div className="my-[50px] flex flex-col md:flex-row gap-8 justify-between">
             <div className="px-3 py-1">
               <h3 className='font-bold text-[32px] leading-[38px] mb-[31px]'>Who we are</h3>
               <p className='max-w-[394px] text-justify font-lato text-[#7E7E7E] leading-6'>Volutpat diam ut venenatis tellus in metus. Nec dui nunc
@@ -206,7 +205,7 @@ const About = () => {
 
       {/* Counter Section  */}
       <section>
-        <div className="container relative rounded-[15px] overflow-hidden">
+        <div className="container hidden 2xl:block relative rounded-[15px] overflow-hidden">
           <div className="w-full">
             <img src={AboutCounter} alt="" className='w-full' />
           </div>
@@ -239,26 +238,26 @@ const About = () => {
 
       {/* Our Team Section */}
       <section>
-        <div className="max-w-[1341px] mx-auto mt-[50px] mb-[220px]">
+        <div className="container2 mt-[50px] mb-[220px]">
           <div className="relative mb-10">
             <h2 className='font-bold text-[40px] text-center leading-12 pb-6'>Our Team</h2>
             <img src={Divider} alt="" className='absolute bottom-0 left-1/2 -translate-x-1/2' />
           </div>
-          <div className="flex items-center gap-x-[30px]">
+          <div className="flex flex-col 2xl:flex-row items-center gap-12">
             <div className="">
               <h5 className='font-bold leading-[20px] text-greeny'>Our Team</h5>
               <h2 className='mb-[31px] max-w-[378px] font-bold text-5xl leading-[58px]'>Meet Our Expert Team</h2>
-              <p className='mb-[35px] font-lato text-[#7E7E7E] leading-6 text-justify'>Proin ullamcorper pretium orci. Donec necscele risque leo.
+              <p className='mb-[35px] font-lato text-[#7E7E7E] leading-6 max-w-[600px]'>Proin ullamcorper pretium orci. Donec necscele risque leo.
                 Nam massa dolor imperdiet neccon sequata congue idsem.
                 Maecenas malesuada faucibus finibus.</p>
-              <p className='mb-[33px] font-lato text-[#7E7E7E] leading-6 text-justify'>Proin ullamcorper pretium orci. Donec necscele risque leo.
+              <p className='mb-[33px] font-lato text-[#7E7E7E] leading-6 max-w-[600px]'>Proin ullamcorper pretium orci. Donec necscele risque leo.
                 Nam massa dolor imperdiet neccon sequata congue idsem.
                 Maecenas malesuada faucibus finibus.</p>
               <button className='w-[188px] h-[47px] text-sm leading-[21px] tracking-[0.5px] font-bold bg-greeny rounded-sm text-white cursor-pointer'>View All Members</button>
             </div>
-            <div className="flex gap-6">
+            <div className="flex flex-wrap 2xl:flex-nowrap md:justify-center gap-24 2xl:gap-10">
               <div className="relative group">
-                <div className="w-[420px]">
+                <div className="w-full sm:w-[420px]">
                   <img src={TeamMember01} alt="" className='w-full' />
                 </div>
                 <div className="absolute left-[42px] right-[42px] -bottom-20 text-center py-[30px] bg-white rounded-[15px] shadow-md leading-6 transition-all ease-in-out duration-300 group-hover:translate-y-[-6px]">
@@ -273,7 +272,7 @@ const About = () => {
                 </div>
               </div>
               <div className="relative group">
-                <div className="w-[420px]">
+                <div className="w-full sm:w-[420px]">
                   <img src={TeamMember02} alt="" className='w-full' />
                 </div>
                 <div className="absolute left-[42px] right-[42px] -bottom-20 text-center py-[30px] bg-white rounded-[15px] shadow-md leading-6 transition-all ease-in-out duration-300 group-hover:translate-y-[-6px]">
@@ -291,7 +290,6 @@ const About = () => {
           </div>
         </div>
       </section>
-
     </>
   )
 }
