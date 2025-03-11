@@ -12,7 +12,7 @@ const Blog = () => {
     return (
         <>
             <section>
-                <div className="hidden">
+                <div className="hidden xl:block">
                     <Breadcrumb2 title={'Blog & News'} />
                 </div>
 

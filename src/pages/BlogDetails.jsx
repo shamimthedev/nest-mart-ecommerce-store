@@ -32,20 +32,20 @@ const BlogDetails = () => {
     return (
         <>
             <section>
-                <div>
+                <div className="hidden md:block">
                     <Breadcrumb />
                 </div>
 
                 <div className="container">
-                    <div className="flex justify-between">
+                    <div className="flex justify-between mt-12">
                         {/* Blog Content */}
                         <div className="flex-1">
                             {/* Article Header */}
                             <div className="max-w-[897px] mx-auto">
                                 <h5 className="font-bold leading-[20px] text-greeny mb-[9px]">Recipes</h5>
-                                <h1 className="font-bold text-[40px] leading-12 mb-6 max-w-[808px]">Best smartwatch 2022: the top wearables
+                                <h1 className="font-bold text-3xl 2xl:text-[40px] leading-9 2xl:leading-12 mb-6 max-w-[808px]">Best smartwatch 2022: the top wearables
                                     you can buy today</h1>
-                                <div className="mb-[47px] flex justify-between">
+                                <div className="mb-[47px] flex flex-col sm:flex-row gap-5 justify-between">
                                     <div className="flex items-center gap-x-[19px] text-[#7E7E7E] font-lato text-[13px] leading-[13px]">
                                         <div className="flex items-center gap-x-[5px]">
                                             <img src={BlogAuthor} alt="" className="w-[30px]" />
@@ -83,7 +83,7 @@ const BlogDetails = () => {
                                     rank it against the competition and enter it into the list you'll find below.</p>
 
                                 <div className="w-full mb-9">
-                                    <img src={ImgGallery} alt="" />
+                                    <img src={ImgGallery} alt="" className="w-full"/>
                                 </div>
 
                                 <p className="mb-[32px]">Tortor, lobortis semper viverra ac, molestie tortor laoreet amet euismod et diam quis aliquam consequat porttitor
@@ -104,7 +104,7 @@ const BlogDetails = () => {
                             </div>
 
                             {/* Tags and Social */}
-                            <div className="max-w-[897px] mx-auto mb-[50px] flex justify-between">
+                            <div className="max-w-[897px] mx-auto mb-[50px] flex flex-col md:flex-row gap-6 justify-between">
                                 <div className="flex gap-x-[10px]">
                                     <button className="w-fit px-[19px] py-3 bg-greeny text-white rounded-sm font-bold text-xs leading-[22px] tracking-[0.5px]">deer</button>
                                     <button className="w-fit px-[19px] py-3 bg-greeny text-white rounded-sm font-bold text-xs leading-[22px] tracking-[0.5px]">nature</button>
@@ -219,7 +219,7 @@ const BlogDetails = () => {
                         </div>
 
                         {/* Sidebar  */}
-                        <div className="w-[20%]">
+                        <div className="hidden 2xl:block w-[20%]">
                             <BlogSidebar className="sticky top-[100px]" />
                         </div>
                     </div>
