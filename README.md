@@ -15,6 +15,7 @@ Nest Mart is a modern and responsive e-commerce platform designed to provide a s
 
 - **React**: A JavaScript library for building user interfaces.
 - **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
+- **Redux**: For state management.
 
 ## Getting Started
 
