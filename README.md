@@ -42,7 +42,7 @@ Nest Mart is a modern and responsive e-commerce platform designed to provide a s
     npm start
     # or
     yarn start
-5. Open your browser and navigate to http://localhost:3000.
+5. Open your browser and navigate to http://localhost:5173.
 
 ## Usage
 
