@@ -6,20 +6,15 @@ Nest Mart is a modern and responsive e-commerce platform designed to provide a s
 
 ## Features
 
-- **User Authentication**: Sign up, log in, and manage your account.
 - **Product Browsing**: Browse products with categories and filters.
 - **Search Functionality**: Easily search for products by name or category.
 - **Shopping Cart**: Add and remove products from your cart.
-- **Secure Checkout**: Complete purchases with a secure payment process.
 - **Responsive Design**: Works seamlessly on all devices.
 
 ## Technologies Used
 
 - **React**: A JavaScript library for building user interfaces.
-- **Next.js**: A React framework for server-side rendering and static site generation.
 - **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
-- **Firebase**: For user authentication and database management.
-- **Stripe**: For secure payment processing.
 
 ## Getting Started
 
