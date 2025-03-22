@@ -44,6 +44,15 @@ Nest Mart is a modern and responsive e-commerce platform designed to provide a s
     yarn start
 5. Open your browser and navigate to http://localhost:5173.
 
+## Deployment
+This app is deployed on Vercel. To deploy your own version:
+
+1. Fork this repository.
+2. Connect your GitHub account to Vercel.
+3. Import the repository into Vercel.
+4. Add the required environment variables in the Vercel dashboard.
+5. Deploy your app.
+
 ## Usage
 
 1. Browse Products: Use the search bar and filters to find products.
