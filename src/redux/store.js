@@ -9,7 +9,7 @@ import { combineReducers } from "redux";
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["cart", "filter"], // Persist both cart and filter
+  whitelist: ["cart", "filter"], 
 };
 
 // Combine Reducers
@@ -26,7 +26,7 @@ export const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
-      serializableCheck: false, // To avoid warnings related to redux-persist
+      serializableCheck: false, 
     }),
 });
 
