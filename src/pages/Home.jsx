@@ -148,33 +148,6 @@ const Home = () => {
         </div>
       </motion.section>
 
-      {/* Newsletter Signup Section */}
-      <motion.section
-        variants={sectionVariants}
-        id="newsletter"
-        data-animate
-        className="py-16 bg-gradient-to-r from-purple-600 to-blue-600 text-white"
-      >
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-            Stay Updated
-          </h2>
-          <p className="text-lg mb-8 opacity-90">
-            Get the latest deals and product updates delivered to your inbox
-          </p>
-          <div className="max-w-md mx-auto flex gap-4">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-white"
-            />
-            <button className="px-6 py-3 bg-white text-purple-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
-              Subscribe
-            </button>
-          </div>
-        </div>
-      </motion.section>
-
       {/* Back to Top Button */}
       <motion.button
         className="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-50"
