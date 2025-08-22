@@ -147,19 +147,6 @@ const Home = () => {
           </div>
         </div>
       </motion.section>
-
-      {/* Back to Top Button */}
-      <motion.button
-        className="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors z-50"
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
-      >
-        ↑
-      </motion.button>
     </motion.div>
   )
 }
