@@ -361,38 +361,91 @@ input[type="number"] {
   position: relative;
 }
 
-/* Custom Slick Dots Styling */
+/* Custom Slick Dots Styling - FIXED: Better spacing and positioning */
 .hero-section .slick-dots {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: absolute !important;
+  bottom: 50px !important; /* Moved further from bottom */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
   display: flex !important;
-  justify-content: center;
-  gap: 12px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  z-index: 10;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 16px !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  z-index: 10 !important;
+  width: auto !important;
 }
 
 .hero-section .slick-dots li {
-  width: auto;
-  height: auto;
-  margin: 0;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .hero-section .slick-dots li button {
-  display: none;
+  display: none !important;
 }
 
+/* Hero dot container styling */
 .hero-dot {
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 6px !important; /* Better click area */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .hero-dot:hover {
   transform: scale(1.2);
+}
+
+/* Dot elements - FIXED: Remove black circles */
+.hero-dot span {
+  display: block !important;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  border: none !important; /* Remove any borders that cause black circles */
+  outline: none !important; /* Remove any outlines */
+  box-shadow: none !important; /* Start with no shadow, add specific ones below */
+}
+
+/* Active dot styling - Green dot */
+.hero-section .slick-dots li.slick-active .hero-dot span,
+.hero-dot span.bg-green-500,
+.hero-dot span[class*="bg-green"] {
+  background-color: #10b981 !important;
+  width: 12px !important;
+  height: 12px !important;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2) !important;
+}
+
+/* Inactive dot styling - Clean white dots */
+.hero-section .slick-dots li:not(.slick-active) .hero-dot span,
+.hero-dot span.bg-white\/50,
+.hero-dot span[class*="bg-white"] {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  border: 2px solid rgba(255, 255, 255, 0.4) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Hover states */
+.hero-section .slick-dots li:not(.slick-active):hover .hero-dot span,
+.hero-dot:hover span.bg-white\/50 {
+  background-color: rgba(255, 255, 255, 1) !important;
+  border-color: rgba(255, 255, 255, 0.8) !important;
+  transform: scale(1.1);
+}
+
+.hero-section .slick-dots li.slick-active:hover .hero-dot span {
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.3) !important;
 }
 
 /* Backdrop blur support for older browsers */
@@ -461,6 +514,30 @@ input[type="number"] {
   left: 100%;
 }
 
+/* FIXED: Better accent badge styling for readability */
+.accent-badge {
+  animation: gentle-pulse 3s infinite;
+  background: rgba(255, 255, 255, 0.95) !important; /* White background for better contrast */
+  color: #059669 !important; /* Dark green text */
+  border: 1px solid rgba(16, 185, 129, 0.3) !important;
+  backdrop-filter: blur(10px);
+}
+
+.accent-badge .accent-dot {
+  background-color: #10b981 !important; /* Green dot */
+}
+
+/* Mobile accent badge - better contrast on dark backgrounds */
+.mobile-accent-badge {
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: #059669 !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+}
+
+.mobile-accent-badge .accent-dot {
+  background-color: #10b981 !important;
+}
+
 /* Pulse animation for accent badges */
 @keyframes gentle-pulse {
   0%, 100% {
@@ -469,10 +546,6 @@ input[type="number"] {
   50% {
     box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
   }
-}
-
-.accent-badge {
-  animation: gentle-pulse 3s infinite;
 }
 
 /* Slide content animations */
@@ -547,19 +620,29 @@ input[type="number"] {
 /* Enhanced mobile styles */
 @media (max-width: 1024px) {
   .hero-section .slick-dots {
-    bottom: 20px;
+    bottom: 40px !important; /* Better spacing on tablet */
+    gap: 14px !important;
   }
 }
 
 @media (max-width: 768px) {
   .hero-section .slick-dots {
-    bottom: 15px;
-    gap: 8px;
+    bottom: 25px !important; /* Better spacing on mobile */
+    gap: 12px !important;
+  }
+  
+  .hero-dot {
+    padding: 4px !important;
   }
   
   .hero-dot span {
-    width: 8px;
-    height: 8px;
+    width: 8px !important;
+    height: 8px !important;
+  }
+  
+  .hero-section .slick-dots li.slick-active .hero-dot span {
+    width: 10px !important;
+    height: 10px !important;
   }
 }
 
@@ -621,6 +704,11 @@ html {
   
   .hero-section .text-gray-500 {
     color: #374151;
+  }
+  
+  .accent-badge {
+    background: white !important;
+    border: 2px solid #059669 !important;
   }
 }
 
