@@ -1,327 +1,441 @@
-import { memo } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router';
+import { 
+  FiMail, 
+  FiPhone, 
+  FiMapPin, 
+  FiClock,
+  FiFacebook,
+  FiTwitter,
+  FiInstagram,
+  FiLinkedin,
+  FiYoutube,
+  FiArrowUp
+} from 'react-icons/fi';
 import PropTypes from 'prop-types';
-import Logo from '/logo.png';
-import Apple from '/app-store.png';
-import Google from '/play-store.png';
-import Payment from '/payment-method.png';
 
-// Icons
-import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
-import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
-import MarkunreadOutlinedIcon from '@mui/icons-material/MarkunreadOutlined';
-import RestoreOutlinedIcon from '@mui/icons-material/RestoreOutlined';
-import { FiPhoneCall } from "react-icons/fi";
-import { FaFacebookF, FaInstagram, FaPinterestP, FaYoutube } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-
-// Footer data - moved to separate objects for better maintainability
-const FOOTER_DATA = {
+// Mock data for footer links
+const footerData = {
   company: {
-    title: 'Company',
+    title: "Company",
     links: [
-      { name: 'About Us', url: '/about' },
-      { name: 'Delivery Information', url: '/delivery' },
-      { name: 'Privacy Policy', url: '/privacy' },
-      { name: 'Terms & Conditions', url: '/terms' },
-      { name: 'Contact Us', url: '/contact' },
-      { name: 'Support Center', url: '/support' },
-      { name: 'Careers', url: '/careers' }
+      { name: "About Us", url: "/about" },
+      { name: "Delivery Info", url: "/delivery" },
+      { name: "Privacy Policy", url: "/privacy" },
+      { name: "Terms & Conditions", url: "/terms" },
+      { name: "Contact Us", url: "/contact" },
+      { name: "Support Center", url: "/support" }
     ]
   },
   account: {
-    title: 'Account',
+    title: "Account",
     links: [
-      { name: 'Sign In', url: '/login' },
-      { name: 'View Cart', url: '/cart' },
-      { name: 'My Wishlist', url: '/wishlist' },
-      { name: 'Track My Order', url: '/track-order' },
-      { name: 'Help Ticket', url: '/help' },
-      { name: 'Shipping Details', url: '/shipping' },
-      { name: 'Compare products', url: '/compare' }
+      { name: "Sign In", url: "/login" },
+      { name: "View Cart", url: "/cart" },
+      { name: "My Wishlist", url: "/wishlist" },
+      { name: "Track My Order", url: "/track-order" },
+      { name: "Help Ticket", url: "/help" },
+      { name: "Shipping Details", url: "/shipping" }
     ]
   },
   corporate: {
-    title: 'Corporate',
+    title: "Corporate",
     links: [
-      { name: 'Become a Vendor', url: '/vendor' },
-      { name: 'Affiliate Program', url: '/affiliate' },
-      { name: 'Farm Business', url: '/farm-business' },
-      { name: 'Farm Careers', url: '/farm-careers' },
-      { name: 'Our Suppliers', url: '/suppliers' },
-      { name: 'Accessibility', url: '/accessibility' },
-      { name: 'Promotions', url: '/promotions' }
+      { name: "Become a Vendor", url: "/vendor" },
+      { name: "Affiliate Program", url: "/affiliate" },
+      { name: "Farm Business", url: "/farm-business" },
+      { name: "Farm Careers", url: "/careers" },
+      { name: "Our Suppliers", url: "/suppliers" },
+      { name: "Accessibility", url: "/accessibility" }
     ]
   },
   popular: {
-    title: 'Popular',
+    title: "Popular",
     links: [
-      { name: 'Milk & Flavoured Milk', url: '/category/milk' },
-      { name: 'Butter and Margarine', url: '/category/butter' },
-      { name: 'Eggs Substitutes', url: '/category/eggs' },
-      { name: 'Marmalades', url: '/category/marmalades' },
-      { name: 'Sour Cream and Dips', url: '/category/cream' },
-      { name: 'Tea & Kombucha', url: '/category/tea' },
-      { name: 'Cheese', url: '/category/cheese' }
+      { name: "Milk & Flavoured Milk", url: "/category/milk" },
+      { name: "Butter and Margarine", url: "/category/butter" },
+      { name: "Eggs Substitutes", url: "/category/eggs" },
+      { name: "Marmalades", url: "/category/marmalades" },
+      { name: "Sour Cream", url: "/category/sour-cream" },
+      { name: "Cheese", url: "/category/cheese" }
     ]
   }
 };
 
-const CONTACT_INFO = {
-  address: 'Utah 53127 United States',
-  phone: '(+91) - 540-025-124553',
-  email: 'sale@Nest.com',
-  hours: '10:00 - 18:00, Mon - Sat'
-};
-
-const SOCIAL_LINKS = [
-  { icon: FaFacebookF, url: 'https://facebook.com', label: 'Facebook', color: '#1877F2' },
-  { icon: FaXTwitter, url: 'https://twitter.com', label: 'Twitter', color: '#000000' },
-  { icon: FaInstagram, url: 'https://instagram.com', label: 'Instagram', color: '#E4405F' },
-  { icon: FaPinterestP, url: 'https://pinterest.com', label: 'Pinterest', color: '#BD081C' },
-  { icon: FaYoutube, url: 'https://youtube.com', label: 'YouTube', color: '#FF0000' }
+const socialLinks = [
+  { icon: FiFacebook, url: "https://facebook.com", label: "Facebook" },
+  { icon: FiTwitter, url: "https://twitter.com", label: "Twitter" },
+  { icon: FiInstagram, url: "https://instagram.com", label: "Instagram" },
+  { icon: FiLinkedin, url: "https://linkedin.com", label: "LinkedIn" },
+  { icon: FiYoutube, url: "https://youtube.com", label: "YouTube" }
 ];
 
-const PHONE_NUMBERS = [
-  { number: '1900 - 6666', description: 'Working 8:00 - 22:00' },
-  { number: '1900 - 8888', description: '24/7 Support Center' }
-];
+// Newsletter Subscription Component
+const NewsletterSubscription = React.memo(() => {
+  const [email, setEmail] = useState('');
+  const [isSubscribed, setIsSubscribed] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-// Reusable Components
-const ContactInfoItem = memo(({ icon: Icon, label, value, className = '' }) => (
-  <div className={`flex items-start gap-2 transition-colors hover:text-greeny group ${className}`}>
-    <Icon className="text-greeny text-lg mt-0.5 group-hover:scale-110 transition-transform" />
-    <span className="text-sm leading-relaxed">
-      <span className="font-semibold">{label}:</span> {value}
-    </span>
-  </div>
-));
+  const handleSubmit = useCallback(() => {
+    if (!email || !email.includes('@')) {
+      alert('Please enter a valid email address');
+      return;
+    }
 
-ContactInfoItem.displayName = 'ContactInfoItem';
-ContactInfoItem.propTypes = {
-  icon: PropTypes.elementType.isRequired,
-  label: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
-  className: PropTypes.string
-};
+    setIsLoading(true);
+    
+    // Simulate API call
+    setTimeout(() => {
+      setIsSubscribed(true);
+      setIsLoading(false);
+      setEmail('');
+      
+      // Reset success message after 3 seconds
+      setTimeout(() => setIsSubscribed(false), 3000);
+    }, 1000);
+  }, [email]);
 
-const FooterSection = memo(({ title, links, className = '' }) => (
-  <div className={`space-y-4 ${className}`}>
-    <h3 className="font-bold text-xl lg:text-2xl text-gray-800 mb-5 relative">
-      {title}
-      <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-greeny rounded-full"></span>
-    </h3>
-    <nav aria-label={`${title} navigation`}>
-      <ul className="space-y-3">
+  return (
+    <div className="space-y-4">
+      <div>
+        <h3 className="text-lg font-bold text-white mb-2">Stay home & get your daily needs from our shop</h3>
+        <p className="text-green-100 text-sm mb-4">
+          Start your daily shopping with <span className="text-white font-semibold">Nest Mart</span>
+        </p>
+      </div>
+
+      {isSubscribed ? (
+        <div className="bg-green-500 text-white px-4 py-3 rounded-md text-sm font-medium">
+          ✓ Thank you for subscribing!
+        </div>
+      ) : (
+        <div className="flex flex-col sm:flex-row gap-2">
+          <div className="flex-1">
+            <label htmlFor="newsletter-email" className="sr-only">
+              Email Address
+            </label>
+            <input
+              id="newsletter-email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Your email address"
+              className="w-full px-4 py-3 rounded-md border border-green-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900 placeholder-gray-500"
+              disabled={isLoading}
+            />
+          </div>
+          <button
+            onClick={handleSubmit}
+            disabled={isLoading}
+            className="px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+          >
+            {isLoading ? 'Subscribing...' : 'Subscribe'}
+          </button>
+        </div>
+      )}
+
+      {/* Social Links */}
+      <div className="flex items-center gap-3 pt-2">
+        <span className="text-green-100 text-sm">Follow us:</span>
+        <div className="flex gap-2">
+          {socialLinks.map((social, index) => (
+            <a
+              key={index}
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-8 h-8 bg-green-700 hover:bg-green-600 text-white rounded-full flex items-center justify-center transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+              aria-label={social.label}
+            >
+              <social.icon size={16} />
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+});
+
+NewsletterSubscription.displayName = 'NewsletterSubscription';
+
+// Footer Link Section Component
+const FooterLinkSection = React.memo(({ title, links }) => {
+  return (
+    <div className="space-y-4">
+      <h3 className="text-lg font-bold text-white">{title}</h3>
+      <ul className="space-y-2">
         {links.map((link, index) => (
           <li key={index}>
             <Link
               to={link.url}
-              className="text-gray-600 hover:text-greeny font-medium transition-all duration-300 hover:translate-x-1 inline-block group text-sm lg:text-base"
+              className="text-green-100 hover:text-white text-sm transition-colors duration-200 focus:outline-none focus:text-white block py-1"
             >
-              <span className="group-hover:underline underline-offset-2">
-                {link.name}
-              </span>
+              {link.name}
             </Link>
           </li>
         ))}
       </ul>
-    </nav>
-  </div>
-));
+    </div>
+  );
+});
 
-FooterSection.displayName = 'FooterSection';
-FooterSection.propTypes = {
+FooterLinkSection.displayName = 'FooterLinkSection';
+FooterLinkSection.propTypes = {
   title: PropTypes.string.isRequired,
   links: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired
-  })).isRequired,
-  className: PropTypes.string
+  })).isRequired
 };
 
-const SocialIcon = memo(({ icon: Icon, url, label, color }) => (
-  <a
-    href={url}
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label={`Follow us on ${label}`}
-    className="group relative w-9 h-9 bg-greeny hover:bg-opacity-90 text-white rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg"
-    style={{ '--hover-color': color }}
-    onMouseEnter={(e) => e.target.style.backgroundColor = color}
-    onMouseLeave={(e) => e.target.style.backgroundColor = '#10b981'}
-  >
-    <Icon className="text-sm transition-transform group-hover:scale-110" />
-  </a>
-));
-
-SocialIcon.displayName = 'SocialIcon';
-SocialIcon.propTypes = {
-  icon: PropTypes.elementType.isRequired,
-  url: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired
-};
-
-const PhoneInfo = memo(({ number, description }) => (
-  <div className="flex items-center gap-3 text-greeny group hover:scale-105 transition-transform">
-    <FiPhoneCall className="text-2xl lg:text-3xl group-hover:rotate-12 transition-transform" />
-    <div>
-      <p className="font-bold text-xl lg:text-2xl leading-tight">{number}</p>
-      <span className="font-lato text-xs text-gray-500">{description}</span>
-    </div>
-  </div>
-));
-
-PhoneInfo.displayName = 'PhoneInfo';
-PhoneInfo.propTypes = {
-  number: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired
-};
-
-const AppDownloadButton = memo(({ src, alt, className = '' }) => (
-  <img
-    src={src}
-    alt={alt}
-    loading="lazy"
-    className={`hover:scale-105 transition-transform cursor-pointer rounded-lg shadow-sm hover:shadow-md ${className}`}
-  />
-));
-
-AppDownloadButton.displayName = 'AppDownloadButton';
-AppDownloadButton.propTypes = {
-  src: PropTypes.string.isRequired,
-  alt: PropTypes.string.isRequired,
-  className: PropTypes.string
-};
-
-// Main Footer Component
-const Footer = memo(({ className = '' }) => {
-  const currentYear = new Date().getFullYear();
+// Contact Info Component
+const ContactInfo = React.memo(() => {
+  const contactDetails = [
+    {
+      icon: FiMapPin,
+      label: "Address",
+      value: "5171 W Campbell Ave, Salt Lake City, Utah 84104"
+    },
+    {
+      icon: FiPhone,
+      label: "Phone",
+      value: "1-800-870-8728",
+      href: "tel:+18008708728"
+    },
+    {
+      icon: FiMail,
+      label: "Email",
+      value: "sale@grocerymart.com",
+      href: "mailto:sale@grocerymart.com"
+    },
+    {
+      icon: FiClock,
+      label: "Hours",
+      value: "10:00 - 18:00, Mon - Sat"
+    }
+  ];
 
   return (
-    <footer className={`bg-gradient-to-b from-gray-50 to-white mt-20 ${className}`} role="contentinfo">
-      <div className="container mx-auto px-4 lg:px-6">
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8 lg:gap-10 py-12 border-b border-green-100">
-          {/* Company Info & Contact */}
-          <div className="col-span-1 md:col-span-2 lg:col-span-2 xl:col-span-1 space-y-6">
-            <Link to="/" className="inline-block group">
-              <img 
-                src={Logo} 
-                alt="Nest - Grocery Store" 
-                loading="lazy" 
-                className="w-[200px] lg:w-[215px] group-hover:scale-105 transition-transform" 
-              />
-            </Link>
-            
-            <p className="text-gray-600 font-lato leading-relaxed max-w-[280px] text-sm lg:text-base">
-              Your trusted partner for fresh, quality groceries delivered right to your doorstep.
-            </p>
-            
-            <address className="not-italic space-y-4">
-              <ContactInfoItem 
-                icon={LocationOnOutlinedIcon} 
-                label="Address" 
-                value={CONTACT_INFO.address}
-              />
-              <ContactInfoItem 
-                icon={CallOutlinedIcon} 
-                label="Call Us" 
-                value={CONTACT_INFO.phone}
-              />
-              <ContactInfoItem 
-                icon={MarkunreadOutlinedIcon} 
-                label="Email" 
-                value={CONTACT_INFO.email}
-              />
-              <ContactInfoItem 
-                icon={RestoreOutlinedIcon} 
-                label="Hours" 
-                value={CONTACT_INFO.hours}
-              />
-            </address>
-          </div>
-
-          {/* Footer Sections */}
-          <FooterSection {...FOOTER_DATA.company} className="col-span-1" />
-          <FooterSection {...FOOTER_DATA.account} className="col-span-1" />
-          <FooterSection {...FOOTER_DATA.corporate} className="col-span-1" />
-          <FooterSection {...FOOTER_DATA.popular} className="col-span-1" />
-
-          {/* App Download & Payment */}
-          <div className="col-span-1 md:col-span-2 lg:col-span-1 space-y-6">
-            <h3 className="font-bold text-xl lg:text-2xl text-gray-800 relative">
-              Install App
-              <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-greeny rounded-full"></span>
-            </h3>
-            
-            <p className="text-gray-600 font-lato text-sm lg:text-base">
-              From App Store or Google Play
-            </p>
-            
-            <div className="flex gap-3">
-              <AppDownloadButton src={Apple} alt="Download from App Store" />
-              <AppDownloadButton src={Google} alt="Get it on Google Play" />
-            </div>
-            
-            <div className="space-y-4">
-              <p className="text-gray-600 font-lato text-sm lg:text-base">
-                Secured Payment Gateways
-              </p>
-              <img 
-                src={Payment} 
-                alt="Accepted payment methods" 
-                loading="lazy"
-                className="rounded-lg shadow-sm"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Footer Bottom */}
-        <div className="py-6 lg:py-8">
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
-            {/* Copyright */}
-            <div className="text-gray-500 font-lato text-sm leading-relaxed">
-              <p>
-                © {currentYear}, <Link to="/" className="text-greeny hover:underline font-semibold">Nest</Link> - Premium Grocery Store
-              </p>
-              <p className="text-xs mt-1">All rights reserved</p>
-            </div>
-
-            {/* Phone Numbers - Desktop Only */}
-            <div className="hidden xl:flex gap-8">
-              {PHONE_NUMBERS.map((phone, index) => (
-                <PhoneInfo key={index} {...phone} />
-              ))}
-            </div>
-
-            {/* Social Links */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
-              <div className="flex items-center gap-4">
-                <span className="font-semibold text-gray-800 text-sm lg:text-base">Follow Us</span>
-                <div className="flex gap-2">
-                  {SOCIAL_LINKS.map((social, index) => (
-                    <SocialIcon key={index} {...social} />
-                  ))}
-                </div>
-              </div>
-              <p className="text-gray-500 font-lato text-xs lg:text-sm">
-                Up to 15% discount on your first subscribe
-              </p>
-            </div>
-          </div>
-        </div>
+    <div className="space-y-4">
+      <div>
+        <img 
+          src="/logo.png" 
+          alt="Nest Mart Logo" 
+          className="h-10 mb-4"
+          loading="lazy"
+        />
+        <p className="text-green-100 text-sm mb-4">
+          Awesome grocery store website template with modern design and useful features.
+        </p>
       </div>
-    </footer>
+
+      <div className="space-y-3">
+        {contactDetails.map((detail, index) => (
+          <div key={index} className="flex items-start gap-3">
+            <detail.icon className="w-5 h-5 text-green-300 mt-0.5 flex-shrink-0" />
+            <div className="min-w-0 flex-1">
+              <span className="text-xs text-green-200 block">{detail.label}:</span>
+              {detail.href ? (
+                <a
+                  href={detail.href}
+                  className="text-sm text-white hover:text-green-200 transition-colors duration-200 focus:outline-none focus:text-green-200 block"
+                >
+                  {detail.value}
+                </a>
+              ) : (
+                <span className="text-sm text-white block">{detail.value}</span>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 });
 
+ContactInfo.displayName = 'ContactInfo';
+
+// Scroll to Top Component
+const ScrollToTop = React.memo(() => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  React.useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.pageYOffset > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', toggleVisibility);
+    return () => window.removeEventListener('scroll', toggleVisibility);
+  }, []);
+
+  const scrollToTop = useCallback(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }, []);
+
+  if (!isVisible) return null;
+
+  return (
+    <button
+      onClick={scrollToTop}
+      className="fixed bottom-8 right-8 w-12 h-12 bg-green-600 hover:bg-green-700 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 z-50 hover:scale-110"
+      aria-label="Scroll to top"
+    >
+      <FiArrowUp size={20} />
+    </button>
+  );
+});
+
+ScrollToTop.displayName = 'ScrollToTop';
+
+// Payment Methods Component
+const PaymentMethods = React.memo(() => {
+  const paymentMethods = [
+    { name: "Visa", src: "/api/placeholder/40/25" },
+    { name: "Mastercard", src: "/api/placeholder/40/25" },
+    { name: "PayPal", src: "/api/placeholder/40/25" },
+    { name: "American Express", src: "/api/placeholder/40/25" },
+    { name: "Apple Pay", src: "/api/placeholder/40/25" },
+    { name: "Google Pay", src: "/api/placeholder/40/25" }
+  ];
+
+  return (
+    <div className="flex flex-wrap items-center justify-center gap-3">
+      {paymentMethods.map((method, index) => (
+        <div
+          key={index}
+          className="bg-white rounded-md p-2 flex items-center justify-center hover:scale-105 transition-transform duration-200"
+        >
+          <img
+            src={method.src}
+            alt={`${method.name} payment method`}
+            className="h-4 w-auto object-contain"
+            loading="lazy"
+          />
+        </div>
+      ))}
+    </div>
+  );
+});
+
+PaymentMethods.displayName = 'PaymentMethods';
+
+// Main Footer Component
+const Footer = React.memo(({ className = "" }) => {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <>
+      <footer className={`bg-green-800 text-white relative overflow-hidden ${className}`}>
+        {/* Decorative background pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 left-0 w-32 h-32 bg-white rounded-full -translate-x-16 -translate-y-16"></div>
+          <div className="absolute bottom-0 right-0 w-48 h-48 bg-white rounded-full translate-x-24 translate-y-24"></div>
+        </div>
+
+        {/* Main Footer Content */}
+        <div className="relative z-10">
+          {/* Newsletter Section */}
+          <div className="bg-green-700 py-8 lg:py-12">
+            <div className="container mx-auto px-4 max-w-7xl">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <NewsletterSubscription />
+                <div className="flex justify-center lg:justify-end">
+                  <img 
+                    src="/api/placeholder/300/200" 
+                    alt="Fresh groceries delivery" 
+                    className="max-w-xs w-full h-auto rounded-lg shadow-lg"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Links Section */}
+          <div className="py-12 lg:py-16">
+            <div className="container mx-auto px-4 max-w-7xl">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8">
+                {/* Contact Info - Takes 2 columns on large screens */}
+                <div className="lg:col-span-2">
+                  <ContactInfo />
+                </div>
+
+                {/* Footer Links - Each takes 1 column */}
+                <FooterLinkSection 
+                  title={footerData.company.title} 
+                  links={footerData.company.links} 
+                />
+                <FooterLinkSection 
+                  title={footerData.account.title} 
+                  links={footerData.account.links} 
+                />
+                <FooterLinkSection 
+                  title={footerData.corporate.title} 
+                  links={footerData.corporate.links} 
+                />
+                <FooterLinkSection 
+                  title={footerData.popular.title} 
+                  links={footerData.popular.links} 
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="border-t border-green-700 bg-green-900 py-6">
+            <div className="container mx-auto px-4 max-w-7xl">
+              <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
+                {/* Copyright */}
+                <div className="text-center lg:text-left">
+                  <p className="text-sm text-green-100">
+                    © {currentYear} <span className="text-white font-semibold">Nest</span>, All rights reserved
+                  </p>
+                </div>
+
+                {/* Payment Methods */}
+                <div className="flex items-center gap-4">
+                  <span className="text-sm text-green-100 hidden sm:block">We accept:</span>
+                  <PaymentMethods />
+                </div>
+
+                {/* Additional Links */}
+                <div className="flex items-center gap-4 text-sm">
+                  <Link 
+                    to="/privacy" 
+                    className="text-green-100 hover:text-white transition-colors duration-200 focus:outline-none focus:text-white"
+                  >
+                    Privacy Policy
+                  </Link>
+                  <span className="text-green-600">|</span>
+                  <Link 
+                    to="/terms" 
+                    className="text-green-100 hover:text-white transition-colors duration-200 focus:outline-none focus:text-white"
+                  >
+                    Terms of Service
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      {/* Scroll to Top Button */}
+      <ScrollToTop />
+    </>
+  );
+});
+
+Footer.displayName = 'Footer';
 Footer.propTypes = {
   className: PropTypes.string
 };
-
-Footer.displayName = 'Footer';
 
 export default Footer;
