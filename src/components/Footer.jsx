@@ -1,15 +1,11 @@
 import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router';
-import { 
-  FiMail, 
-  FiPhone, 
-  FiMapPin, 
+import {
+  FiMail,
+  FiPhone,
+  FiMapPin,
   FiClock,
-  FiFacebook,
-  FiTwitter,
-  FiInstagram,
-  FiLinkedin,
-  FiYoutube,
+
   FiArrowUp
 } from 'react-icons/fi';
 import PropTypes from 'prop-types';
@@ -62,101 +58,101 @@ const footerData = {
   }
 };
 
-const socialLinks = [
-  { icon: FiFacebook, url: "https://facebook.com", label: "Facebook" },
-  { icon: FiTwitter, url: "https://twitter.com", label: "Twitter" },
-  { icon: FiInstagram, url: "https://instagram.com", label: "Instagram" },
-  { icon: FiLinkedin, url: "https://linkedin.com", label: "LinkedIn" },
-  { icon: FiYoutube, url: "https://youtube.com", label: "YouTube" }
-];
+// const socialLinks = [
+//   { icon: FiFacebook, url: "https://facebook.com", label: "Facebook" },
+//   { icon: FiTwitter, url: "https://twitter.com", label: "Twitter" },
+//   { icon: FiInstagram, url: "https://instagram.com", label: "Instagram" },
+//   { icon: FiLinkedin, url: "https://linkedin.com", label: "LinkedIn" },
+//   { icon: FiYoutube, url: "https://youtube.com", label: "YouTube" }
+// ];
 
-// Newsletter Subscription Component
-const NewsletterSubscription = React.memo(() => {
-  const [email, setEmail] = useState('');
-  const [isSubscribed, setIsSubscribed] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+// // Newsletter Subscription Component
+// const NewsletterSubscription = React.memo(() => {
+//   const [email, setEmail] = useState('');
+//   const [isSubscribed, setIsSubscribed] = useState(false);
+//   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = useCallback(() => {
-    if (!email || !email.includes('@')) {
-      alert('Please enter a valid email address');
-      return;
-    }
+//   const handleSubmit = useCallback(() => {
+//     if (!email || !email.includes('@')) {
+//       alert('Please enter a valid email address');
+//       return;
+//     }
 
-    setIsLoading(true);
-    
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubscribed(true);
-      setIsLoading(false);
-      setEmail('');
-      
-      // Reset success message after 3 seconds
-      setTimeout(() => setIsSubscribed(false), 3000);
-    }, 1000);
-  }, [email]);
+//     setIsLoading(true);
 
-  return (
-    <div className="space-y-4">
-      <div>
-        <h3 className="text-lg font-bold text-white mb-2">Stay home & get your daily needs from our shop</h3>
-        <p className="text-green-100 text-sm mb-4">
-          Start your daily shopping with <span className="text-white font-semibold">Nest Mart</span>
-        </p>
-      </div>
+//     // Simulate API call
+//     setTimeout(() => {
+//       setIsSubscribed(true);
+//       setIsLoading(false);
+//       setEmail('');
 
-      {isSubscribed ? (
-        <div className="bg-green-500 text-white px-4 py-3 rounded-md text-sm font-medium">
-          ✓ Thank you for subscribing!
-        </div>
-      ) : (
-        <div className="flex flex-col sm:flex-row gap-2">
-          <div className="flex-1">
-            <label htmlFor="newsletter-email" className="sr-only">
-              Email Address
-            </label>
-            <input
-              id="newsletter-email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Your email address"
-              className="w-full px-4 py-3 rounded-md border border-green-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900 placeholder-gray-500"
-              disabled={isLoading}
-            />
-          </div>
-          <button
-            onClick={handleSubmit}
-            disabled={isLoading}
-            className="px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
-          >
-            {isLoading ? 'Subscribing...' : 'Subscribe'}
-          </button>
-        </div>
-      )}
+//       // Reset success message after 3 seconds
+//       setTimeout(() => setIsSubscribed(false), 3000);
+//     }, 1000);
+//   }, [email]);
 
-      {/* Social Links */}
-      <div className="flex items-center gap-3 pt-2">
-        <span className="text-green-100 text-sm">Follow us:</span>
-        <div className="flex gap-2">
-          {socialLinks.map((social, index) => (
-            <a
-              key={index}
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-8 h-8 bg-green-700 hover:bg-green-600 text-white rounded-full flex items-center justify-center transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
-              aria-label={social.label}
-            >
-              <social.icon size={16} />
-            </a>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-});
+//   return (
+//     <div className="space-y-4">
+//       <div>
+//         <h3 className="text-lg font-bold text-white mb-2">Stay home & get your daily needs from our shop</h3>
+//         <p className="text-green-100 text-sm mb-4">
+//           Start your daily shopping with <span className="text-white font-semibold">Nest Mart</span>
+//         </p>
+//       </div>
 
-NewsletterSubscription.displayName = 'NewsletterSubscription';
+//       {isSubscribed ? (
+//         <div className="bg-green-500 text-white px-4 py-3 rounded-md text-sm font-medium">
+//           ✓ Thank you for subscribing!
+//         </div>
+//       ) : (
+//         <div className="flex flex-col sm:flex-row gap-2">
+//           <div className="flex-1">
+//             <label htmlFor="newsletter-email" className="sr-only">
+//               Email Address
+//             </label>
+//             <input
+//               id="newsletter-email"
+//               type="email"
+//               value={email}
+//               onChange={(e) => setEmail(e.target.value)}
+//               placeholder="Your email address"
+//               className="w-full px-4 py-3 rounded-md border border-green-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-gray-900 placeholder-gray-500"
+//               disabled={isLoading}
+//             />
+//           </div>
+//           <button
+//             onClick={handleSubmit}
+//             disabled={isLoading}
+//             className="px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+//           >
+//             {isLoading ? 'Subscribing...' : 'Subscribe'}
+//           </button>
+//         </div>
+//       )}
+
+//       {/* Social Links */}
+//       <div className="flex items-center gap-3 pt-2">
+//         <span className="text-green-100 text-sm">Follow us:</span>
+//         <div className="flex gap-2">
+//           {socialLinks.map((social, index) => (
+//             <a
+//               key={index}
+//               href={social.url}
+//               target="_blank"
+//               rel="noopener noreferrer"
+//               className="w-8 h-8 bg-green-700 hover:bg-green-600 text-white rounded-full flex items-center justify-center transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+//               aria-label={social.label}
+//             >
+//               <social.icon size={16} />
+//             </a>
+//           ))}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// });
+
+// NewsletterSubscription.displayName = 'NewsletterSubscription';
 
 // Footer Link Section Component
 const FooterLinkSection = React.memo(({ title, links }) => {
@@ -218,9 +214,9 @@ const ContactInfo = React.memo(() => {
   return (
     <div className="space-y-4">
       <div>
-        <img 
-          src="/logo.png" 
-          alt="Nest Mart Logo" 
+        <img
+          src="/logo.png"
+          alt="Nest Mart Logo"
           className="h-10 mb-4"
           loading="lazy"
         />
@@ -297,12 +293,12 @@ ScrollToTop.displayName = 'ScrollToTop';
 // Payment Methods Component
 const PaymentMethods = React.memo(() => {
   const paymentMethods = [
-    { name: "Visa", src: "/api/placeholder/40/25" },
-    { name: "Mastercard", src: "/api/placeholder/40/25" },
-    { name: "PayPal", src: "/api/placeholder/40/25" },
-    { name: "American Express", src: "/api/placeholder/40/25" },
-    { name: "Apple Pay", src: "/api/placeholder/40/25" },
-    { name: "Google Pay", src: "/api/placeholder/40/25" }
+    { name: "Visa", src: "/visa-logo.webp" },
+    { name: "Mastercard", src: "/mastercard-logo.svg" },
+    { name: "PayPal", src: "/paypal-logo.png" },
+    { name: "American Express", src: "/american_express-logo.svg" },
+    { name: "Apple Pay", src: "/apple-pay.png" },
+    { name: "Google Pay", src: "/google_pay-logo.png" }
   ];
 
   return (
@@ -332,7 +328,7 @@ const Footer = React.memo(({ className = "" }) => {
 
   return (
     <>
-      <footer className={`bg-green-800 text-white relative overflow-hidden ${className}`}>
+      <footer className={`bg-green-800 mt-10 text-white relative overflow-hidden ${className}`}>
         {/* Decorative background pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 left-0 w-32 h-32 bg-white rounded-full -translate-x-16 -translate-y-16"></div>
@@ -342,21 +338,7 @@ const Footer = React.memo(({ className = "" }) => {
         {/* Main Footer Content */}
         <div className="relative z-10">
           {/* Newsletter Section */}
-          <div className="bg-green-700 py-8 lg:py-12">
-            <div className="container mx-auto px-4 max-w-7xl">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                <NewsletterSubscription />
-                <div className="flex justify-center lg:justify-end">
-                  <img 
-                    src="/api/placeholder/300/200" 
-                    alt="Fresh groceries delivery" 
-                    className="max-w-xs w-full h-auto rounded-lg shadow-lg"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+          
 
           {/* Links Section */}
           <div className="py-12 lg:py-16">
@@ -368,21 +350,21 @@ const Footer = React.memo(({ className = "" }) => {
                 </div>
 
                 {/* Footer Links - Each takes 1 column */}
-                <FooterLinkSection 
-                  title={footerData.company.title} 
-                  links={footerData.company.links} 
+                <FooterLinkSection
+                  title={footerData.company.title}
+                  links={footerData.company.links}
                 />
-                <FooterLinkSection 
-                  title={footerData.account.title} 
-                  links={footerData.account.links} 
+                <FooterLinkSection
+                  title={footerData.account.title}
+                  links={footerData.account.links}
                 />
-                <FooterLinkSection 
-                  title={footerData.corporate.title} 
-                  links={footerData.corporate.links} 
+                <FooterLinkSection
+                  title={footerData.corporate.title}
+                  links={footerData.corporate.links}
                 />
-                <FooterLinkSection 
-                  title={footerData.popular.title} 
-                  links={footerData.popular.links} 
+                <FooterLinkSection
+                  title={footerData.popular.title}
+                  links={footerData.popular.links}
                 />
               </div>
             </div>
@@ -407,15 +389,15 @@ const Footer = React.memo(({ className = "" }) => {
 
                 {/* Additional Links */}
                 <div className="flex items-center gap-4 text-sm">
-                  <Link 
-                    to="/privacy" 
+                  <Link
+                    to="/privacy"
                     className="text-green-100 hover:text-white transition-colors duration-200 focus:outline-none focus:text-white"
                   >
                     Privacy Policy
                   </Link>
                   <span className="text-green-600">|</span>
-                  <Link 
-                    to="/terms" 
+                  <Link
+                    to="/terms"
                     className="text-green-100 hover:text-white transition-colors duration-200 focus:outline-none focus:text-white"
                   >
                     Terms of Service
