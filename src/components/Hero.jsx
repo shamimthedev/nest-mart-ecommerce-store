@@ -60,33 +60,28 @@ const Hero = () => {
     }, 3000);
   };
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 800,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true,
-    fade: true,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    pauseOnHover: true,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow isHero={true}/>,
-    beforeChange: (current, next) => setCurrentSlide(next),
-    customPaging: (i) => (
-      <div className="hero-dot">
-        <span className={`block w-3 h-3 rounded-full transition-all duration-300 ${
-          i === currentSlide ? 'bg-green-500 scale-125' : 'bg-white/50'
-        }`}></span>
-      </div>
-    ),
-    appendDots: dots => (
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <ul className="flex space-x-3"> {dots} </ul>
-      </div>
-    )
-  };
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 800,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: true,
+  fade: true,
+  autoplay: true,
+  autoplaySpeed: 5000,
+  pauseOnHover: true,
+  nextArrow: <NextArrow />,
+  prevArrow: <PrevArrow isHero={true}/>,
+  beforeChange: (current, next) => setCurrentSlide(next),
+  customPaging: (i) => (
+    <div className="hero-dot">
+      <span className={`block w-3 h-3 rounded-full transition-all duration-300 ${
+        i === currentSlide ? 'bg-green-500 scale-125' : 'bg-white/50'
+      }`}></span>
+    </div>
+  )
+};
 
   return (
     <div className="hero-section">
@@ -94,7 +89,7 @@ const Hero = () => {
       <div className="container overflow-hidden hidden lg:block">
         <div className="relative">
           <Slider {...settings}>
-            {slides.map((slide, index) => (
+            {slides.map((slide) => (
               <div className="my-[30px] outline-none overflow-hidden relative" key={slide.id}>
                 {/* Background Image with Overlay */}
                 <div className="relative rounded-[30px] overflow-hidden">
